@@ -1,3 +1,9 @@
-~.docx
-~.docx
-~.docx
+.DS_Store
+.idea/
+~$*        
+*.tmp      
+*.bak      
+*.wbk      
+*.asd      
+*.docx~    
+*.doc~
