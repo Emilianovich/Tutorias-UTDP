@@ -79,6 +79,7 @@ CREATE TABLE Imparte (
     cod_materia INT,         
     cod_sesion CHAR(5),    
     CONSTRAINT PK_Imparte_codTutor_codMateria_codSesion PRIMARY KEY (cod_tutor,cod_materia,cod_sesion),
+    CONSTRAINT UQ_Imparte_codSesion UNIQUE (cod_sesion),
     CONSTRAINT FK_Imparte_cod_tutor FOREIGN KEY (cod_tutor) REFERENCES Tutor (cod_tutor),
     CONSTRAINT FK_Imparte_cod_materia FOREIGN KEY (cod_materia) REFERENCES Materia (cod_materia),
     CONSTRAINT FK_Imparte_cod_sesion FOREIGN KEY (cod_sesion) REFERENCES Sesion (cod_sesion)  
