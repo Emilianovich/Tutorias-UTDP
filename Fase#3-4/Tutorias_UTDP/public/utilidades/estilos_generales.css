@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Exo;
+}
+
+body {
+    background-color: #232946;
+}
+
+.header_estilos_generales_pc {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_estilos_generales_pc div {
+    width: 23%;
+    background-color: #fffffe;
+    padding: 1em;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 1.13rem
+}
+
+picture {
+    width: 30%;
+}
+
+#logo-utdp {
+    width: 30%;
+    height: auto;
+}
+
+#picture-icono-perfil {
+    display: flex;
+    justify-content:flex-end;
+}
+
+#icono-perfil {
+    width: 17%;
+    height: auto;
+}
+
+.nav_estilos_generales_pc {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #FFFFFF;
+    border: 0.5px solid #FFFFFF;
+}
+
+.nav_estilos_generales_pc div {
+    height: 90%;
+    width: 9%;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.nav_estilos_generales_pc h2 {
+    font-size: 1.50rem;
+    font-weight: 300;
+}
+
+.nav_estilos_generales_pc div:hover {
+    background-color: #eebbc3;
+    color: black;
+}
+
+.footer_estilos_generales_pc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_estilos_generales_pc p {
+    color: white;
+    font-weight: 100;
+}
