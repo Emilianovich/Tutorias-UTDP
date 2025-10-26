@@ -1,0 +1,5 @@
+/vendor
+.phpunit.result.cache
+/.idea
+/logs
+/tests/database/*.sqlite

@@ -1,0 +1,36 @@
+{
+    "name": "thiagoprz/eloquent-composite-key",
+    "description": "Eloquent Composite Key Support Package",
+    "type": "library",
+    "autoload": {
+        "classmap": [
+            "src/"
+        ],
+        "psr-4": {
+            "Thiagoprz\\CompositeKey\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ],
+        "psr-4": {
+            "Thiagoprz\\CompositeKey\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^7.1 || ^8.0 || ^8.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "6",
+        "squizlabs/php_codesniffer": "4.0.x-dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Thiago Przyczynski",
+            "email": "przyczynski@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
