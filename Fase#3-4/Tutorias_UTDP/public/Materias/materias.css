@@ -10,6 +10,11 @@ body {
     height: 100vh;
 }
 
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 header {
     grid-area: header;
 }
@@ -37,15 +42,45 @@ main article {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #eebbc3;
+    border: 4px solid #eebbc3;
     background-color: #fffffe;
     border-radius: 1em;
     width: 40%;
     height: 20%;
 }
 
+.picture {
+    position: relative;
+    width: 90%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.picture div {
+    position: relative;
+    left: 30%;
+}
+
+main article img {
+    position: absolute;
+    left: 0;
+    width: 23%;
+    height: auto;
+}
+
 main h1 {
     font-weight: 400;
+    color: black;
+}
+
+#edo {
+    max-width: 13ch;
+}
+
+.nombre-materias:hover {
+    transition: 0.8s ease;
+    transform: scale(1.1);
 }
 
 footer {

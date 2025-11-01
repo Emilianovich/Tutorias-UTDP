@@ -9,6 +9,7 @@
     <link rel="icon" href="../images/logo_utdp.png">
     <link rel="stylesheet" href="../utilidades/estilos_generales.css">
     <link rel="stylesheet" href="materias.css">
+    <link rel="stylesheet" href="materias_responsive.css">
     <script defer src="materias.js"></script>
     <script defer src="../utilidades/utilidades.js"></script>
 </head>
@@ -17,7 +18,7 @@
         <picture>
             <img src="../images/logo_utdp.png" alt="Logo de la UTDP" id="logo-utdp">
         </picture>
-        <div>
+        <div id="titulo-pagina">
             <h1>Tutorías UTDP</h1>
         </div>
         <picture id="picture-icono-perfil">
@@ -43,46 +44,52 @@
     <main>
         <section>
             <article class="nombre-materias">
-                <picture>
-                    <img alt="Imagen Cálculo I" src="../images/">
-                </picture>
-                <h1>Cálculo I</h1>
+                <div class="picture">
+                    <img alt="Imagen Cálculo I" src="../images/imagen_calculo1.png">
+                    <div><h1><a href="materias_sesiones.html?1">Cálculo I</a></h1></div>
+                </div>
+
             </article>
             <article class="nombre-materias">
-                <picture>
-                    <img alt="Imagen Cálculo II" src="../images/">
-                </picture>
-                <h1>Cálculo II</h1>
+                <div class="picture">
+                    <img alt="Imagen Cálculo II" src="../images/imagen_calculo2.png">
+                    <div><h1><a href="materias_sesiones.html?2">Cálculo II</a></h1></div>
+                </div>
+
             </article>
             <article class="nombre-materias">
-                <picture>
-                    <img alt="Imagen Programación I" src="../images/">
-                </picture>
-                <h1>Programación I</h1>
+                <div class="picture">
+                    <img alt="Imagen Programación I" src="../images/imagen_programacion.png">
+                    <div><h1><a href="materias_sesiones.html?3">Programación I</a></h1></div>
+                </div>
+            </article>
+
+            <article class="nombre-materias">
+                <div class="picture">
+                    <img alt="Imagen Física I" src="../images/image_fisica1.png">
+                    <div><h1><a href="materias_sesiones.html?4">Física I</a></h1></div>
+                </div>
+
             </article>
             <article class="nombre-materias">
-                <picture>
-                    <img alt="Imagen Física I" src="../images/">
-                </picture>
-                <h1>Física I</h1>
+                <div class="picture">
+                    <img alt="Imagen Física II" src="../images/imagen_fisica2.png">
+                    <div><h1><a href="materias_sesiones.html?5">Física II</a></h1></div>
+                </div>
+
             </article>
             <article class="nombre-materias">
-                <picture>
-                    <img alt="Imagen Física II" src="../images/">
-                </picture>
-                <h1>Física II</h1>
-            </article>
-            <article class="nombre-materias">
-                <picture>
-                    <img alt="Imange EDO" src="../images/">
-                </picture>
-                <h1>Ecuaciones Diferenciales Ord.</h1>
+                <div class="picture">
+                    <img alt="Imange EDO" src="../images/imagen_edo.png">
+                    <div><h1 id="edo"><a href="materias_sesiones.html?5">Ecuaciones Diferenciales Ord.</a></h1></div>
+                </div>
+
             </article>
         </section>
     </main>
 
     <footer class="footer_estilos_generales_pc">
-        <div>
+        <div id="footer-copyright">
             <p>©Copyright Ingeniería Web 2025</p>
         </div>
         <div>
@@ -90,4 +97,15 @@
         </div>
     </footer>
 </body>
+<section class="nav-celular">
+    <article id="nav-celular-opciones">
+        <article id="contenedor-boton-cerrar">
+            <img src="../images/close.png" alt="Closing arrow by ariefstudio" id="botonCerrar">
+        </article>
+        <p><a href="">Inicio</a></p>
+        <p><a href="">Materias</a></p>
+        <p><a href="">Evaluar</a></p>
+        <p><a href="">Nosotros</a></p>
+    </article>
+</section>
 </html>
