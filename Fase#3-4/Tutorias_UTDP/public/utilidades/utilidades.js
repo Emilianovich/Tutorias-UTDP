@@ -3,6 +3,8 @@ const opcionSeleccionada = document.getElementById("opcion_nav-seleccionada");
 const botonCerrar = document.getElementById("botonCerrar");
 const slidingMenu = document.querySelector(".nav-celular");
 slidingMenu.style.display = "none";
+
+/*Nav dinámico*/
 opcionesNav.forEach((opcion) => {
     opcion.addEventListener("mouseover", ()=> {
         if (opcion.id !== "opcion_nav-seleccionada") {
