@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../images/logo_utdp.png">
     <link rel="stylesheet" href="../utilidades/estilos_generales.css">
-    <script src="../utilidades/utilidades.js"></script>
+    <script defer src="../utilidades/utilidades.js"></script>
     <title>Ejemplo</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
         <img src="../images/logo_utdp.png" alt="Logo de la UTDP" id="logo-utdp">
     </picture>
     <div>
-        <h1>Tutorías UTDP</h1>
+        <h1 id="titulo-pagina">Tutorías UTDP</h1>
     </div>
     <picture id="picture-icono-perfil">
         <img src="../images/avatar_perfil.png" alt="Ícono de Perfil" id="icono-perfil" onmouseover="cerrarSesion(this)">
@@ -37,13 +37,25 @@
 </nav>
 
 <footer class="footer_estilos_generales_pc">
-    <div>
+    <div id="footer-copyright">
         <p>©Copyright Ingeniería Web 2025</p>
     </div>
     <div>
         <p>Linette   Emiola   Nayim   Eloy</p>
     </div>
 </footer>
-
 </body>
+
+<!--Colocar esto fuera del body de sus páginas para el hamburguer menu-->
+<section class="nav-celular">
+    <article id="nav-celular-opciones">
+        <article id="contenedor-boton-cerrar">
+            <img src="../images/close.png" alt="Closing arrow by ariefstudio" id="botonCerrar">
+        </article>
+        <p><a href="">Inicio</a></p>
+        <p><a href="">Materias</a></p>
+        <p><a href="">Evaluar</a></p>
+        <p><a href="">Nosotros</a></p>
+    </article>
+</section>
 </html>
