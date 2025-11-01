@@ -63,7 +63,12 @@ picture {
     font-weight: 300;
 }
 
-.nav_estilos_generales_pc div:hover {
+.opciones-nav:hover {
+    background-color: #eebbc3;
+    color: black;
+}
+
+.nav-selected {
     background-color: #eebbc3;
     color: black;
 }
