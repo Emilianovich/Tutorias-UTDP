@@ -1,0 +1,39 @@
+@media (max-width: 480px) {
+    body {
+        display: grid;
+        grid-template-areas: "header"
+                            "main"
+                            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        gap: 1em;
+        overflow: auto;
+        height: 100vh;
+    }
+
+    header {
+        grid-area: header;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid white;
+    }
+
+    header div {
+        width: 300px;
+        border: 2px solid red;
+    }
+
+    #logo-utdp {
+        position: absolute;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+}
