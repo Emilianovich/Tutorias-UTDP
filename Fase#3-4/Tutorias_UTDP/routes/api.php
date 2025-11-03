@@ -13,3 +13,5 @@ Route::get('/bienvenida', function () {
 /*Rutas para Materias*/
 Route::get('/materia/{cod_materia}/{estudiante_uuid}', [InscripcionController::class, 'index']);
 Route::get('/inscripcion/{cod_materia}/{cod_sesion}', [InscripcionController::class, 'show']);
+Route::post('/inscripcion', [InscripcionController::class, 'store']);
+

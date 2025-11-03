@@ -1,10 +1,9 @@
 sessionStorage.setItem("estudiante_uuid", "abcdef12-3456-7890-abcd-ef1234566678");
-const cedula_estudiante = sessionStorage.getItem("estudiante_uuid");
-
+const estudianteUUID = sessionStorage.getItem("estudiante_uuid");
+const cod_materia = new URLSearchParams(window.location.search).get("id");
+const cod_sesion = new URLSearchParams(window.location.search).get("sesion");
+let fechaHora = dayjs().format("YYYY-MM-DD HH:mm:ss");
 document.addEventListener("DOMContentLoaded", async function () {
-    const cod_materia = new URLSearchParams(window.location.search).get("id");
-    const cod_sesion = new URLSearchParams(window.location.search).get("sesion");
-
     const request = await fetch(`http://127.0.0.1:8000/api/inscripcion/${cod_materia}/${cod_sesion}`);
     const response = await request.json();
 
@@ -55,8 +54,15 @@ document.addEventListener("DOMContentLoaded", async function () {
     contenedorBotones.classList.add("botones-enviar");
     const botonConfirmarBoton = document.createElement("button");
     botonConfirmarBoton.innerText = "Confirmar Inscripción";
-    botonConfirmarBoton.addEventListener("click", () => {
-
+    botonConfirmarBoton.addEventListener("click", async () => {
+        console.log("Estoy en el evento de Confirmar Inscripcion");
+        const datosInscripcion = {
+            "estudiante_uuid":  estudianteUUID,
+            "cod_sesion": cod_sesion,
+            "fecha_hora": fechaHora
+        }
+        const datosInscripcion_json = JSON.stringify(datosInscripcion);
+        const solicitud = await inscripcionSesion(datosInscripcion_json);
     })
 
 
@@ -70,3 +76,25 @@ document.addEventListener("DOMContentLoaded", async function () {
     contenedorSesiones.append(infoDatosSesion, pregunta, contenedorBotones);
     main.appendChild(contenedorSesiones);
 })
+
+async function inscripcionSesion(datosInscripcion) {
+    const inscripcion_request = await fetch("http://127.0.0.1:8000/api/inscripcion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json",
+                    "Accept": "application/json",},
+        body: datosInscripcion,
+    });
+    const inscripcion_response = await inscripcion_request.json();
+    if (inscripcion_request.status === 201) {
+        const src = "../images/exito-inscripcion.png";
+        const mensaje = inscripcion_response.mensaje;
+        mostrarPopUpConRedirect(mensaje,src,`materia_sesiones.html?id=${cod_materia}`);
+    }
+    else {
+        const src = "../images/error-inscripcion.png";
+        const mensaje = Object.values(inscripcion_response.errors);
+        const mensajeArray = mensaje[0];
+        mostrarPopUpConRedirect(mensajeArray,src, `materia_sesiones.html?id=${cod_materia}`);
+    }
+
+}

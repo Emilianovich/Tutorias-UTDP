@@ -15,7 +15,7 @@ class Sesion extends Model
     protected $keyType = 'string';
     protected function casts() : array {
         return [
-            "fecha" => "date:d-m-Y",
+            "fecha" => "date",
             "cant_estudiantes" => "integer",
             "cupos_disponibles" => "integer",
         ];

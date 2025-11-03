@@ -84,10 +84,5 @@ document.addEventListener("DOMContentLoaded", async function () {
 })
 
 
-    const src = "../images/error-inscripcion.png";
-    const mensaje = "Usted se encuentra oficialmente inscrito en la sesión";
-
-    //mostrarPopUp(mensaje, src);
-
 
 

@@ -8,6 +8,7 @@ use App\Models\Sesion;
 use Illuminate\Http\Request;
 use App\Models\Inscripcion;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 class InscripcionController extends Controller
 {
     public function index(Request $request) {
@@ -55,5 +56,11 @@ class InscripcionController extends Controller
         return response()->json([   "nombre" => $infoMateria->nombre,
                                     "descripcion" => $infoMateria->descripcion,
                                     "sesion" => $sesionPorInscribir]);
+    }
+
+    public function store(InsertarInscripcionRequest $request) {
+        $validated = $request->validated();
+        Inscripcion::create($validated);
+        return response()->json(["mensaje" => "Usted se encuentra oficialmente inscrit@ en la sesión"], 201);
     }
 }
