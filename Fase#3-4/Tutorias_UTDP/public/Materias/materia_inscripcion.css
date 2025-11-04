@@ -1,3 +1,16 @@
+header {
+    margin-top: 2em;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header picture {
+    position: absolute;
+    left: 1%;
+}
+
 #main-sesion-inscripcion {
     grid-area: main;
     gap: 2em;

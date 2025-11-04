@@ -5,35 +5,67 @@
                             "main"
                             "footer";
         grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, auto);
+        grid-template-rows: auto 1fr auto;
         gap: 1em;
         overflow: auto;
-        height: 100vh;
     }
 
     header {
         grid-area: header;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid white;
-    }
-
-    header div {
-        width: 300px;
-        border: 2px solid red;
-    }
-
-    #logo-utdp {
-        position: absolute;
     }
 
     main {
         grid-area: main;
     }
 
+    main.main-alineacion-responsive {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .contenedor-materia-descripcion {
+        width: 70%;
+        height: 30%;
+        padding: 1.5em;
+    }
+
+    .contenedor-materia-descripcion.alineacion-responsive-hay-sesiones {
+        height: 200px;
+    }
+
+    #titulo-materia {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    #descripcion {
+        font-size: 0.85rem;
+    }
+
+    .sesiones-disponibles {
+        width: 70%;
+        height: 300px;
+        flex-grow: 0.5;
+    }
+
+    #sesiones-no-disponibles {
+        width: 70%;
+        height: 70%;
+        text-align: center;
+    }
+
+    #sesiones-no-disponibles h1 {
+        font-weight: 500;
+    }
+
     footer {
         grid-area: footer;
+    }
+
+    #seccion-sesiones-disponibles {
+        height: 80%;
+
     }
 }

@@ -6,11 +6,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="../images/logo_utdp.png">
+    <link rel="stylesheet" href="../utilidades/estilos_generales.css">
     <link rel="stylesheet" href="materia_sesiones.css">
     <link rel="stylesheet" href="materia_sesiones_responsive.css">
-    <link rel="stylesheet" href="../utilidades/estilos_generales.css">
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/es.js"></script>
+    <script defer src="../utilidades/utilidades.js"></script>
     <script defer src="materias.js"></script>
     <title></title>
 </head>
@@ -22,7 +23,25 @@
         <div class="titulo-utdp">
             <h1>Inscripción</h1>
         </div>
+        <picture id="picture-icono-perfil">
+            <img src="../images/avatar_perfil.png" alt="Ícono de Perfil" id="icono-perfil" onmouseover="cerrarSesion(this)">
+        </picture>
     </header>
+
+    <nav class="nav_estilos_generales_pc">
+        <div class="opciones-nav">
+            <h2>Inicio</h2>
+        </div>
+        <div class="opciones-nav nav-selected" id="opcion_nav-seleccionada">
+            <h2><a href="materias.html">Materias</a></h2>
+        </div>
+        <div class="opciones-nav">
+            <h2>Evaluar</h2>
+        </div>
+        <div class="opciones-nav">
+            <h2>Nosotros</h2>
+        </div>
+    </nav>
     <main id="main-sesiones-disponibles">
 
 
@@ -37,4 +56,15 @@
         </div>
     </footer>
 </body>
+<section class="nav-celular">
+    <article id="nav-celular-opciones">
+        <article id="contenedor-boton-cerrar">
+            <img src="../images/close.png" alt="Closing arrow by ariefstudio" id="botonCerrar">
+        </article>
+        <p><a href="">Inicio</a></p>
+        <p><a href="materias.html">Materias</a></p>
+        <p><a href="">Evaluar</a></p>
+        <p><a href="">Nosotros</a></p>
+    </article>
+</section>
 </html>

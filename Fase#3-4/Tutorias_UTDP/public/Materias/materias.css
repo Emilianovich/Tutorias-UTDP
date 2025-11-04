@@ -8,6 +8,7 @@ body {
     grid-template-rows: auto auto 1fr auto;
     row-gap: 1em;
     height: 100vh;
+    min-height: 100dvh;
 }
 
 a, a:visited {

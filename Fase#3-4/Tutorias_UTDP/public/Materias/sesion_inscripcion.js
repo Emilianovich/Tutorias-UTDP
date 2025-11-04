@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     const botonConfirmarBoton = document.createElement("button");
     botonConfirmarBoton.innerText = "Confirmar Inscripción";
     botonConfirmarBoton.addEventListener("click", async () => {
-        console.log("Estoy en el evento de Confirmar Inscripcion");
         const datosInscripcion = {
             "estudiante_uuid":  estudianteUUID,
             "cod_sesion": cod_sesion,

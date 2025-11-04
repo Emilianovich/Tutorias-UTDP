@@ -13,6 +13,7 @@ nombreMateria.id = "titulo-materia";
 const materiaDescripcion = document.createElement("p");
 materiaDescripcion.id = "descripcion";
 document.addEventListener("DOMContentLoaded", async function () {
+    window.dispatchEvent(new Event('resize'));
     const request = await fetch(`http://127.0.0.1:8000/api/materia/${codMateria}/${cedula_estudiante}`);
     const response = await request.json();
     const infoSesiones = response.sesiones;
@@ -40,7 +41,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     else {
-        main.classList.add("alineacion-hay-sesiones");
+        main.classList.add("alineacion-hay-sesiones", "main-alineacion-responsive");
+        contenedorMateriaDescripcion.classList.add("alineacion-responsive-hay-sesiones");
 
         infoSesiones.forEach((sesion) => {
             let contenedorSesion = document.createElement("article");
