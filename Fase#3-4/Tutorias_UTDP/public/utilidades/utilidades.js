@@ -2,7 +2,7 @@ const opcionesNav = document.querySelectorAll("div.opciones-nav");
 const opcionSeleccionada = document.getElementById("opcion_nav-seleccionada");
 const botonCerrar = document.getElementById("botonCerrar");
 const slidingMenu = document.querySelector(".nav-celular");
-slidingMenu.style.display = "none";
+//slidingMenu.style.display = "none";
 
 /*Nav dinámico*/
 opcionesNav.forEach((opcion) => {
@@ -52,7 +52,7 @@ function removeHamburgerAccount () {
     header.appendChild(iconoPerfil);
 }
 
-screenSize.addEventListener("change", addHamburgerMenu);
+addHamburgerMenu(screenSize);
 
 function cerrarSesion (avatar) {
     avatar.style.cursor = "pointer";
