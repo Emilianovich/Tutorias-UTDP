@@ -51,7 +51,7 @@ function removeHamburgerAccount () {
     header.removeChild(contenedorHamburgerPerfil);
     header.appendChild(iconoPerfil);
 }
-
+screenSize.addEventListener("change", addHamburgerMenu);
 addHamburgerMenu(screenSize);
 
 function cerrarSesion (avatar) {
