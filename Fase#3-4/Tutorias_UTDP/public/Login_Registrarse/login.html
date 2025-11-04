@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--esto es una prueba para github-->
+    <meta charset="UTF-8">
+    <link rel="icon" href="../images/logo_utdp.png" type="image/png">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login_responsive.css">
+</head>
+<body>
+    <div class="fondo-login"></div>
+
+    <section class="contenedor-login">
+        <div class="panel-izquierdo">
+            <div class="logo-UTDP">
+                <img src="../images/logo_utdp.png" alt="Logo Tutorías UTDP" class="logo-principal">
+            </div>
+        </div>
+
+        <div class="panel-derecho">
+            <form class="login" name="formulario-login" action="validarLogin.jsp" method="post">
+                <h1 class="titulo">UTDP</h1>
+
+                <div class="input-login">
+                    <input type="email" name="correo" placeholder="Correo" required>
+                </div>
+
+                <div class="input-login">
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                </div>
+
+                <button class="login" type="submit">Iniciar Sesión</button>
+
+                <p class="registrarse">¿No tienes cuenta? <a href="registrarse.html">Regístrate</a></p>
+
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
