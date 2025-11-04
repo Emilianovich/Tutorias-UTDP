@@ -1,2 +1,160 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Exo;
+}
+
+body {
+    position: relative;
+    display: flex;
+    justify-content: center;  /* Centrado horizontal */
+    align-items: center;       /* Centrado vertical */
+    min-height: 100vh;         /* 100% de la altura del viewport */
+    width: 100%;
+    overflow: hidden;
+}
+
+.fondo-login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/desktop_fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.contenedor-login {
+    display: flex;
+    width: 900px;
+    height: 500px;
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.panel-izquierdo {
+    flex: 1;
+    background: #232946;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.logo-UTDP {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-principal {
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+}
+
+/* Panel derecho con el formulario */
+.panel-derecho {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    padding: 50px;
+    backdrop-filter: blur(20px);
+}
+
+/* Formulario */
+form.login {
+    width: 100%;
+    max-width: 350px;
+}
+
+.titulo {
+    font-size: 42px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #000000;
+    letter-spacing: 2px;
+}
+
+/* Inputs */
+.input-login {
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.input-login input {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.input-login input::placeholder {
+    color: #999;
+}
+
+.input-login input:focus {
+    box-shadow: 0 4px 20px rgba(44, 62, 111, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Botón de iniciar sesión */
+button.login {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e8a5b8 0%, #d89aae 100%);
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(232, 165, 184, 0.4);
+    margin-top: 10px;
+}
+
+button.login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 165, 184, 0.6);
+}
+
+button.login:active {
+    transform: translateY(0);
+}
+
+/* Texto de registro */
+.registrarse {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.registrarse a {
+    color: #2c3e6f;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.registrarse a:hover {
+    color: #1a2744;
+    text-decoration: underline;
+}
