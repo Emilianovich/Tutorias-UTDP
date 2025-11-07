@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo_utdp.png">
+    <script defer src="../utilidades/utilidades.js"></script>
+    <link rel="stylesheet" href="../utilidades/estilos_generales.css">
+    <link rel="stylesheet" href="../perfil/cambiar_contraseña.css">
+    <title>Actualizar Credenciales</title>
+</head>
+<body>
+<header class="header_estilos_generales_pc">
+    <picture>
+        <img src="../images/logo_utdp.png" alt="Logo de la UTDP" id="logo-utdp">
+    </picture>
+    <div class="titulo-utdp">
+        <h1 id="titulo-pagina">Tutorías UTDP</h1>
+    </div>
+    <picture id="picture-icono-perfil">
+        <img src="../images/logout.png" alt="Icono de Cerrar Sesión" id="icono-cerrar_sesion" onmouseover="cerrarSesion(this)">
+    </picture>
+</header>
+<main>
+    <div class="contenedor">
+        <form autocomplete="off">
+        <h2 id="titulo_contra">Actualizar Contraseña</h2>
+        <label id="lbl_nueva">Nueva contraseña: </label><input id="nueva_input" type="password" autocomplete="new_password">
+        <label id="lbl_confirm">Confirmar contraseña: </label><input id="confirm_input" type="password" autocomplete="new_password">
+        <button type="submit">Guardar</button>
+        </form>
+    </div>
+</main>
+
+<footer class="footer_estilos_generales_pc">
+    <div id="footer-copyright">
+        <p>©Copyright Ingeniería Web 2025</p>
+    </div>
+    <div>
+        <p>Linette   Emiola   Nayim   Eloy</p>
+    </div>
+</footer>
+</body>
+
+</html>

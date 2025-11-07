@@ -1,0 +1,56 @@
+@media (max-width: 1130px) {
+    main {
+        flex-direction: column;
+        gap: 3em;
+    }
+
+    .contenedor_datos_personales {
+        margin: 0 1em 0 1em;
+    }
+
+
+}
+
+@media (max-width: 1050px) {
+    .contenedor_datos_personales {
+        display: grid;
+        grid-template-areas:
+                "nombre nombre"
+                "apellido apellido"
+                "cedula cedula"
+                "telefono telefono"
+                "facultad facultad"
+                "correo correo"
+                "contraseña contraseña"
+                "boton_contra boton_contra";
+    }
+
+    .contenedor_cambiar_contra {
+        grid-area: boton_contra;
+        justify-self: center;
+    }
+
+    #facultad_perfil, #correo_perfil, #contraseña_perfil {
+        width: 20em;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor_botones_perfil {
+        font-size: small;
+    }
+    .perfil_icon {
+        width: 4em;
+    }
+    .contenedor_perfil_options {
+        width: fit-content;
+    }
+    .contenedor_datos_personales {
+        font-size: inherit;
+    }
+    #boton_cambiar_contra {
+        font-size: 0.5em;
+    }
+}
+
+

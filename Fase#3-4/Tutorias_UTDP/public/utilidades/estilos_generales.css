@@ -45,6 +45,11 @@ picture {
     height: auto;
 }
 
+#icono-cerrar_sesion {
+    width: 100%;
+    height: auto;
+}
+
 .nav_estilos_generales_pc {
     display: flex;
     justify-content: space-around;
@@ -140,6 +145,11 @@ picture {
         height: auto;
     }
 
+    #icono-cerrar_sesion {
+        width: 100%;
+        height: auto;
+    }
+
     footer {
         font-size: 0.60rem;
     }
@@ -212,13 +222,13 @@ picture {
 }
 
 @keyframes mostrarHamburger {
-    0% {transform: translateX(-480px)};
-100% {transform: translateX(0px)};
+    0% {transform: translateX(-480px); }
+100% {transform: translateX(0px); }
 }
 
 @keyframes quitarHamburger {
-    0% {transform: translateX(0px)};
-100% {transform: translateX(-480px)};
+    0% {transform: translateX(0px);}
+100% {transform: translateX(-480px);}
 }
 
 #contenedor-pop-up {

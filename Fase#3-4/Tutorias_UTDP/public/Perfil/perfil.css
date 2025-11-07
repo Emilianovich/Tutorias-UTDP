@@ -1,0 +1,254 @@
+main {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.perfil_icon {
+    width: 6em;
+    margin-bottom: 1.8em;
+}
+
+.contenedor_perfil_options {
+    background-color: white;
+    width: 18rem;
+    height: 80%;
+    border-radius: 0 2em 2em 0;
+    padding: 1em 0.2em 1em 0.2em;
+    margin-right: 2em;
+}
+
+.contenedor_img {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_botones_perfil {
+    padding: 0.5em;
+}
+
+.perfil_buttons {
+    font-size: 1.2em;
+    background-color: transparent;
+    width: 100%;
+    text-align: start;
+    padding: 0.8em 0.8em 0.8em 0.4em;
+    border: none;
+}
+
+.perfil_buttons:hover {
+    border: 3px solid #EEBBC3;
+}
+
+hr {
+    margin: 0.5em 0 0.5em 0;
+}
+
+.activa{
+    border: 3px solid #EEBBC3;
+}
+
+input::placeholder {
+    color: #494646;
+}
+
+input {
+    padding: 0.5em;
+}
+
+#facultad_perfil {
+    width: 38em;
+}
+
+#correo_perfil {
+    width: 27em;
+}
+
+#contraseña_perfil {
+    width: 22em;
+}
+
+.contenedor_datos_personales {
+    display: grid;
+    grid-template-areas:
+                "nombre apellido"
+                "cedula telefono"
+                "facultad facultad"
+                "correo correo"
+                "contraseña btn_contraseña";
+    row-gap: 1.5em;
+    column-gap: 1em;
+    background-color: white;
+    border-radius: 1.5em;
+    padding: 2em;
+    font-size: 1.6em;
+}
+
+.dato_nombre{
+    grid-area: nombre;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_apellido{
+    grid-area: apellido;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_cedula{
+    grid-area: cedula;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_telefono{
+    grid-area: telefono;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_facultad{
+    grid-area: facultad;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_correo{
+    grid-area: correo;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_contraseña{
+    grid-area: contraseña;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.contenedor_cambiar_contra {
+    grid-area: btn_contraseña;
+}
+
+.datos_perfil {
+    font-size: 0.6em;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+#boton_cambiar_contra {
+    padding: 0.7em;
+    border-radius: 1.5em;
+    background-color: #EEBBC3;
+    border: none;
+    transition: 0.3s ease;
+}
+
+#boton_cambiar_contra:hover {
+    background-color: #F5D0D9;
+}
+
+#boton_cambiar_contra:active {
+    transform: scale(0.95);
+}
+
+/*Sesiones Pendientes*/
+#pendientes {
+    width: 75%;
+}
+#contenedor_sesiones_pendientes {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    gap: 1em;
+    justify-content: center;
+    height: 30rem;
+    padding: 1em;
+}
+
+.sesion_pend {
+    background-color: white;
+    padding: 1em;
+    border-radius: 1em;
+    border: 5px solid #EEBBC3;
+    height: 9.5rem;
+}
+
+.contenedor_desinscribirse {
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+}
+
+.boton_desinscribirse {
+    padding: 0.5em;
+    border-radius: 1.5em;
+    background-color: #EEBBC3;
+    border: none;
+    transition: 0.3s ease;
+    justify-items: center;
+}
+
+.boton_desinscribirse:hover {
+    background-color: #F5D0D9;
+}
+
+.boton_desinscribirse:active {
+    transform: scale(0.95);
+}
+
+.div_vacio {
+    background-color: white;
+    text-align: center;
+    align-content: center;
+    border-radius: 2em;
+    padding: 2em;
+    border: 3px solid #EEBBC3;
+    height: 14%;
+    width: 63%;
+}
+
+/*Sesiones Anteriores*/
+#anteriores {
+    width: 75%;
+}
+
+#contenedor_sesiones_anteriores {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    gap: 1em;
+    justify-content: center;
+    height: 30rem;
+    padding: 1em;
+}
+
+.sesion_ant {
+    background-color: white;
+    padding: 1em;
+    border-radius: 1em;
+    border: 5px solid #EEBBC3;
+    height: 7rem;
+}
+
+.hide {
+    display: none !important;
+}
+
+button {
+    cursor: pointer;
+}
+
+@media (min-width: 1640px) {
+    .contenedor_sesiones_pendientes {
+        max-width: 75%;
+    }
+}
