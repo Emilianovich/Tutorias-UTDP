@@ -107,61 +107,6 @@ picture {
     align-items: center;
 }
 
-<<<<<<< HEAD
-/*Header responsive para celulares*/
-@media (max-width: 480px) {
-    #logo-utdp {
-        width: 70%;
-    }
-
-    header {
-        gap: 1em;
-    }
-
-    .titulo-utdp {
-        width: 80%;
-        height: 10%;
-    }
-
-    .header_estilos_generales_pc h1 {
-        text-align: center;
-        font-size: 1.30rem;
-        max-width: 60ch;
-    }
-
-    #contenedorHamburgerPerfil {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        width: 30%;
-        height: 100%;
-    }
-
-    #hamburger-menu {
-        width: 50%;
-    }
-
-    #icono-perfil {
-        width: 100%;
-        height: auto;
-    }
-
-    #icono-cerrar_sesion {
-        width: 100%;
-        height: auto;
-    }
-
-    footer {
-        font-size: 0.60rem;
-    }
-
-    #footer-copyright {
-        margin-top: 5em;
-    }
-}
-
-=======
->>>>>>> 77401197253cfd27ac07794393d1171f1f915e99
 /*Hambuger menu*/
 .nav-celular {
     background-color:#2E5C91;
