@@ -46,10 +46,13 @@
         width: fit-content;
     }
     .contenedor_datos_personales {
-        font-size: inherit;
+        font-size: small;
     }
     #boton_cambiar_contra {
         font-size: 0.5em;
+    }
+    #pendientes {
+        width: 100%;
     }
 }
 
