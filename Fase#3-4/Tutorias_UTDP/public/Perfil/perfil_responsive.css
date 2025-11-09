@@ -44,15 +44,39 @@
     }
     .contenedor_perfil_options {
         width: fit-content;
+        height: fit-content;
     }
+    #datos {
+        display: flex;
+        justify-content: center;
+    }
+    .perfil_buttons {
+        font-size: 1em;
+    }
+
     .contenedor_datos_personales {
         font-size: small;
+        width: fit-content;
     }
     #boton_cambiar_contra {
         font-size: 0.5em;
     }
     #pendientes {
         width: 100%;
+    }
+    #anteriores {
+        width: 100%;
+    }
+    #icono-cerrar_sesion {
+        width: 1.4em;
+        height: auto;
+    }
+    #password_image {
+        width: 3%;
+        right: 9.5em;
+    }
+    #picture-icono-perfil {
+        justify-content: center;
     }
 }
 

@@ -1,6 +1,42 @@
+body {
+    display: grid;
+    grid-template-areas: "header header"
+                        "nav nav"
+                        "main main"
+                        "footer footer";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    row-gap: 1em;
+    height: 100vh;
+    min-height: 100dvh;
+}
+
 main {
     display: flex;
     margin-top: 2rem;
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+#icono-cerrar_sesion {
+    width: 12%;
+    height: auto;
 }
 
 .perfil_icon {
@@ -10,8 +46,8 @@ main {
 
 .contenedor_perfil_options {
     background-color: white;
-    width: 18rem;
-    height: 80%;
+    width: fit-content;
+    height: fit-content;
     border-radius: 0 2em 2em 0;
     padding: 1em 0.2em 1em 0.2em;
     margin-right: 2em;
@@ -65,6 +101,14 @@ input {
 
 #contraseña_perfil {
     width: 22em;
+    position: relative;
+}
+
+#password_image {
+    position: absolute;
+    right: 41%;
+    width: 29px;
+    background-color: white;
 }
 
 .contenedor_datos_personales {
@@ -179,7 +223,9 @@ footer {
     padding: 1em;
     border-radius: 1em;
     border: 5px solid #EEBBC3;
-    height: 9.5rem;
+    height: fit-content;
+    width: 15em;
+    align-self: center;
 }
 
 .contenedor_desinscribirse {
@@ -219,6 +265,7 @@ footer {
 /*Sesiones Anteriores*/
 #anteriores {
     width: 75%;
+    align-self: center;
 }
 
 #contenedor_sesiones_anteriores {
@@ -236,7 +283,9 @@ footer {
     padding: 1em;
     border-radius: 1em;
     border: 5px solid #EEBBC3;
-    height: 7rem;
+    width: 14em;
+    height: fit-content;
+    align-self: center;
 }
 
 .hide {
@@ -247,8 +296,3 @@ button {
     cursor: pointer;
 }
 
-@media (min-width: 1640px) {
-    .contenedor_sesiones_pendientes {
-        max-width: 75%;
-    }
-}

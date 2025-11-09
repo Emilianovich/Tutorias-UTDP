@@ -45,11 +45,6 @@ picture {
     height: auto;
 }
 
-#icono-cerrar_sesion {
-    width: 25%;
-    height: auto;
-}
-
 .nav_estilos_generales_pc {
     display: flex;
     justify-content: space-around;
@@ -265,7 +260,7 @@ picture {
     }
 
     #hamburger-menu {
-        width: 50%;
+        width: 35%;
     }
 
     #icono-perfil {

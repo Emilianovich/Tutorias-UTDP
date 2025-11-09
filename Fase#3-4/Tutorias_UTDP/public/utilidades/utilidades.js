@@ -70,7 +70,7 @@ const contenedorHamburgerPerfil = document.createElement("div");
 contenedorHamburgerPerfil.id = "contenedorHamburgerPerfil";
 
 function addHamburgerMenu(event) {
-    if (event.matches) {
+    if (event.matches && document.querySelector("nav")) {
         addHamburgerAccount();
     } else {
         removeHamburgerAccount();
@@ -78,16 +78,20 @@ function addHamburgerMenu(event) {
 }
 
 function addHamburgerAccount() {
-    nav?.remove();
-    contenedorHamburgerPerfil.appendChild(hamburgerMenu);
-    contenedorHamburgerPerfil.appendChild(iconoPerfil);
-    header.appendChild(contenedorHamburgerPerfil);
+    if (document.body.contains(nav)) {
+        nav.remove();
+        contenedorHamburgerPerfil.append(hamburgerMenu, iconoPerfil);
+        header.appendChild(contenedorHamburgerPerfil);
+    }
 }
 
 function removeHamburgerAccount() {
-    document.body.appendChild(nav);
-    contenedorHamburgerPerfil?.remove();
-    header.appendChild(iconoPerfil);
+    if (!document.body.contains(nav)) {
+        document.body.appendChild(nav);
+        contenedorHamburgerPerfil.remove();
+        slidingMenu.remove();
+        header.appendChild(iconoPerfil);
+    }
 }
 
 screenSize.addEventListener("change", addHamburgerMenu);

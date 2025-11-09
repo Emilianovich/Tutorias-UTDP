@@ -1,3 +1,23 @@
+/*Ojo de la contraseña*/
+const password_field = document.getElementById("contraseña_perfil");
+const password_image = document.getElementById("password_image");
+
+//Making the eye icon change for the user to see the password
+password_image.addEventListener("click", ()=>{
+    if(password_field.type === "password") {
+        password_field.type = "text";
+        password_image.src = "../images/passwordeye.png";
+        password_image.alt = "Opened eye by th studio";
+    }
+
+//Changing the eye icon back and hiding the password
+    else {
+        password_field.type = "password";
+        password_image.src= "../images/close-eye.png";
+        password_image.alt = "Closed eye by Rahul Kaklotar";
+    }
+})
+
 /*Contenedores*/
 const contenedor_datos = document.getElementById('datos');
 const contenedor_pendientes = document.getElementById('pendientes');
@@ -26,14 +46,14 @@ document.getElementById('contraseña_perfil').value = usuario.contrasena;
 const contenedor_divs_pendientes = document.getElementById("contenedor_sesiones_pendientes");
 const sesiones_P = [
     {materia:"Ecuaciones Diferenciales Ordinarias", fecha:"10:30am - 11:30am", salon:"3-211", tutor:"Leo Torres"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"}
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"}
 ];
 
 
@@ -69,15 +89,15 @@ const sesiones_P = [
 /*Sesiones Anteriores*/
 const contenedor_divs_anteriores = document.getElementById("contenedor_sesiones_anteriores");
 const sesiones_Ant = [
-    {materia:"Ecuaciones Diferenciales Ordinarias", fecha:"10:30am - 11:30am", salon:"3-211", tutor:"Leo Torres"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-    {materia:"Cáculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"}
+    /*{materia:"Ecuaciones Diferenciales Ordinarias", fecha:"10:30am - 11:30am", salon:"3-211", tutor:"Leo Torres"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
+    {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"}*/
 ];
 
 
