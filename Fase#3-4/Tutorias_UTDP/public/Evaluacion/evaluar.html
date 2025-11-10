@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../images/logo_utdp.png">
+        <link rel="stylesheet" href="../utilidades/estilos_generales.css">
+        <link rel="stylesheet" href="evaluar.css">
+        <script defer src="../utilidades/utilidades.js"></script> <!-- si lo usan para hover nav -->
+        <title>Evaluar</title>
+    </head>
+    <body>
+        <!-- HEADER (igual que en Inicio/Nosotros) -->
+        <header class="header_estilos_generales_pc">
+            <picture>
+                <img src="../images/logo_utdp.png" alt="Logo de la UTDP" id="logo-utdp">
+            </picture>
+            <div class="titulo-utdp">
+                <h1 id="titulo-pagina">Tutorías UTDP</h1>
+            </div>
+            <picture id="picture-icono-perfil">
+                <img src="../images/avatar_perfil.png" alt="Ícono de Perfil" id="icono-perfil">
+            </picture>
+        </header>
+
+        <!-- NAV (Evaluar seleccionado) -->
+        <nav class="nav_estilos_generales_pc">
+            <div class="opciones-nav">
+                <h2>Inicio</h2>
+            </div>
+            <div class="opciones-nav">
+                <h2>Materias</h2>
+            </div>
+            <div class="opciones-nav nav-selected" id="opcion_nav-seleccionada">
+                <h2>Evaluar</h2>
+            </div>
+            <div class="opciones-nav">
+                <h2>Nosotros</h2>
+            </div>
+        </nav>
+
+        <main>
+            <!-- LISTA DE SESIONES (mostrar si hay sesiones) -->
+            <section id="contenedor-sesiones">
+                <!-- Ejemplo de tarjeta; en el proyecto real esto se genera dinámicamente -->
+                <article class="tarjeta-sesion">
+                    <h2>Datos de la Sesión</h2>
+                    <p><span>Tutor:</span> Nombre del tutor</p>
+                    <p><span>Materia:</span> Nombre de la materia</p>
+                    <p><span>Puntaje:</span> 4.5 ★</p>
+                    <p><span>Fecha:</span> 12/11/2025</p>
+                    <button class="btn-evaluar"
+                            onclick="window.location.href='evaluar_sesion.html'">
+                        Evaluar
+                    </button>
+                </article>
+
+                <article class="tarjeta-sesion">
+                    <h2>Datos de la Sesión</h2>
+                    <p><span>Tutor:</span> Nombre del tutor</p>
+                    <p><span>Materia:</span> Nombre de la materia</p>
+                    <p><span>Puntaje:</span> 4.5 ★</p>
+                    <p><span>Fecha:</span> 12/11/2025</p>
+                    <button class="btn-evaluar"
+                            onclick="window.location.href='evaluar_sesion.html'">
+                        Evaluar
+                    </button>
+                </article>
+
+                <article class="tarjeta-sesion">
+                    <h2>Datos de la Sesión</h2>
+                    <p><span>Tutor:</span> Nombre del tutor</p>
+                    <p><span>Materia:</span> Nombre de la materia</p>
+                    <p><span>Puntaje:</span> 4.5 ★</p>
+                    <p><span>Fecha:</span> 12/11/2025</p>
+                    <button class="btn-evaluar"
+                            onclick="window.location.href='evaluar_sesion.html'">
+                        Evaluar
+                    </button>
+                </article>
+
+                <article class="tarjeta-sesion">
+                    <h2>Datos de la Sesión</h2>
+                    <p><span>Tutor:</span> Nombre del tutor</p>
+                    <p><span>Materia:</span> Nombre de la materia</p>
+                    <p><span>Puntaje:</span> 4.5 ★</p>
+                    <p><span>Fecha:</span> 12/11/2025</p>
+                    <button class="btn-evaluar"
+                            onclick="window.location.href='evaluar_sesion.html'">
+                        Evaluar
+                    </button>
+                </article>
+
+                <!-- Duplica/itera más tarjetas según las sesiones disponibles -->
+                <!-- ... -->
+            </section>
+
+            <!-- MENSAJE SIN SESIONES (usar SOLO cuando no haya sesiones) -->
+            <!-- Quita el display:none en CSS o genera esta versión en otro HTML si prefieren -->
+            <section id="sin-sesiones">
+                <p>No hay sesiones por evaluar</p>
+            </section>
+        </main>
+
+        <footer class="footer_estilos_generales_pc">
+            <div id="footer-copyright">
+                <p>@Copyright Ingeniería Web 2025</p>
+            </div>
+            <div>
+                <p>Linette   Emiola   Nayim   Eloy</p>
+            </div>
+        </footer>
+    </body>
+</html>
