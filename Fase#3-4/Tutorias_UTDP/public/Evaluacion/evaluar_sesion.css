@@ -127,55 +127,73 @@ main{
     cursor: pointer;
 }
 
-/*
-Pop-up (encima de la tarjeta, estilo imágenes) 
-#contenedor-pop-up{
-    position: fixed;
-    inset: 0;
-    display: none;
+/* ====== MOBILE EVALUAR SESIÓN (≤480px) ====== */
+@media (max-width: 480px){
+
+main{
+    padding-top: 9rem;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: rgba(0,0,0,0.35);
-    z-index: 2000;
+    align-items: flex-start;
 }
 
-#contenedor-pop-up.mostrar{
-    display: flex;
+.evaluar-sesion-contenedor{
+    width: 90vw;
+    padding: 2.4rem 1rem .9rem;
+    border-radius: 20px;
 }
 
-#pop-up{
-    width: min(720px, 90vw);
-    min-height: 320px;
-    background-color: #fffffe;
-    border-radius: 40px;
-    border: 4px solid #eebbc3;
-    padding: 2rem 2rem 1.5rem;
-    display: flex;
+.evaluar-sesion-contenedor h2{
+    font-size: 1.15rem;
+    margin-bottom: 1.50rem;
+}
+
+#bold{
+    font-weight: bold;
+}
+
+.evaluar-sesion-contenedor p{
+    font-size: 1.15rem;
+    margin: .35rem 0;
+}
+
+  /* rating */
+.evaluar-rating{
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-#pop-up-mensaje{
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-}
-
-#pop-up-imagen{
-    max-width: 40%;
-    height: auto;
-    margin-bottom: 1.25rem;
-}
-
-#cerrar-pop-up{
+    gap: .4rem;
     margin-top: 1rem;
-    padding: 0.6rem 2.5rem;
-    font-size: 1.05rem;
-    border: none;
-    border-radius: 999px;
-    background-color: #eebbc3;
-    cursor: pointer;
 }
-*/
+
+.rating-bar{
+    margin-left: 5.5em;
+    gap: .5rem;
+}
+
+.estrella{ font-size: 1.35rem; }
+
+#rango-puntaje{
+    width: 38vw;              /* barra más corta en móvil */
+    height: 6px;
+}
+
+#valor-puntaje{
+    margin-top: 1.9em;            /* alinear con la barra */
+    font-size: .95rem;
+}
+
+#btn-enviar-evaluacion{
+    margin: 1.25rem auto 0;
+    padding: .6rem 2.4rem;
+    font-size: 1.05rem;
+}
+
+  /* popup imagen (sin tocar el archivo original) */
+#pop-up-imagen{ 
+    max-width: 42vw; 
+}
+
+footer{
+    margin-top: 14em;
+}
+
+}

@@ -155,3 +155,118 @@ footer{
     grid-area: footer;
     margin-top: 3.5em;
 }
+
+/* ====== MOBILE INICIO (≤480px) ====== */
+@media (max-width: 480px){
+
+header {
+    width: 480px;
+}
+
+main{
+    width: 480px;
+    margin-inline:auto;
+    padding-block: 1rem;
+    row-gap: 1.25rem;
+}
+
+  /* Bloque 1: imagen + bienvenida a una sola columna */
+.inicio-bienvenida{
+    width: 480px;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-block: .5rem;
+}
+
+.inicio-main-bienvenida{
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-top: 0.8em;
+    padding-bottom: 0.6em;
+    border-radius: 2em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+.inicio-bienvenida-imagen .imagen-inicio{
+    width: 100%;
+    height: auto;
+    display:block;
+}
+
+inicio-main-bienvenida{
+    padding: 1.1rem 1rem;
+    border-radius: 1rem;
+}
+
+.inicio-main-bienvenida h1{
+    font-size: 1.25rem; 
+    margin-bottom:1.65rem; 
+}
+
+.inicio-main-bienvenida p {
+    font-size: 0.8rem;  
+}
+
+  /* Bloque 2: 3 imágenes apiladas + tarjetas de Misión/Visión en 1 columna */
+.inicio-misionvision{ 
+    width: 480px;
+    row-gap: 1rem; 
+}
+
+.inicio-misionvision-imagenes{
+    width: 480px;
+}
+
+.inicio-misionvision-imagenes .imagen-inicio{
+    width:100%; aspect-ratio: 16/9; object-fit: cover;
+}
+
+.inicio-misionvision-texto{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "titulo"
+      "mision"
+      "vision";
+    gap: 2rem; 
+}
+
+.inicio-misionvision-texto-titulo{
+    width: fit-content;
+    margin: 0 auto 0.2rem;
+    padding: .35rem .9rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 2rem;
+}
+
+.inicio-misionvision-texto-titulo h1{
+    font-size: 1.25rem;
+}
+
+.inicio-misionvision-texto-mision,
+.inicio-misionvision-texto-vision{
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 2.8rem;
+    margin-right: 3.2em;
+    margin-left: 3em;
+}
+
+
+.inicio-misionvision-texto-mision h2,
+.inicio-misionvision-texto-vision h2{
+    font-size: 1rem;
+}
+
+.inicio-misionvision-texto-mision p,
+.inicio-misionvision-texto-vision p{
+    font-size: 0.8rem;
+}
+
+footer{
+    margin-top: 0em;
+}
+
+}
