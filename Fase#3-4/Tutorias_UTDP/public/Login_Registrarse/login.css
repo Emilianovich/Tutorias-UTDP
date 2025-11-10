@@ -9,9 +9,9 @@
 body {
     position: relative;
     display: flex;
-    justify-content: center;  /* Centrado horizontal */
-    align-items: center;       /* Centrado vertical */
-    min-height: 100vh;         /* 100% de la altura del viewport */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     width: 100%;
     overflow: hidden;
 }
@@ -37,7 +37,9 @@ body {
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
+
 .panel-izquierdo {
     flex: 1;
     background: #232946;
@@ -60,7 +62,7 @@ body {
     padding: 20px;
 }
 
-/* Panel derecho con el formulario */
+
 .panel-derecho {
     flex: 1;
     display: flex;
@@ -71,7 +73,7 @@ body {
     backdrop-filter: blur(20px);
 }
 
-/* Formulario */
+
 form.login {
     width: 100%;
     max-width: 350px;
@@ -86,15 +88,16 @@ form.login {
     letter-spacing: 2px;
 }
 
-/* Inputs */
+
 .input-login {
     margin-bottom: 25px;
-    width: 100%;
+    width: 20em;
+    position: relative;
 }
 
 .input-login input {
-    width: 100%;
-    padding: 15px 20px;
+    width: 20em;
+    padding: 15px 30px 15px 20px;
     border: none;
     border-radius: 12px;
     background: white;
@@ -114,9 +117,15 @@ form.login {
     transform: translateY(-2px);
 }
 
-/* Botón de iniciar sesión */
+
+
+.boton{
+    display: grid;
+    justify-content: center;
+}
+
 button.login {
-    width: 100%;
+    align-content: center;
     padding: 15px;
     border: none;
     border-radius: 12px;
@@ -139,16 +148,38 @@ button.login:active {
     transform: translateY(0);
 }
 
-/* Texto de registro */
+.logo-movil{
+    display: none;
+}
+
+
+#password_image {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+#password_image:hover {
+    opacity: 1;
+}
+
+
 .registrarse {
     text-align: center;
     margin-top: 25px;
     font-size: 14px;
     color: #000000;
+    text-align: center;
 }
 
 .registrarse a {
-    color: #2c3e6f;
+    color: #EEBBC3;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
