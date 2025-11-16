@@ -140,7 +140,7 @@ btnDatos.addEventListener('click', () => {
     contenedor_pendientes.classList.add('hide');
     btnPendientes.classList.remove('activa');
     contenedor_anteriores.classList.add('hide');
-    btnAnteriores.classList.remove('active');
+    btnAnteriores.classList.remove('activa');
 });
 
 btnPendientes.addEventListener('click', () => {

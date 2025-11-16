@@ -45,7 +45,7 @@ a, a:visited {
 }
 
 .contenedor_perfil_options {
-    background-color: white;
+    background-color: #FFFFFE;
     width: fit-content;
     height: fit-content;
     border-radius: 0 2em 2em 0;
@@ -72,7 +72,7 @@ a, a:visited {
 }
 
 .perfil_buttons:hover {
-    border: 3px solid #EEBBC3;
+    outline: 3px solid #EEBBC3;
 }
 
 hr {
@@ -80,7 +80,7 @@ hr {
 }
 
 .activa{
-    border: 3px solid #EEBBC3;
+    outline: 3px solid #EEBBC3;
 }
 
 input::placeholder {
@@ -101,14 +101,13 @@ input {
 
 #contraseña_perfil {
     width: 22em;
-    position: relative;
 }
 
 #password_image {
     position: absolute;
-    right: 41%;
+    Left: 52%;
     width: 29px;
-    background-color: white;
+    background-color: #FFFFFE;
 }
 
 .contenedor_datos_personales {
@@ -121,10 +120,11 @@ input {
                 "contraseña btn_contraseña";
     row-gap: 1.5em;
     column-gap: 1em;
-    background-color: white;
+    background-color: #FFFFFE;
     border-radius: 1.5em;
     padding: 2em;
     font-size: 1.6em;
+    position: relative;
 }
 
 .dato_nombre{
@@ -219,7 +219,7 @@ footer {
 }
 
 .sesion_pend {
-    background-color: white;
+    background-color: #FFFFFE;
     padding: 1em;
     border-radius: 1em;
     border: 5px solid #EEBBC3;
@@ -252,7 +252,7 @@ footer {
 }
 
 .div_vacio {
-    background-color: white;
+    background-color: #FFFFFE;
     text-align: center;
     align-content: center;
     border-radius: 2em;
@@ -279,7 +279,7 @@ footer {
 }
 
 .sesion_ant {
-    background-color: white;
+    background-color: #FFFFFE;
     padding: 1em;
     border-radius: 1em;
     border: 5px solid #EEBBC3;
