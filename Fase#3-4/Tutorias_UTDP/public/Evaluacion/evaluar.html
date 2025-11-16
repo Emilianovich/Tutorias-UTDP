@@ -6,11 +6,11 @@
         <link rel="icon" href="../images/logo_utdp.png">
         <link rel="stylesheet" href="../utilidades/estilos_generales.css">
         <link rel="stylesheet" href="evaluar.css">
-        <script defer src="../utilidades/utilidades.js"></script> <!-- si lo usan para hover nav -->
+        <script defer src="../utilidades/utilidades.js"></script> 
         <title>Evaluar</title>
     </head>
     <body>
-        <!-- HEADER (igual que en Inicio/Nosotros) -->
+        
         <header class="header_estilos_generales_pc">
             <picture>
                 <img src="../images/logo_utdp.png" alt="Logo de la UTDP" id="logo-utdp">
@@ -23,32 +23,32 @@
             </picture>
         </header>
 
-        <!-- NAV (Evaluar seleccionado) -->
+        
         <nav class="nav_estilos_generales_pc">
             <div class="opciones-nav">
-                <h2>Inicio</h2>
+                <a href="../Inicio/inicio.html"><h2>Inicio</h2></a>
             </div>
             <div class="opciones-nav">
-                <h2>Materias</h2>
+                <a href="../Materias/materias.html"><h2>Materias</h2></a>
             </div>
             <div class="opciones-nav nav-selected" id="opcion_nav-seleccionada">
-                <h2>Evaluar</h2>
+                <a href="../Evaluacion/evaluar.html"><h2>Evaluar</h2></a>
             </div>
             <div class="opciones-nav">
-                <h2>Nosotros</h2>
+                <a href="../Nosotros/nosotros.html"><h2>Nosotros</h2></a>
             </div>
         </nav>
 
         <main>
-            <!-- LISTA DE SESIONES (mostrar si hay sesiones) -->
+            
             <section id="contenedor-sesiones">
-                <!-- Ejemplo de tarjeta; en el proyecto real esto se genera dinámicamente -->
+                
                 <article class="tarjeta-sesion">
                     <h2>Datos de la Sesión</h2>
-                    <p><span>Tutor:</span> Nombre del tutor</p>
-                    <p><span>Materia:</span> Nombre de la materia</p>
-                    <p><span>Puntaje:</span> 4.5 ★</p>
-                    <p><span>Fecha:</span> 12/11/2025</p>
+                    <p>Tutor: Nombre del tutor</p>
+                    <p>Materia: Nombre de la materia</p>
+                    <p>Puntaje: 4.5</p>
+                    <p>Fecha: 12/11/2025</p>
                     <button class="btn-evaluar"
                             onclick="window.location.href='evaluar_sesion.html'">
                         Evaluar
@@ -57,10 +57,10 @@
 
                 <article class="tarjeta-sesion">
                     <h2>Datos de la Sesión</h2>
-                    <p><span>Tutor:</span> Nombre del tutor</p>
-                    <p><span>Materia:</span> Nombre de la materia</p>
-                    <p><span>Puntaje:</span> 4.5 ★</p>
-                    <p><span>Fecha:</span> 12/11/2025</p>
+                    <p>Tutor: Nombre del tutor</p>
+                    <p>Materia: Nombre de la materia</p>
+                    <p>Puntaje: 4.5</p>
+                    <p>Fecha: 12/11/2025</p>
                     <button class="btn-evaluar"
                             onclick="window.location.href='evaluar_sesion.html'">
                         Evaluar
@@ -69,10 +69,10 @@
 
                 <article class="tarjeta-sesion">
                     <h2>Datos de la Sesión</h2>
-                    <p><span>Tutor:</span> Nombre del tutor</p>
-                    <p><span>Materia:</span> Nombre de la materia</p>
-                    <p><span>Puntaje:</span> 4.5 ★</p>
-                    <p><span>Fecha:</span> 12/11/2025</p>
+                    <p>Tutor: Nombre del tutor</p>
+                    <p>Materia: Nombre de la materia</p>
+                    <p>Puntaje: 4.5</p>
+                    <p>Fecha: 12/11/2025</p>
                     <button class="btn-evaluar"
                             onclick="window.location.href='evaluar_sesion.html'">
                         Evaluar
@@ -81,22 +81,17 @@
 
                 <article class="tarjeta-sesion">
                     <h2>Datos de la Sesión</h2>
-                    <p><span>Tutor:</span> Nombre del tutor</p>
-                    <p><span>Materia:</span> Nombre de la materia</p>
-                    <p><span>Puntaje:</span> 4.5 ★</p>
-                    <p><span>Fecha:</span> 12/11/2025</p>
+                    <p>Tutor: Nombre del tutor</p>
+                    <p>Materia: Nombre de la materia</p>
+                    <p>Puntaje: 4.5</p>
+                    <p>Fecha: 12/11/2025</p>
                     <button class="btn-evaluar"
                             onclick="window.location.href='evaluar_sesion.html'">
                         Evaluar
                     </button>
                 </article>
-
-                <!-- Duplica/itera más tarjetas según las sesiones disponibles -->
-                <!-- ... -->
             </section>
 
-            <!-- MENSAJE SIN SESIONES (usar SOLO cuando no haya sesiones) -->
-            <!-- Quita el display:none en CSS o genera esta versión en otro HTML si prefieren -->
             <section id="sin-sesiones">
                 <p>No hay sesiones por evaluar</p>
             </section>

@@ -6,11 +6,12 @@
     <link rel="icon" href="../images/logo_utdp.png">
     <link rel="stylesheet" href="../utilidades/estilos_generales.css">
     <link rel="stylesheet" href="evaluar_sesion.css">
-    <script defer src="../utilidades/utilidades.js"></script> <!-- si lo usan para hover nav -->
+    <script defer src="../utilidades/utilidades.js"></script> 
+    <script defer src="../Evaluacion/evaluar_sesion.js"></script> 
     <title>Evaluar sesión</title>
 </head>
 <body>
-    <!-- HEADER -->
+    
     <header class="header_estilos_generales_pc">
         <picture>
             <img src="../images/logo_utdp.png" alt="Logo de la UTDP" id="logo-utdp">
@@ -23,12 +24,10 @@
         </picture>
     </header>
 
-    <!-- SIN NAV AQUÍ -->
-
     <main>
         <section class="evaluar-sesion-contenedor">
             <h2 id="bold">Datos de la sesión:</h2>
-            <!-- Estos datos se rellenan con la sesión seleccionada -->
+            
             <h2>Tutor:</h2>
             <h2>Materia:</h2>
             <h2>Fecha: --/--/--</h2>
@@ -49,15 +48,6 @@
             <button id="btn-enviar-evaluacion">Enviar</button>
         </section>
 
-        <!-- POP-UP reutilizando la estructura global -->
-        <!--
-        <section id="contenedor-pop-up">
-            <article id="pop-up">
-                <h1 id="pop-up-mensaje"></h1>
-                <img id="pop-up-imagen" src="" alt="">
-                <button id="cerrar-pop-up">Cerrar</button>
-            </article>
-        </section> -->
     </main>
 
     <footer class="footer_estilos_generales_pc">
@@ -69,63 +59,5 @@
         </div>
     </footer>
 
-    <!-- JS SOLO PARA ESTA PANTALLA -->
-    <script>
-    const slider = document.getElementById('rango-puntaje');
-    const labelValor = document.getElementById('valor-puntaje');
-    const btnEnviar = document.getElementById('btn-enviar-evaluacion');
-    /*const contPop = document.getElementById('contenedor-pop-up');*/
-    /*const popMensaje = document.getElementById('pop-up-mensaje');*/
-    /*const popImagen = document.getElementById('pop-up-imagen');*/
-
-    // span donde mostraremos las estrellas (arriba de la barra)
-    const spanEstrellas = document.querySelector('.estrella');
-
-    // Función para actualizar número + estrellas
-    function actualizarRating() {
-        const v = parseInt(slider.value, 10) || 0;
-
-        // número pequeño a la derecha
-        labelValor.textContent = v;
-
-        // estrellas arriba de la barra:
-        // 0 => vacío, 1..5 => tantas ★ como valor
-        if (v <= 0) {
-            spanEstrellas.textContent = '-';
-        } else {
-            const estrellas = '★'.repeat(Math.max(0, Math.min(v, 5)));
-            spanEstrellas.textContent = estrellas;
-        }
-    }
-
-    // Inicial (barra en 0, sin estrellas)
-    actualizarRating();
-
-    // Cada vez que muevo la barra
-    slider.addEventListener('input', actualizarRating);
-
-    // Mostrar pop-ups según valor
-    btnEnviar.addEventListener('click', () => {
-        const v = parseInt(slider.value, 10);
-
-        if (isNaN(v) || v < 1 || v > 5) {
-            // POPUP 1: puntuación inválida
-            popMensaje= 'Por favor, coloque una puntuación entre \n1 y 5';
-            popImagen= '../images/error-inscripcion.png'; // popup1
-            mostrarPopUpConRedirect(popMensaje, popImagen, 'evaluar.html')
-        } else {
-            // Aquí iría el envío real al backend
-
-            // POPUP 2: éxito
-            popMensaje= 'Evaluación enviada exitosamente';
-            popImagen= '../images/exito-inscripcion.png';  // popup2
-            mostrarPopUpConRedirect(popMensaje, popImagen, 'evaluar.html')
-        }
-    });
-
-    btnCerrar.addEventListener('click', () => {
-        contPop.classList.remove('mostrar');
-    });
-</script>
 </body>
 </html>

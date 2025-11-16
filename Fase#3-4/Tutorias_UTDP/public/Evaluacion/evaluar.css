@@ -18,6 +18,11 @@ nav{
     grid-area: nav;
 }
 
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Contenedor principal */
 main{
     grid-area: main;
@@ -44,19 +49,21 @@ main{
     border-radius: 18px;
     border: 4px solid #eebbc3;
     box-shadow: 0 6px 18px rgba(0,0,0,.18);
-    padding: 1.5rem 1.8rem 1.75rem;
+    padding: 1.5rem 1.8rem 1rem;
     box-sizing: border-box;
     color: #000000;
 }
 
 .tarjeta-sesion h2{
+    font-weight: normal;
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .tarjeta-sesion p{
     margin: 0.25rem 0;
-    font-size: 1rem;
+    font-size: 1.24rem;
+    margin-bottom: 0.8rem;
 }
 
 .tarjeta-sesion span{
@@ -65,7 +72,7 @@ main{
 
 /* Botón Evaluar */
 .btn-evaluar{
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     display: block;
     margin-inline: auto;
     padding: 0.45rem 2.4rem;

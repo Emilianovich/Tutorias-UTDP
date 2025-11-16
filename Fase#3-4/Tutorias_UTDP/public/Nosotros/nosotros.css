@@ -17,6 +17,11 @@ nav {
     grid-area: nav;
 }
 
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
 main{
     grid-area: main;
     display: grid;
@@ -55,7 +60,7 @@ main{
 }
 
 .informacion-creadores h1{ /*Personalización del section que contiene la información de los creadores*/
-    font-size:1.81em;
+    font-size:1.68em;
     margin-bottom: 0.3em;
     
 }
@@ -114,94 +119,3 @@ footer{
     margin-top: 0.5em;
 }
 
-/* ====== MOBILE NOSOTROS (≤480px) ====== */
-@media (max-width: 480px){
-
-main{
-    width: 480px;
-    margin-inline:auto;
-    row-gap: 1.25rem;
-    padding-block: 1rem;
-    align-items: center;
-    padding-bottom: 0em;
-}
-
-.main-creadores{
-    width: 480px;
-    padding: 0em;
-    padding-top: 2em;
-}
-
-.informacion-creadores{
-    padding-top: 1em;
-    margin-right: 0.7em;
-    margin-bottom: 2em;
-}
-
-.informacion-creadores h1{
-    font-size: 1.50em;
-}
-
-.lore{
-    width: 480px;
-}
-
-.lore-texto{
-    margin-left: 4em;
-    margin-right: 4em;
-    padding-bottom: 3em;
-}
-
-.lore-texto h1{
-    padding-top: 0.8em;
-}
-
-.lore-texto p {
-    margin-top: 1.5em;
-}
-  /* rejilla de personas a 1 columna (ajusta a tus clases reales) */
-.tarjetas-nosotros,
-.nosotros-grid,
-.grid-personas{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-} 
-
-  /* tarjeta de persona */
-.tarjeta-nosotros,
-.nos-card,
-.card-persona,
-.tarjeta{
-    width: 100%;
-    max-width: none;
-    padding: 1rem 1.2rem;
-    border-radius: 18px;
-}
-
-  /* fila de iconos sociales */
-.fila-social,
-.social,
-.social-row{
-    display:flex;
-    justify-content: space-around;
-    align-items:center;
-    gap:1rem;
-    margin-top: .6rem;
-}
-
-  /* card de “¿Por qué existimos?” */
-.nos-porque,
-.porque-card{
-    width: 100%;
-    padding: 1rem 1.2rem;
-    border-radius: 18px;
-    line-height: 1.65;
-    font-size: 1rem;
-}
-
-footer{
-    margin-top: 0em;
-}
-
-}
