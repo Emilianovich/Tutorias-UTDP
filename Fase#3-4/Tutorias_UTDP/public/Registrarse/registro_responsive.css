@@ -62,7 +62,6 @@
         color: #555;
         outline: none;
         box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
     }
 
     .campo-formulario input::placeholder {
@@ -83,17 +82,25 @@
         appearance: none;
         cursor: pointer;
         color: #555;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: right 18px center;
         background-color: rgba(255, 255, 255, 0.95);
         padding-right: 45px;
-        font-family: Exo;
+    }
+
+    .campo-formulario select:focus {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-size: 12px;
     }
 
     .campo-formulario select option {
         background: white;
         color: #333;
         padding: 10px;
+        font-family: Exo;
     }
 
     .campo-formulario select option:first-child {
@@ -115,7 +122,6 @@
         height: 24px;
         cursor: pointer;
         opacity: 0.6;
-        transition: opacity 0.3s ease;
         z-index: 10;
     }
 
@@ -139,7 +145,6 @@
         font-size: 17px;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(232, 165, 184, 0.45);
         margin-top: 20px;
     }
