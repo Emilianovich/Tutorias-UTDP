@@ -41,17 +41,12 @@ class InscripcionController extends Controller
 
     public function show(Request $request) {
         $infoMateria = Materia::where("cod_materia", $request->route("cod_materia"))->first();
-        $sesionPorInscribir = DB::select('SELECT
-            t.nombre_completo,
-            t.puntaje,
-            DATE_FORMAT(s.hora, "%H:%i") as hora,
-            s.salon,
-            s.cupos_disponibles as cupos
-            FROM `Imparte` im
-                 INNER JOIN Tutor t ON t.cod_tutor = im.cod_tutor
-                 INNER JOIN Sesion s ON im.cod_sesion = s.cod_sesion
-            WHERE im.cod_sesion = ?'
-            , [$request->route("cod_sesion")]);
+        $sesionPorInscribir = DB::table("Imparte as im")
+            ->select('t.nombre_completo', 't.puntaje', DB::raw('DATE_FORMAT(s.hora, "%H:%i") as hora'), 's.salon', 's.cupos_disponibles AS cupos')
+            ->join('Tutor AS t', 'im.cod_tutor', '=', 't.cod_tutor')
+            ->join('Sesion AS s', 'im.cod_sesion', '=', 's.cod_sesion')
+            ->where('im.cod_sesion', '=', $request->route("cod_sesion"))
+            ->first();
 
         return response()->json([   "nombre" => $infoMateria->nombre,
                                     "descripcion" => $infoMateria->descripcion,
