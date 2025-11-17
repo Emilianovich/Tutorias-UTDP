@@ -33,25 +33,25 @@ contenedorBotonCerrar.appendChild(botonCerrar);
 const opcionInicio = document.createElement("p");
 const linkInicio = document.createElement("a");
 linkInicio.innerText = "Inicio";
-linkInicio.href = "";
+linkInicio.href = "../Inicio/inicio.html";
 opcionInicio.appendChild(linkInicio);
 
 const opcionMateria = document.createElement("p");
 const linkMateria = document.createElement("a");
 linkMateria.innerText = "Materia";
-linkMateria.href = "materias.html";
+linkMateria.href = "../Materias/materias.html";
 opcionMateria.appendChild(linkMateria);
 
 const opcionEvaluar = document.createElement("p");
 const linkEvaluar = document.createElement("a");
 linkEvaluar.innerText = "Evaluar";
-linkEvaluar.href = "";
+linkEvaluar.href = "../Evaluacion/evaluar.html";
 opcionEvaluar.appendChild(linkEvaluar);
 
 const opcionNosotros = document.createElement("p");
 const linkNosotros = document.createElement("a");
 linkNosotros.innerText = "Nosotros";
-linkNosotros.href = "";
+linkNosotros.href = "../Nosotros/nosotros.html";
 opcionNosotros.appendChild(linkNosotros);
 
 contenedorMenu.append(contenedorBotonCerrar, opcionInicio, opcionMateria, opcionEvaluar, opcionNosotros);
@@ -174,6 +174,15 @@ function cerrarSesion(avatar) {
     avatar.style.cursor = "pointer";
     avatar.addEventListener("click", () => {
         sessionStorage.clear();
-        window.location.href("http://127.0.0.1:63342/Login/login.html");
+        window.location.href = "../Login/login.html";
     })
 }
+
+/*Agregando el vínculo a la página de Perfil*/
+const perfilIcono = document.getElementById("icono-perfil");
+perfilIcono.addEventListener("click", () => {
+    window.location.href = "../Perfil/perfil.html";
+})
+perfilIcono.addEventListener("mouseover", () => {
+    iconoPerfil.style.cursor = "pointer";
+})
