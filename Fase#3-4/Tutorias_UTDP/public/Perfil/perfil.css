@@ -1,0 +1,298 @@
+body {
+    display: grid;
+    grid-template-areas: "header header"
+                        "nav nav"
+                        "main main"
+                        "footer footer";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    row-gap: 1em;
+    height: 100vh;
+    min-height: 100dvh;
+}
+
+main {
+    display: flex;
+    margin-top: 2rem;
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+#icono-cerrar_sesion {
+    width: 12%;
+    height: auto;
+}
+
+.perfil_icon {
+    width: 6em;
+    margin-bottom: 1.8em;
+}
+
+.contenedor_perfil_options {
+    background-color: #FFFFFE;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0 2em 2em 0;
+    padding: 1em 0.2em 1em 0.2em;
+    margin-right: 2em;
+}
+
+.contenedor_img {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor_botones_perfil {
+    padding: 0.5em;
+}
+
+.perfil_buttons {
+    font-size: 1.2em;
+    background-color: transparent;
+    width: 100%;
+    text-align: start;
+    padding: 0.8em 0.8em 0.8em 0.4em;
+    border: none;
+}
+
+.perfil_buttons:hover {
+    outline: 3px solid #EEBBC3;
+}
+
+hr {
+    margin: 0.5em 0 0.5em 0;
+}
+
+.activa{
+    outline: 3px solid #EEBBC3;
+}
+
+input::placeholder {
+    color: #494646;
+}
+
+input {
+    padding: 0.5em;
+}
+
+#facultad_perfil {
+    width: 38em;
+}
+
+#correo_perfil {
+    width: 27em;
+}
+
+#contraseña_perfil {
+    width: 22em;
+}
+
+#password_image {
+    position: absolute;
+    Left: 53%;
+    width: 24px;
+    background-color: #FFFFFE;
+}
+
+.contenedor_datos_personales {
+    display: grid;
+    grid-template-areas:
+                "nombre apellido"
+                "cedula telefono"
+                "facultad facultad"
+                "correo correo"
+                "contraseña btn_contraseña";
+    row-gap: 1.5em;
+    column-gap: 1em;
+    background-color: #FFFFFE;
+    border-radius: 1.5em;
+    padding: 2em;
+    font-size: 1.6em;
+    position: relative;
+}
+
+.dato_nombre{
+    grid-area: nombre;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_apellido{
+    grid-area: apellido;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_cedula{
+    grid-area: cedula;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_telefono{
+    grid-area: telefono;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_facultad{
+    grid-area: facultad;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_correo{
+    grid-area: correo;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.dato_contraseña{
+    grid-area: contraseña;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.contenedor_cambiar_contra {
+    grid-area: btn_contraseña;
+}
+
+.datos_perfil {
+    font-size: 0.6em;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+#boton_cambiar_contra {
+    padding: 0.7em;
+    border-radius: 1.5em;
+    background-color: #EEBBC3;
+    border: none;
+    transition: 0.3s ease;
+}
+
+#boton_cambiar_contra:hover {
+    background-color: #F5D0D9;
+}
+
+#boton_cambiar_contra:active {
+    transform: scale(0.95);
+}
+
+/*Sesiones Pendientes*/
+#pendientes {
+    width: 75%;
+}
+#contenedor_sesiones_pendientes {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    gap: 1em;
+    justify-content: center;
+    height: 30rem;
+    padding: 1em;
+}
+
+.sesion_pend {
+    background-color: #FFFFFE;
+    padding: 1em;
+    border-radius: 1em;
+    border: 5px solid #EEBBC3;
+    height: fit-content;
+    width: 15em;
+    align-self: center;
+}
+
+.contenedor_desinscribirse {
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+}
+
+.boton_desinscribirse {
+    padding: 0.5em;
+    border-radius: 1.5em;
+    background-color: #EEBBC3;
+    border: none;
+    transition: 0.3s ease;
+    justify-items: center;
+}
+
+.boton_desinscribirse:hover {
+    background-color: #F5D0D9;
+}
+
+.boton_desinscribirse:active {
+    transform: scale(0.95);
+}
+
+.div_vacio {
+    background-color: #FFFFFE;
+    text-align: center;
+    align-content: center;
+    border-radius: 2em;
+    padding: 2em;
+    border: 3px solid #EEBBC3;
+    height: 14%;
+    width: 63%;
+}
+
+/*Sesiones Anteriores*/
+#anteriores {
+    width: 75%;
+    align-self: center;
+}
+
+#contenedor_sesiones_anteriores {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    gap: 1em;
+    justify-content: center;
+    height: 30rem;
+    padding: 1em;
+}
+
+.sesion_ant {
+    background-color: #FFFFFE;
+    padding: 1em;
+    border-radius: 1em;
+    border: 5px solid #EEBBC3;
+    width: 14em;
+    height: fit-content;
+    align-self: center;
+}
+
+.hide {
+    display: none !important;
+}
+
+button {
+    cursor: pointer;
+}
+
