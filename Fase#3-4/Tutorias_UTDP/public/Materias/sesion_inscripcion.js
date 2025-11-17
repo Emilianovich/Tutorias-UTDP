@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const response = await request.json();
 
     document.title = response.nombre;
-    const informacionSesion = response.sesion;
+    const informacionSesion = Object.values(response.sesion);
     const main = document.getElementById("main-sesion-inscripcion");
     const contenedorMateriaDescripcion = document.createElement("section");
     main.appendChild(contenedorMateriaDescripcion);
@@ -32,19 +32,19 @@ document.addEventListener("DOMContentLoaded", async function () {
     infoDatosSesion.classList.add("info-datos-sesion");
 
     const nombreTutor = document.createElement("p");
-    nombreTutor.innerText = `Nombre: ${informacionSesion[0].nombre_completo}`;
+    nombreTutor.innerText = `Nombre: ${informacionSesion[0]}`;
 
     const puntajeTutor = document.createElement("p");
-    puntajeTutor.innerText = `Puntaje: ${informacionSesion[0].puntaje}`;
+    puntajeTutor.innerText = `Puntaje: ${informacionSesion[1]}`;
 
     const horaSesion = document.createElement("p");
-    horaSesion.innerText = `Hora: ${informacionSesion[0].hora}`;
+    horaSesion.innerText = `Hora: ${informacionSesion[2]}`;
 
     const salonSesion = document.createElement("p");
-    salonSesion.innerText = `Salón: ${informacionSesion[0].salon}`;
+    salonSesion.innerText = `Salón: ${informacionSesion[3]}`;
 
     const cuposSesion = document.createElement("p");
-    cuposSesion.innerText = `Cupos Disponibles: ${informacionSesion[0].cupos}`;
+    cuposSesion.innerText = `Cupos Disponibles: ${informacionSesion[4]}`;
     infoDatosSesion.append(nombreTutor, puntajeTutor, horaSesion, salonSesion, cuposSesion);
 
     const pregunta = document.createElement("p");
