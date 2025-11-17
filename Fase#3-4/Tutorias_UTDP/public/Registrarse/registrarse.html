@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo_utdp.png" type="image/png">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="registro_responsive.css">
+</head>
+<body>
+<div class="fondo-registro"></div>
+
+<form class="contenedor-registro" name="registro" action="" method="post">
+    <div class="titulo-registro">
+        <img src="../images/logo_utdp.png" id="logo-utdp" alt="logo UTDP">
+        <h1>Registrarse</h1>
+    </div>
+
+    <div class="campo-formulario">
+        <input type="text" name="Nombre" placeholder="Nombre" id="nombre" required>
+    </div>
+
+    <div class="campo-formulario">
+        <input type="text" name="Apellido" placeholder="Apellido" id="apellido" required>
+    </div>
+
+    <div class="campo-formulario">
+        <input type="text" name="Cedula" placeholder="Cédula" id="cedula" required>
+    </div>
+
+    <div class="campo-formulario">
+        <input type="email" name="Correo" placeholder="Correo" id="correo" required>
+    </div>
+
+    <div class="campo-formulario">
+        <input type="tel" name="Telefono" placeholder="Teléfono" id="telefono" required>
+    </div>
+
+    <div class="campo-formulario">
+        <select id="facultad" name="cod_facultad" required>
+            <option value="" selected disabled hidden>Facultad</option>
+            <option value="FCYT">Facultad de Ciencias y Tecnología</option>
+            <option value="FIC">Facultad de Ingeniería Civil</option>
+            <option value="FIE">Facultad de Ingeniería Eléctrica</option>
+            <option value="FII">Facultad de Ingeniería Industrial</option>
+            <option value="FIM">Facultad de Ingeniería Mecánica</option>
+            <option value="FISC">Facultad de Ingeniería de Sistemas</option>
+        </select>
+    </div>
+
+    <div class="campo-formulario">
+        <input type="password" name="password" placeholder="Contraseña" id="password" required>
+        <img src="../images/eye_closed.png" alt="ojo password" id="password_image">
+    </div>
+
+    <div class="boton">
+    <button class="botones-login-registro" type="submit" id="ultimo-opcion-registro">Crear cuenta</button>
+    </div>
+
+</form>
+<script src="registrarse.js"></script>
+</body>
+</html>

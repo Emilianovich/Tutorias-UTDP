@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/logo_utdp.png" type="image/png">
+    <title>Login - UTDP</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login_responsive.css">
+</head>
+<body>
+<div class="fondo-login"></div>
+
+<section class="contenedor-login">
+    <div class="panel-izquierdo">
+        <div class="logo-UTDP">
+            <img src="../images/logo_utdp.png" alt="Logo Tutorías UTDP" class="logo-principal">
+        </div>
+    </div>
+
+    <div class="panel-derecho">
+        <form class="login" name="formulario-login" action="" method="post">
+            <h1 class="titulo">
+                UTDP
+                <img src="../images/logo_utdp.png" alt="Logo UTDP" class="logo-movil">
+            </h1>
+
+            <div class="input-login">
+                <input type="email" name="correo" placeholder="Correo" required>
+            </div>
+
+            <div class="input-login">
+                <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                <img src="../images/eye_closed.png" alt="ojo password" id="password_image">
+            </div>
+
+            <div class="boton">
+                <button class="login" type="submit">Iniciar Sesión</button>
+                <p class="registrarse">¿No tienes cuenta? <a href="../Registrarse/registrarse.html">Regístrate</a></p>
+            </div>
+
+        </form>
+    </div>
+</section>
+
+<script src="../Registrarse/registrarse.js"></script>
+
+</body>
+</html>
