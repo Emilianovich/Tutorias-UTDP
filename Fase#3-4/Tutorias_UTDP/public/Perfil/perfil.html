@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../images/logo_utdp.png">
     <script defer src="../utilidades/utilidades.js"></script>
-    <script defer src="../perfil/perfil.js"></script>
+    <script defer src="../Perfil/perfil.js"></script>
     <link rel="stylesheet" href="../utilidades/estilos_generales.css">
-    <link rel="stylesheet" href="../perfil/perfil.css">
-    <link rel="stylesheet" href="../perfil/perfil_responsive.css">
+    <link rel="stylesheet" href="../Perfil/perfil.css">
+    <link rel="stylesheet" href="../Perfil/perfil_responsive.css">
     <title>Perfil</title>
 </head>
 
-<body>
+<body id="pagina-perfil">
 <header class="header_estilos_generales_pc">
     <picture>
         <img src="../images/logo_utdp.png" alt="Logo de la UTDP" id="logo-utdp">
@@ -21,23 +21,22 @@
         <h1 id="titulo-pagina">Tutorías UTDP</h1>
     </div>
     <picture id="picture-icono-perfil">
-        <img src="../images/logout.png" alt="Icono de Cerrar Sesión" id="icono-cerrar_sesion"
-             onmouseover="cerrarSesion(this)">
+        <img src="../images/logout.png" alt="Icono de Cerrar Sesión" id="icono-cerrar_sesion">
     </picture>
 </header>
 
 <nav class="nav_estilos_generales_pc">
     <div class="opciones-nav">
-        <h2>Inicio</h2>
+        <h2><a href="../Inicio/inicio.html">Inicio</a></h2>
+    </div>
+    <div class="opciones-nav nav-selected" id="opcion_nav-seleccionada">
+        <h2><a href="materias.html">Materias</a></h2>
     </div>
     <div class="opciones-nav">
-        <h2>Materias</h2>
+        <h2><a href="../Evaluacion/evaluar.html">Evaluar</a></h2>
     </div>
     <div class="opciones-nav">
-        <h2>Evaluar</h2>
-    </div>
-    <div class="opciones-nav">
-        <h2>Nosotros</h2>
+        <h2><a href="../Nosotros/nosotros.html">Nosotros</a></h2>
     </div>
 </nav>
 

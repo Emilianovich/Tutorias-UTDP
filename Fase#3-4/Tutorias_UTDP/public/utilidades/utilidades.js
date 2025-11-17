@@ -168,21 +168,7 @@ function mostrarPopUpSinRedirect(mensaje, src) {
     document.body.append(contenedorPopUp);
     contenedorPopUp.classList.add("mostrar");
 }
-
-/*Revisar cuando esté listo el login*/
-function cerrarSesion(avatar) {
-    avatar.style.cursor = "pointer";
-    avatar.addEventListener("click", () => {
-        sessionStorage.clear();
-        window.location.href = "../Login/login.html";
-    })
+function cerrarSesion() {
+    sessionStorage.clear();
+    window.location.href = "../Login/login.html";
 }
-
-/*Agregando el vínculo a la página de Perfil*/
-const perfilIcono = document.getElementById("icono-perfil");
-perfilIcono.addEventListener("click", () => {
-    window.location.href = "../Perfil/perfil.html";
-})
-perfilIcono.addEventListener("mouseover", () => {
-    iconoPerfil.style.cursor = "pointer";
-})
