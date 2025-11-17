@@ -166,13 +166,13 @@ picture {
 }
 
 @keyframes mostrarHamburger {
-    0% {transform: translateX(-480px)};
-100% {transform: translateX(0px)};
+    0% {transform: translateX(-480px); }
+100% {transform: translateX(0px); }
 }
 
 @keyframes quitarHamburger {
-    0% {transform: translateX(0px)};
-100% {transform: translateX(-480px)};
+    0% {transform: translateX(0px);}
+100% {transform: translateX(-480px);}
 }
 
 #contenedor-pop-up {
@@ -260,7 +260,7 @@ picture {
     }
 
     #hamburger-menu {
-        width: 50%;
+        width: 35%;
     }
 
     #icono-perfil {

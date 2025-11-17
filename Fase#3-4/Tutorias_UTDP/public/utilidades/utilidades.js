@@ -70,7 +70,7 @@ const contenedorHamburgerPerfil = document.createElement("div");
 contenedorHamburgerPerfil.id = "contenedorHamburgerPerfil";
 
 function addHamburgerMenu(event) {
-    if (event.matches) {
+    if (event.matches && document.querySelector("nav")) {
         addHamburgerAccount();
     } else {
         removeHamburgerAccount();
