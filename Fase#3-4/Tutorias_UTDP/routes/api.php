@@ -15,3 +15,6 @@ Route::get('/materia/{cod_materia}/{estudiante_uuid}', [InscripcionController::c
 Route::get('/inscripcion/{cod_materia}/{cod_sesion}', [InscripcionController::class, 'show']);
 Route::post('/inscripcion', [InscripcionController::class, 'store']);
 
+/*Rutas para Login y Registrarse*/
+Route::post('/registrarse', [EstudianteController::class, 'store']);
+Route::post('/login', [EstudianteController::class, 'login']);
