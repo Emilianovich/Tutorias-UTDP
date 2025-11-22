@@ -24,53 +24,40 @@ class StoreEstudianteRequest extends FormRequest
         return [
             "nombre" => [
                 "required",
-                "string",
-                "max:50"
+                "string"
             ],
 
             "apellido" => [
                 "required",
-                "string",
-                "max:50"
+                "string"
             ],
 
             "cedula" => [
                 "required",
-                "string",
-                "max:13",
                 Rule::unique("Estudiante", "cedula"),
-                new ValidStudentID()   // tu regla personalizada
+                new ValidStudentID()
             ],
 
             "correo" => [
                 "required",
-                "string",
                 "email",
-                "max:75",
                 Rule::unique("Estudiante", "correo"),
-                new ValidEmail()       // tu regla personalizada
+                new ValidEmail()
             ],
 
             "telefono" => [
                 "required",
-                "string",
-                "max:9",
-                new ValidPhoneNumber() // tu regla personalizada
+                new ValidPhoneNumber()
             ],
 
             "cod_facultad" => [
                 "required",
-                "string",
-                "max:4",
                 Rule::exists("Facultad", "cod_facultad"),
-                new ValidFaculty()     // tu regla personalizada
+                new ValidFaculty()
             ],
 
             "contraseña" => [
-                "required",
-                "string",
-                "min:6",
-                "max:100"
+                "required"
             ]
         ];
     }
@@ -78,16 +65,16 @@ class StoreEstudianteRequest extends FormRequest
     public function messages(): array
     {
         return [
-            "nombre.required" => "El nombre es obligatorio.",
-            "apellido.required" => "El apellido es obligatorio.",
-            "cedula.required" => "La cédula es obligatoria.",
-            "cedula.unique" => "Esta cédula ya está registrada.",
-            "correo.required" => "El correo es obligatorio.",
-            "correo.unique" => "Este correo ya está registrado.",
-            "telefono.required" => "El teléfono es obligatorio.",
-            "cod_facultad.required" => "Debe asignar una facultad.",
-            "cod_facultad.exists" => "La facultad seleccionada no existe.",
-            "contraseña.required" => "Debe proporcionar una contraseña."
+            "nombre.required" => "Por favor, llene los campos solicitados",
+            "apellido.required" => "Por favor, llene los campos solicitados",
+            "cedula.required" => "Por favor, llene los campos solicitados",
+            "cedula.unique" => "Esta cédula ya existe en el sistema",
+            "correo.required" => "Por favor, llene los campos solicitados",
+            "correo.unique" => "El correo ingresado ya existe en el sistema",
+            "telefono.required" => "Por favor, llene los campos solicitados",
+            "cod_facultad.required" => "Por favor, llene los campos solicitados",
+            "cod_facultad.exists" => "La facultad seleccionada no existe",
+            "contraseña.required" => "Por favor, llene los campos solicitados"
         ];
     }
 }
