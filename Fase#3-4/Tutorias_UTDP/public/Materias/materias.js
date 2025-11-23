@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         contenedorMateriaDescripcion.classList.add("margen-no-sesiones");
         const sesionesNoDisponibles = document.createElement("section");
         sesionesNoDisponibles.id = "sesiones-no-disponibles";
-        const mensaje = document.createElement("h1");
+        const mensaje = document.createElement("h2");
         mensaje.innerText = "No hay sesiones disponibles actualmente";
         sesionesNoDisponibles.appendChild(mensaje);
         main.appendChild(sesionesNoDisponibles);

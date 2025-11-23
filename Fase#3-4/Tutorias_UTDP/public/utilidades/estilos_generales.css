@@ -204,7 +204,7 @@ picture {
     text-align: center;
 }
 
-#pop-up h1 {
+#pop-up h2 {
     margin-top: 0.5em;
     font-weight: 200;
 }
@@ -280,7 +280,7 @@ picture {
         width: 80%;
     }
 
-    #pop-up h1 {
+    #pop-up h2 {
         font-size: 1.30rem;
     }
 
@@ -289,7 +289,145 @@ picture {
     }
 
     #pop-up button {
-        height: 7%;
+        font-size: 1.20rem;
+        width: 30%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 700px) {
+    header picture, header div {
+        margin-top: 1em;
+    }
+
+    #logo-utdp {
+        width: 60%;
+    }
+
+    .titulo-utdp {
+        width: fit-content;
+        font-size: 0.75rem;
+        height: fit-content;
+    }
+
+    #icono-perfil {
+        width: 45%;
+    }
+
+    .nav_estilos_generales_pc div {
+        width: 18%;
+    }
+
+    .opciones-nav h2 {
+        font-size: 1.25rem;
+    }
+
+    .footer_estilos_generales_pc p {
+        font-size: 0.8rem;
+    }
+
+    #pop-up {
+        width: 85%;
+    }
+
+    #pop-up img {
+        width: 25%;
+    }
+
+    #pop-up button {
+        font-size: 1.20rem;
+        width: 25%;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 850px) {
+    header picture, header div {
+        margin-top: 1em;
+    }
+
+    #logo-utdp {
+        width: 35%;
+    }
+
+    .titulo-utdp {
+        width: 35%;
+        font-size: 1rem;
+        height: fit-content;
+    }
+
+    #icono-perfil {
+        width: 30%;
+    }
+
+    .nav_estilos_generales_pc div {
+        width: 15%;
+    }
+
+    .opciones-nav h2 {
+        font-size: 1.4rem;
+    }
+
+    #pop-up {
+        width: 75%;
+    }
+
+    #pop-up h2 {
+        font-size: 1.5rem;
+    }
+
+    #pop-up img {
+        width: 25%;
+    }
+
+    #pop-up button {
+        font-size: 1.20rem;
+        width: 25%;
+    }
+}
+
+@media (min-width: 851px) and (max-width: 1052px) {
+    .titulo-utdp {
+        width: fit-content;
+        font-size: 1rem;
+        height: fit-content;
+    }
+
+    .nav_estilos_generales_pc div {
+        width: 15%;
+    }
+
+    #pop-up {
+        width: 75%;
+    }
+
+    #pop-up h2 {
+        font-size: 1.5rem;
+    }
+
+    #pop-up img {
+        width: 15%;
+    }
+
+    #pop-up button {
+        font-size: 1.20rem;
+        width: 25%;
+    }
+}
+
+@media (min-width: 1053px) {
+    #pop-up {
+        width: 60%;
+    }
+
+    #pop-up h2 {
+        font-size: 1.75rem;
+    }
+
+    #pop-up img {
+        width: 15%;
+    }
+
+    #pop-up button {
+        height: 10%;
         font-size: 1.25rem;
     }
 }
