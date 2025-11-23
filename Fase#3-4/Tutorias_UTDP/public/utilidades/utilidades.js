@@ -112,61 +112,63 @@ botonCerrar.addEventListener("click", () => {
 })
 
 /*Función para el pop up Inscripción, Evaluar, Registrarse con redirección a Inicio de Sesión*/
-function mostrarPopUpConRedirect(mensaje, src, redireccion) {
+function creacionContenedorPopUp () {
     const contenedorPopUp = document.createElement("section");
     contenedorPopUp.id = "contenedor-pop-up";
+    return contenedorPopUp;
+}
 
+function creacionPopUp () {
     const popUp = document.createElement("article");
     popUp.id = "pop-up";
     popUp.classList.add("pointer-events");
+    return popUp;
+}
 
-    const mensajePopUp = document.createElement("h1");
-    mensajePopUp.innerText = mensaje;
+function creacionMensajePopUp (mensaje) {
+    const mensajePopUp = document.createElement("h2");
+    mensajePopUp.textContent = mensaje;
+    return mensajePopUp;
+}
 
+function creacionImagenPopUp (src) {
     const imagen = document.createElement("img");
     imagen.src = src;
+    return imagen;
+}
 
+function creacionBotonPopUp (contenedorPopUp) {
     const botonPopUp = document.createElement("button");
     botonPopUp.id = "cerrar-pop-up";
     botonPopUp.innerText = "Cerrar";
     botonPopUp.cursor = "pointer";
+    return botonPopUp;
+}
+
+function cerrarPopUp (botonPopUp, contenedorPopUp, redireccion) {
     botonPopUp.addEventListener("click", () => {
         contenedorPopUp.classList.remove("mostrar");
-        window.location.href = redireccion;
+        if (redireccion !== undefined) {
+            console.log("En el if de cerrarPopUp")
+            window.location.href = redireccion;
+        }
     });
+}
 
+function agregarPopUpDOM (mensajePopUp, imagen, botonPopUp, popUp, contenedorPopUp) {
     popUp.append(mensajePopUp, imagen, botonPopUp);
     contenedorPopUp.append(popUp);
     document.body.append(contenedorPopUp);
     contenedorPopUp.classList.add("mostrar");
 }
-
-function mostrarPopUpSinRedirect(mensaje, src) {
-    const contenedorPopUp = document.createElement("section");
-    contenedorPopUp.id = "contenedor-pop-up";
-
-    const popUp = document.createElement("article");
-    popUp.id = "pop-up";
-    popUp.classList.add("pointer-events");
-
-    const mensajePopUp = document.createElement("h1");
-    mensajePopUp.innerText = mensaje;
-
-    const imagen = document.createElement("img");
-    imagen.src = src;
-
-    const botonPopUp = document.createElement("button");
-    botonPopUp.id = "cerrar-pop-up";
-    botonPopUp.innerText = "Cerrar";
-    botonPopUp.cursor = "pointer";
-    botonPopUp.addEventListener("click", () => {
-        contenedorPopUp.classList.remove("mostrar");
-    });
-
-    popUp.append(mensajePopUp, imagen, botonPopUp);
-    contenedorPopUp.append(popUp);
-    document.body.append(contenedorPopUp);
-    contenedorPopUp.classList.add("mostrar");
+function mostrarPopUp(mensaje, src, redireccion) {
+    const contenedorPopUp = creacionContenedorPopUp();
+    const popUp = creacionPopUp();
+    const mensajePopUp = creacionMensajePopUp(mensaje);
+    const imagenPopUp = creacionImagenPopUp(src);
+    const botonPopUp = creacionBotonPopUp();
+    agregarPopUpDOM(mensajePopUp, imagenPopUp, botonPopUp, popUp, contenedorPopUp);
+    botonPopUp.addEventListener("click", () => cerrarPopUp(botonPopUp, contenedorPopUp, redireccion));
 }
 function cerrarSesion() {
     sessionStorage.clear();

@@ -95,7 +95,7 @@ if (document.body.id === "pagina-perfil") {
     /*Sesiones Anteriores*/
     const contenedor_divs_anteriores = document.getElementById("contenedor_sesiones_anteriores");
     const sesiones_Ant = [
-        /*{materia:"Ecuaciones Diferenciales Ordinarias", fecha:"10:30am - 11:30am", salon:"3-211", tutor:"Leo Torres"},
+        {materia:"Ecuaciones Diferenciales Ordinarias", fecha:"10:30am - 11:30am", salon:"3-211", tutor:"Leo Torres"},
         {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
         {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
         {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
@@ -103,7 +103,7 @@ if (document.body.id === "pagina-perfil") {
         {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
         {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
         {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"},
-        {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"}*/
+        {materia:"Cálculo", fecha:"12:30pm - 1:30pm", salon:"3-219", tutor:"María Paredes"}
     ];
 
 
@@ -179,13 +179,5 @@ iconoCerrarSesion.addEventListener("mouseover", () => {
 })
 iconoCerrarSesion.addEventListener("click", cerrarSesion);
 
-const perfilIcono = document.getElementById("icono-perfil");
-perfilIcono.addEventListener("click", () => {
-    window.location.href = "../Perfil/perfil.html";
-})
-perfilIcono.addEventListener("mouseover", () => {
-    iconoPerfil.style.cursor = "pointer";
-})
-console.log(perfilIcono);
 
 

@@ -16,7 +16,7 @@
     #logo-utdp {
         width: 50%;
     }
-    
+
     .contenedor-materia-descripcion {
         width: 95%;
         height: 30%;
@@ -25,10 +25,11 @@
     #titulo-materia {
         font-size: 1.25rem;
         font-weight: 400;
+        text-align: center;
     }
 
     #descripcion {
-        font-size: 1rem;
+        font-size: 0.75rem;
         line-height: 1.45;
         font-weight: 400;
     }
@@ -40,14 +41,14 @@
     }
 
     .sesion-por-inscribir {
-        width: 85%;
+        width: 80%;
         height: 70%;
         border: 5px solid #eebbc3;
         padding: 1em
     }
 
     .sesion-por-inscribir p {
-        font-size: 1.1rem;
+        font-size: 0.90rem;
     }
 
     .botones-enviar {
@@ -56,9 +57,158 @@
     }
 
     .botones-enviar button {
-        width: 50%;
+        width: 60%;
         height: 20%;
-        font-size: 0.95rem;
+        font-size: 0.75rem;
         padding: 1em;
+    }
+}
+
+@media (min-width: 481px)  and (max-width: 599px) {
+    main {
+        height: fit-content;
+    }
+
+    .alineacion-hay-sesiones {
+        justify-content: flex-start;
+    }
+
+    .contenedor-materia-descripcion {
+        width: 90%;
+        height: fit-content;
+    }
+
+    #titulo-materia {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    #descripcion {
+        font-size: 0.85rem;
+    }
+
+    .sesion-por-inscribir {
+        width: 75%;
+        padding: 1em;
+    }
+
+    .sesion-por-inscribir p {
+        font-size: 1rem;
+    }
+
+    .botones-enviar button {
+        width: 50%;
+        height: 30px;
+        border-radius: 0.5em;
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 709px) {
+
+    .alineacion-hay-sesiones {
+        justify-content: flex-start;
+    }
+
+    .contenedor-materia-descripcion {
+        width: 90%;
+        height: fit-content;
+    }
+
+    #titulo-materia {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    #descripcion {
+        font-size: 0.85rem;
+    }
+
+    .sesion-por-inscribir {
+        width: 75%;
+        padding: 1em;
+    }
+
+    .sesion-por-inscribir p {
+        font-size: 1rem;
+    }
+
+    .alineacion-hay-sesiones {
+        justify-content: flex-start;
+    }
+
+    .contenedor-materia-descripcion {
+        width: 90%;
+        height: fit-content;
+    }
+
+    #titulo-materia {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    #descripcion {
+        font-size: 0.85rem;
+    }
+
+    .sesion-por-inscribir {
+        width: 75%;
+        padding: 1em;
+    }
+
+    .sesion-por-inscribir p {
+        font-size: 1rem;
+    }
+
+    .botones-enviar button {
+        width: 40%;
+        height: 30px;
+        border-radius: 0.5em;
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 710px)  and (max-width: 899px) {
+    .sesion-por-inscribir {
+        width: 75%;
+        padding: 1em;
+    }
+
+    .sesion-por-inscribir p {
+        font-size: 1rem;
+    }
+
+    .botones-enviar button {
+        width: 30%;
+        height: 30px;
+        border-radius: 0.5em;
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 900px) {
+    #descripcion {
+        font-size: 1.15rem;
+    }
+
+    .alineacion-hay-sesiones-responsive {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 901px) {
+    .sesion-por-inscribir {
+        padding: 1em;
+    }
+
+    .sesion-por-inscribir p {
+        font-size: 1.25rem;
+    }
+
+    .botones-enviar button {
+        width: 31%;
+        height: 30px;
+        border-radius: 0.5em;
+        font-size: 0.8rem;
     }
 }
