@@ -40,6 +40,36 @@ confirm_image.addEventListener("click", ()=>{
     }
 })
 
-const div = document.createElement("div");
-div.style.background = 'red';
-document.body.appendChild(div);
+
+async function cambiarContrasena() {
+    const nueva = document.getElementById('nueva_input').value;
+    const confirm = document.getElementById('confirm_input').value;
+    const estudiante_uuid = sessionStorage.getItem('estudiante_uuid');
+
+    const response = await fetch(`http://127.0.0.1:8000/api/cambiar-contrasena/${estudiante_uuid}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+            contrasena_nueva: nueva,
+            contrasena_nueva_confirmation: confirm
+        })
+    });
+
+    const data = await response.json();
+
+    if (response.status === 200) {
+        alert(data.mensaje); // o usar tu popup
+        document.getElementById('form_cambiar_contra').reset();
+    } else {
+        alert(data.error || 'Ocurrió un error');
+    }
+}
+
+const form = document.getElementById('form_cambiar_contra');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    cambiarContrasena();
+});
