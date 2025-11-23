@@ -93,7 +93,7 @@ async function inscripcionSesion(datosInscripcion) {
         const src = "../images/error-inscripcion.png";
         const mensaje = Object.values(inscripcion_response.errors);
         const mensajeArray = mensaje[0];
-        mostrarPopUp(mensajeArray,src, `materia_sesiones.html?id=${cod_materia}`);
+        mostrarPopUp(mensajeArray,src);
     }
 
 }

@@ -149,7 +149,6 @@ function cerrarPopUp (botonPopUp, contenedorPopUp, redireccion) {
     botonPopUp.addEventListener("click", () => {
         contenedorPopUp.classList.remove("mostrar");
         if (redireccion !== undefined) {
-            console.log("En el if de cerrarPopUp")
             window.location.href = redireccion;
         }
     });
