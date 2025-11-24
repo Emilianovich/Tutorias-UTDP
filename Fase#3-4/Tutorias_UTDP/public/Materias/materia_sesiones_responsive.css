@@ -46,8 +46,8 @@
 
     .sesiones-disponibles {
         width: 70%;
-        height: 300px;
-        flex-grow: 0.5;
+        height: 30%;
+        padding: 1.5em;
     }
 
     #sesiones-no-disponibles {
@@ -68,4 +68,63 @@
         height: 80%;
 
     }
+}
+
+@media (min-width: 481px)  {
+    /*main {
+        height: fit-content;
+    }*/
+
+    .alineacion-hay-sesiones {
+        justify-content: flex-start;
+    }
+
+    .contenedor-materia-descripcion {
+        width: 90%;
+        height: fit-content;
+    }
+
+    #titulo-materia {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    #descripcion {
+        font-size: 0.85rem;
+    }
+
+    #seccion-sesiones-disponibles {
+        width: 90%;
+        height: fit-content;
+    }
+
+    .sesiones-disponibles {
+        width: 350px;
+        height: 200px;
+    }
+
+    .cupos-boton button {
+        padding: 0.5em;
+        border-radius: 0.5em;
+    }
+
+    #sesiones-no-disponibles {
+        width: 90%;
+        height: 300px;
+    }
+
+    #sesiones-no-disponibles h2 {
+        text-align: center;
+    }
+}
+
+@media (min-width: 900px) {
+    #descripcion {
+        font-size: 1.15rem;
+    }
+
+    .alineacion-hay-sesiones-responsive {
+        justify-content: center;
+    }
+
 }

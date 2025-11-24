@@ -26,6 +26,7 @@ nav {
 #main-sesiones-disponibles {
     grid-area: main;
     gap: 2em;
+    height: fit-content;
 }
 
 .alineacion-hay-sesiones {
@@ -87,8 +88,7 @@ nav {
     gap: 5em;
     flex-wrap: wrap;
     width: 100%;
-    height: 65%;
-    overflow: auto;
+    height: fit-content;
 }
 
 .sesiones-disponibles {

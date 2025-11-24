@@ -87,13 +87,13 @@ async function inscripcionSesion(datosInscripcion) {
     if (inscripcion_request.status === 201) {
         const src = "../images/exito-inscripcion.png";
         const mensaje = inscripcion_response.mensaje;
-        mostrarPopUpConRedirect(mensaje,src,`materia_sesiones.html?id=${cod_materia}`);
+        mostrarPopUp(mensaje,src,`materia_sesiones.html?id=${cod_materia}`);
     }
     else {
         const src = "../images/error-inscripcion.png";
         const mensaje = Object.values(inscripcion_response.errors);
         const mensajeArray = mensaje[0];
-        mostrarPopUpConRedirect(mensajeArray,src, `materia_sesiones.html?id=${cod_materia}`);
+        mostrarPopUp(mensajeArray,src);
     }
 
 }
