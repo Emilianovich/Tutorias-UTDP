@@ -46,7 +46,7 @@ async function cambiarContrasena() {
     const confirm = document.getElementById('confirm_input').value;
     const estudiante_uuid = sessionStorage.getItem('estudiante_uuid');
 
-    const response = await fetch(`http://127.0.0.1:8000/api/cambiar-contrasena/${estudiante_uuid}`, {
+    const response_Contra = await fetch(`http://127.0.0.1:8000/api/cambiarContrasena/${estudiante_uuid}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -58,13 +58,23 @@ async function cambiarContrasena() {
         })
     });
 
-    const data = await response.json();
+    const data_Contra = await response_Contra.json();
 
-    if (response.status === 200) {
-        alert(data.mensaje); // o usar tu popup
+    if (response_Contra.status === 200) {
+        const mensaje = data_Contra.mensaje;
+        const src = '../images/exito-inscripcion.png';
+        const redireccion = `perfil.html?${estudiante_uuid}`;
+        mostrarPopUp(mensaje,src, redireccion);
         document.getElementById('form_cambiar_contra').reset();
-    } else {
-        alert(data.error || 'Ocurrió un error');
+    } else if(response_Contra.status === 422){
+        const mensaje = data_Contra.message;
+        const src = '../images/error-inscripcion.png';
+        mostrarPopUp(mensaje,src);
+    }else
+    {
+        const mensaje = 'Ocurrió un error inesperado';
+        const src = '../images/error-inscripcion.png';
+        mostrarPopUp(mensaje,src);
     }
 }
 

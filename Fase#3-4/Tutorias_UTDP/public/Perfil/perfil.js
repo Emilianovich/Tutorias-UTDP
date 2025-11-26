@@ -104,8 +104,12 @@ if (document.body.id === "pagina-perfil") {
         const contenedorbtnPopups = document.createElement("div");
         contenedorbtnPopups.style.display = "flex";
         contenedorbtnPopups.style.width = "100%";
+        contenedorbtnPopups.style.gap = "3em";
+        contenedorbtnPopups.style.justifyContent = "center";
+        contenedorbtnPopups.style.alignItems = "center";
         const botonSiPopUp = document.createElement("button");
         botonSiPopUp.style.width = "fit-content";
+        botonSiPopUp.style.padding = "1em";
         botonSiPopUp.id = "confirmar-pop-up";
         botonSiPopUp.innerText = "Sí";
         botonSiPopUp.cursor = "pointer";
@@ -118,6 +122,7 @@ if (document.body.id === "pagina-perfil") {
 
         const botonNoPopUp = document.createElement("button");
         botonNoPopUp.style.width = "fit-content";
+        botonNoPopUp.style.padding = "1em";
         botonNoPopUp.id = "cerrar-pop-up";
         botonNoPopUp.innerText = "No";
         botonNoPopUp.cursor = "pointer";

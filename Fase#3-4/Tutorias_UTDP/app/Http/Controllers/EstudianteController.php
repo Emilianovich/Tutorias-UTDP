@@ -7,12 +7,12 @@ use App\Models\Estudiante;
 use \Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Requests\CambiarContrasena;
+use App\Http\Requests\CambiarContrasenaRequest;
 
 class EstudianteController extends Controller
 {
     public function show(string $estudiante_uuid): JsonResponse{
-        $infoEstudiante = Estudiante::select('nombre', 'apellido', 'cedula', 'correo', 'telefono', 'cod_facultad', 'contraseña', 'estudiante_uuid')
+        $infoEstudiante = Estudiante::select('nombre', 'apellido', 'cedula', 'correo', 'telefono', 'cod_facultad', 'contrasena', 'estudiante_uuid')
             ->where('estudiante_uuid', $estudiante_uuid)
             ->first();
 
@@ -25,10 +25,10 @@ class EstudianteController extends Controller
         return response()->json($infoEstudiante);
     }
 
-    public function cambiarContrasena(CambiarContrasena $request, $estudiante_uuid)
+    public function cambiarContrasena(CambiarContrasenaRequest $request, $estudiante_uuid)
     {
         DB::table('Estudiante')->where('estudiante_uuid', $estudiante_uuid)->update([
-            'contraseña' => Hash::make($request->input('contrasena_nueva'))
+            'contrasena' => Hash::make($request->input('contrasena_nueva'))
         ]);
 
         return response()->json(['mensaje' => 'Contraseña actualizada correctamente'], 200);
