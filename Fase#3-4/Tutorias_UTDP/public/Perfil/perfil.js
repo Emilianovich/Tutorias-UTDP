@@ -181,7 +181,7 @@ if (document.body.id === "pagina-perfil") {
             contenedorValidPopUp.classList.remove("mostrar");
             location.reload();
         });
-        ValidpopUp.append(mensaje, imagen, botonPopUp);
+        ValidpopUp.append(mensajeValidPopUp, imagen, botonPopUp);
         contenedorValidPopUp.append(ValidpopUp);
         document.body.append(contenedorValidPopUp);
         contenedorValidPopUp.classList.add("mostrar");

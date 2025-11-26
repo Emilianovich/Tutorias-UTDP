@@ -297,3 +297,11 @@ button {
     cursor: pointer;
 }
 
+#confirmar-pop-up, #cerrar-pop-up {
+    padding: 1em 3em 1em 3em !important;
+}
+
+#pop-up h1 {
+    font-size: 1.5em !important;
+}
+
