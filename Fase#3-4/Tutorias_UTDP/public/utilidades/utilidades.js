@@ -182,3 +182,26 @@ perfilIcono.addEventListener("click", () => {
 perfilIcono.addEventListener("mouseover", () => {
     iconoPerfil.style.cursor = "pointer";
 })
+
+/*Toggler para el ojo del campo de contraseña*/
+function togglePasswordVisibility(passwordFieldId, passwordImageId) {
+    const password_field = document.getElementById(passwordFieldId);
+    const password_image = document.getElementById(passwordImageId);
+
+    if (!password_field || !password_image) {
+        console.error("No se encontraron los elementos especificados");
+        return;
+    }
+
+    password_image.addEventListener("click", () => {
+        if(password_field.type === "password") {
+            password_field.type = "text";
+            password_image.src = "../images/eye_open.png";
+            password_image.alt = "Opened eye";
+        } else {
+            password_field.type = "password";
+            password_image.src = "../images/eye_closed.png";
+            password_image.alt = "Closed eye";
+        }
+    });
+}
