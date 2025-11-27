@@ -31,7 +31,7 @@ class CambiarContrasenaRequest extends FormRequest{
             $estudiante_uuid = $this->route('estudiante_uuid');
             $usuario = DB::table('Estudiante')->where('estudiante_uuid', $estudiante_uuid)->first();
 
-            if ($usuario && Hash::check($this->input('contrasena_nueva'), $usuario->contrasena)) {
+            if ($usuario && Hash::check($this->input('contrasena_nueva'), $usuario->contraseña)) {
                 $validator->errors()->add('contrasena_nueva', 'La nueva contraseña debe de ser diferente a la anterior');
             }
         });

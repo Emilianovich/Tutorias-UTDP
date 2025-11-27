@@ -95,7 +95,7 @@ if (document.body.id === "pagina-perfil") {
         confPopUp.id = "pop-up";
         confPopUp.classList.add("pointer-events");
 
-        const mensajePopUp = document.createElement("h1");
+        const mensajePopUp = document.createElement("p");
         mensajePopUp.innerText = "¿Segur@ que desea cancelar su inscripción?";
 
         const imagen = document.createElement("img");

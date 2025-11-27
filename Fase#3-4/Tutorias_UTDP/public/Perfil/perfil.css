@@ -15,6 +15,7 @@ main {
     display: flex;
     margin-top: 2rem;
     grid-area: main;
+    gap: 2em;
 }
 
 footer {
@@ -50,7 +51,7 @@ a, a:visited {
     height: fit-content;
     border-radius: 0 2em 2em 0;
     padding: 1em 0.2em 1em 0.2em;
-    margin-right: 2em;
+    margin-left: 0;
 }
 
 .contenedor_img {
@@ -63,7 +64,7 @@ a, a:visited {
 }
 
 .perfil_buttons {
-    font-size: 1.2em;
+    font-size: 1em;
     background-color: transparent;
     width: 100%;
     text-align: start;
@@ -301,7 +302,7 @@ button {
     padding: 1em 3em 1em 3em !important;
 }
 
-#pop-up h1 {
+#pop-up p {
     font-size: 1.5em !important;
 }
 
