@@ -1,0 +1,90 @@
+body {
+    display: grid;
+    grid-template-areas: "header header"
+                        "nav nav"
+                        "main main"
+                        "footer footer";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    row-gap: 1em;
+    min-height: 100dvh;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+}
+
+main section {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4em;
+}
+
+main article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #eebbc3;
+    background-color: #fffffe;
+    border-radius: 1em;
+    width: 40%;
+    height: 20%;
+}
+
+.picture {
+    position: relative;
+    width: 90%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.picture div {
+    position: relative;
+    left: 30%;
+}
+
+main article img {
+    position: absolute;
+    left: 0;
+    width: 23%;
+    height: auto;
+}
+
+main h2 {
+    font-weight: 400;
+    color: black;
+}
+
+#edo {
+    max-width: 13ch;
+}
+
+.nombre-materias:hover {
+    transition: 0.8s ease;
+    transform: scale(1.1);
+}
+
+footer {
+    grid-area: footer;
+}
+
+
