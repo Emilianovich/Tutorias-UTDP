@@ -15,3 +15,9 @@ Route::get('/materia/{cod_materia}/{estudiante_uuid}', [InscripcionController::c
 Route::get('/inscripcion/{cod_materia}/{cod_sesion}', [InscripcionController::class, 'show']);
 Route::post('/inscripcion', [InscripcionController::class, 'store']);
 
+/*Rutas para Evaluar y Evaluar_Sesion*/
+// Lista de sesiones pendientes por evaluar para un estudiante
+Route::get('/sesiones-por-evaluar/{estudiante_uuid}', [EvaluacionController::class, 'index']);
+
+// Crear una evaluación para una sesión
+Route::post('/evaluaciones', [EvaluacionController::class, 'store']);
