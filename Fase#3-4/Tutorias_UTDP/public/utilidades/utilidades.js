@@ -145,13 +145,11 @@ function creacionBotonPopUp (contenedorPopUp) {
     return botonPopUp;
 }
 
-function cerrarPopUp (botonPopUp, contenedorPopUp, redireccion) {
-    botonPopUp.addEventListener("click", () => {
-        contenedorPopUp.classList.remove("mostrar");
-        if (redireccion !== undefined) {
-            window.location.href = redireccion;
-        }
-    });
+function cerrarPopUp (contenedorPopUp, redireccion) {
+    contenedorPopUp.remove();
+    if (redireccion !== undefined) {
+        window.location.href = redireccion;
+    }
 }
 
 function agregarPopUpDOM (mensajePopUp, imagen, botonPopUp, popUp, contenedorPopUp) {
@@ -167,7 +165,7 @@ function mostrarPopUp(mensaje, src, redireccion) {
     const imagenPopUp = creacionImagenPopUp(src);
     const botonPopUp = creacionBotonPopUp();
     agregarPopUpDOM(mensajePopUp, imagenPopUp, botonPopUp, popUp, contenedorPopUp);
-    botonPopUp.addEventListener("click", () => cerrarPopUp(botonPopUp, contenedorPopUp, redireccion));
+    botonPopUp.addEventListener("click", () => cerrarPopUp(contenedorPopUp, redireccion));
 }
 function cerrarSesion() {
     sessionStorage.clear();
@@ -183,25 +181,4 @@ perfilIcono.addEventListener("mouseover", () => {
     iconoPerfil.style.cursor = "pointer";
 })
 
-/*Toggler para el ojo del campo de contraseña*/
-function togglePasswordVisibility(passwordFieldId, passwordImageId) {
-    const password_field = document.getElementById(passwordFieldId);
-    const password_image = document.getElementById(passwordImageId);
 
-    if (!password_field || !password_image) {
-        console.error("No se encontraron los elementos especificados");
-        return;
-    }
-
-    password_image.addEventListener("click", () => {
-        if(password_field.type === "password") {
-            password_field.type = "text";
-            password_image.src = "../images/eye_open.png";
-            password_image.alt = "Opened eye";
-        } else {
-            password_field.type = "password";
-            password_image.src = "../images/eye_closed.png";
-            password_image.alt = "Closed eye";
-        }
-    });
-}
