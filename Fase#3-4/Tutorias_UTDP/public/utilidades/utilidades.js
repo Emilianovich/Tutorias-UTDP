@@ -145,13 +145,11 @@ function creacionBotonPopUp (contenedorPopUp) {
     return botonPopUp;
 }
 
-function cerrarPopUp (botonPopUp, contenedorPopUp, redireccion) {
-    botonPopUp.addEventListener("click", () => {
-        contenedorPopUp.classList.remove("mostrar");
-        if (redireccion !== undefined) {
-            window.location.href = redireccion;
-        }
-    });
+function cerrarPopUp (contenedorPopUp, redireccion) {
+    contenedorPopUp.remove();
+    if (redireccion !== undefined) {
+        window.location.href = redireccion;
+    }
 }
 
 function agregarPopUpDOM (mensajePopUp, imagen, botonPopUp, popUp, contenedorPopUp) {
@@ -167,7 +165,7 @@ function mostrarPopUp(mensaje, src, redireccion) {
     const imagenPopUp = creacionImagenPopUp(src);
     const botonPopUp = creacionBotonPopUp();
     agregarPopUpDOM(mensajePopUp, imagenPopUp, botonPopUp, popUp, contenedorPopUp);
-    botonPopUp.addEventListener("click", () => cerrarPopUp(botonPopUp, contenedorPopUp, redireccion));
+    botonPopUp.addEventListener("click", () => cerrarPopUp(contenedorPopUp, redireccion));
 }
 function cerrarSesion() {
     sessionStorage.clear();
