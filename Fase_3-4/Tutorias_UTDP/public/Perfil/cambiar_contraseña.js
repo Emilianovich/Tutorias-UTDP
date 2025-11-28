@@ -1,4 +1,5 @@
 import {mostrarPopUp} from "/utilidades/utilidades.js"
+
 /*Ojo de contraseña nueva*/
 const nueva_field = document.getElementById("nueva_input");
 const nueva_image = document.getElementById("ojo_contranueva");
@@ -41,6 +42,46 @@ confirm_image.addEventListener("click", ()=>{
     }
 })
 
-const div = document.createElement("div");
-div.style.background = 'red';
-document.body.appendChild(div);
+
+async function cambiarContrasena() {
+    const nueva = document.getElementById('nueva_input').value;
+    const confirm = document.getElementById('confirm_input').value;
+    const estudiante_uuid = sessionStorage.getItem('estudiante_uuid');
+
+    const response_Contra = await fetch(`http://127.0.0.1:8000/api/cambiarContrasena/${estudiante_uuid}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+            contrasena_nueva: nueva,
+            contrasena_nueva_confirmation: confirm
+        })
+    });
+
+    const data_Contra = await response_Contra.json();
+
+    if (response_Contra.status === 200) {
+        const mensaje = data_Contra.mensaje;
+        const src = '/images/exito-inscripcion.png';
+        const redireccion = `perfil.html?${estudiante_uuid}`;
+        mostrarPopUp(mensaje,src, redireccion);
+        document.getElementById('form_cambiar_contra').reset();
+    } else if(response_Contra.status === 422){
+        const mensaje = data_Contra.message;
+        const src = '/images/error-inscripcion.png';
+        mostrarPopUp(mensaje,src);
+    }else
+    {
+        const mensaje = 'Ocurrió un error inesperado';
+        const src = '/images/error-inscripcion.png';
+        mostrarPopUp(mensaje,src);
+    }
+}
+
+const form = document.getElementById('form_cambiar_contra');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    cambiarContrasena();
+});

@@ -7,7 +7,6 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto 1fr auto;
     row-gap: 1em;
-    height: 100vh;
     min-height: 100dvh;
 }
 
@@ -15,6 +14,7 @@ main {
     display: flex;
     margin-top: 2rem;
     grid-area: main;
+    gap: 2em;
 }
 
 footer {
@@ -50,7 +50,7 @@ a, a:visited {
     height: fit-content;
     border-radius: 0 2em 2em 0;
     padding: 1em 0.2em 1em 0.2em;
-    margin-right: 2em;
+    margin-left: 0;
 }
 
 .contenedor_img {
@@ -63,7 +63,7 @@ a, a:visited {
 }
 
 .perfil_buttons {
-    font-size: 1.2em;
+    font-size: 1em;
     background-color: transparent;
     width: 100%;
     text-align: start;
@@ -103,12 +103,6 @@ input {
     width: 22em;
 }
 
-#password_image {
-    position: absolute;
-    Left: 53%;
-    width: 24px;
-    background-color: #FFFFFE;
-}
 
 .contenedor_datos_personales {
     display: grid;
@@ -123,8 +117,7 @@ input {
     background-color: #FFFFFE;
     border-radius: 1.5em;
     padding: 2em;
-    font-size: 1.6em;
-    position: relative;
+    font-size: 1.5em;
 }
 
 .dato_nombre{
@@ -207,6 +200,7 @@ footer {
 /*Sesiones Pendientes*/
 #pendientes {
     width: 75%;
+    align-self: center;
 }
 #contenedor_sesiones_pendientes {
     display: flex;
@@ -214,7 +208,7 @@ footer {
     overflow-y: auto;
     gap: 1em;
     justify-content: center;
-    height: 30rem;
+    max-height: 30rem;
     padding: 1em;
 }
 
@@ -274,7 +268,7 @@ footer {
     overflow-y: auto;
     gap: 1em;
     justify-content: center;
-    height: 30rem;
+    max-height: 30rem;
     padding: 1em;
 }
 
@@ -296,3 +290,10 @@ button {
     cursor: pointer;
 }
 
+#confirmar-pop-up, #cerrar-pop-up {
+    padding: 1em 3em 1em 3em !important;
+}
+
+#pop-up p {
+    font-size: 1.5em !important;
+}

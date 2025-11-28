@@ -48,4 +48,17 @@ class InscripcionController extends Controller
         Inscripcion::create($validated);
         return response()->json(["mensaje" => "Usted se encuentra oficialmente inscrit@ en la sesión"], 201);
     }
+
+    public function desinscribirse(string $estudiante_uuid, string $cod_sesion) : JsonResponse {
+        $sesionPorDesinscribir = DB::table("Inscripcion")
+        ->where('estudiante_uuid', $estudiante_uuid)
+        ->where('cod_sesion', $cod_sesion)
+        ->delete();
+
+        if(!$sesionPorDesinscribir){
+            return response()->json(["error" => "Ocurrió un error al intentar desinscribirse"], 500);
+        }
+
+        return response()->json(["mensaje" => "Usted se ha desinscrito exitosamente"]);
+    }
 }
