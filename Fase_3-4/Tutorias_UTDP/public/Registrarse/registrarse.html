@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/logo_utdp.png" type="image/png">
     <title>Registrarse</title>
+    <link rel="stylesheet" href="/utilidades/estilos_generales.css">
     <link rel="stylesheet" href="/Registrarse/registro.css">
     <link rel="stylesheet" href="/Registrarse/registro_responsive.css">
 </head>
@@ -18,27 +19,33 @@
     </div>
 
     <div class="campo-formulario">
-        <input type="text" name="Nombre" placeholder="Nombre" id="nombre" required>
+        <label for="nombre" class="sr-only">Nombre</label>
+        <input type="text" name="Nombre" placeholder="Nombre" id="nombre">
     </div>
 
     <div class="campo-formulario">
-        <input type="text" name="Apellido" placeholder="Apellido" id="apellido" required>
+        <label for="apellido" class="sr-only">Apellido</label>
+        <input type="text" name="Apellido" placeholder="Apellido" id="apellido">
     </div>
 
     <div class="campo-formulario">
-        <input type="text" name="Cedula" placeholder="Cédula" id="cedula" required>
+        <label for="cedula" class="sr-only">Cédula</label>
+        <input type="text" name="Cedula" placeholder="Cédula" id="cedula">
     </div>
 
     <div class="campo-formulario">
-        <input type="email" name="Correo" placeholder="Correo" id="correo" required>
+        <label for="correo" class="sr-only">Correo</label>
+        <input type="email" name="Correo" placeholder="Correo" id="correo">
     </div>
 
     <div class="campo-formulario">
-        <input type="tel" name="Telefono" placeholder="Teléfono" id="telefono" required>
+        <label for="telefono" class="sr-only">Teléfono</label>
+        <input type="tel" name="Telefono" placeholder="Teléfono" id="telefono">
     </div>
 
     <div class="campo-formulario">
-        <select id="facultad" name="cod_facultad" required>
+        <label for="facultad" class="sr-only">Facultad</label>
+        <select id="facultad" name="cod_facultad">
             <option value="" selected disabled hidden>Facultad</option>
             <option value="FCYT">Facultad de Ciencias y Tecnología</option>
             <option value="FIC">Facultad de Ingeniería Civil</option>
@@ -50,12 +57,13 @@
     </div>
 
     <div class="campo-formulario">
-        <input type="password" name="password" placeholder="Contraseña" id="password" required>
+        <label for="contraseña" class="sr-only">Contraseña</label>
+        <input type="password" name="contraseña" placeholder="Contraseña" id="contraseña">
         <img src="/images/eye_closed.png" alt="ojo password" id="password_image">
     </div>
 
     <div class="boton">
-    <button class="botones-login-registro" type="submit" id="ultimo-opcion-registro">Crear cuenta</button>
+        <button class="botones-login-registro" type="submit" id="ultimo-opcion-registro">Crear cuenta</button>
     </div>
 
 </form>

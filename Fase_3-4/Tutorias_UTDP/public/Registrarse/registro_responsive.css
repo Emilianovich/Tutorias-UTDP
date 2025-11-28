@@ -8,7 +8,7 @@
     .fondo-registro {
         filter: blur(5px) brightness(1.05);
         opacity: 0.95;
-        background-image: url("../images/cellphone_fondo.jpg");
+        background-image: url("/images/cellphone_fondo.jpg");
     }
 
 /
