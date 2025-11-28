@@ -21,24 +21,19 @@ function togglePasswordVisibility(inputId, imageId) {
     });
 }
 
-const formulario = document.querySelector('form[name="registro"]');
+const formulario = document.querySelector('form[name="formulario-login"]');
 const botonSubmit = formulario.querySelector('button[type="submit"]');
 
 formulario.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const datosEstudiante = {
-        nombre: document.getElementById('nombre').value.trim(),
-        apellido: document.getElementById('apellido').value.trim(),
-        cedula: document.getElementById('cedula').value.trim(),
+    const datosLogin = {
         correo: document.getElementById('correo').value.trim(),
-        telefono: document.getElementById('telefono').value.trim(),
-        cod_facultad: document.getElementById('facultad').value,
         contraseña: document.getElementById('contraseña').value
     };
 
     // Validación básica de campos vacíos en el frontend
-    if (!validarCamposVacios(datosEstudiante)) {
+    if (!validarCamposVacios(datosLogin)) {
         mostrarPopUp(
             'Por favor, llene todos los campos solicitados',
             '/images/error-inscripcion.png'
@@ -50,27 +45,26 @@ formulario.addEventListener('submit', async (e) => {
     deshabilitarFormulario();
 
     try {
-        const response = await fetch(`${API_BASE_URL}/registrarse`, {
+        const response = await fetch(`${API_BASE_URL}/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(datosEstudiante)
+            body: JSON.stringify(datosLogin)
         });
 
         const data = await response.json();
 
         if (response.ok) {
-            // Mensaje de éxito desde el backend
-            mostrarPopUp(
-                data.message,
-                '/images/exito-inscripcion.png',
-                '/index.html'
-            );
+            // Guardar UUID en sessionStorage
+            sessionStorage.setItem('estudiante_uuid', data.uuid);
+
+            // Redirigir al inicio
+            window.location.href = '/Inicio/inicio.html';
         } else {
             // Extraer mensaje de error desde el backend
-            let mensajeError = 'Error en el registro';
+            let mensajeError = 'Error en el inicio de sesión';
 
             if (data.errors) {
                 // Si hay errores de validación, tomar el primer error
@@ -81,6 +75,7 @@ formulario.addEventListener('submit', async (e) => {
             }
 
             mostrarPopUp(mensajeError, '/images/error-inscripcion.png');
+            habilitarFormulario();
         }
 
     } catch (error) {
@@ -92,6 +87,16 @@ formulario.addEventListener('submit', async (e) => {
         habilitarFormulario();
     }
 });
+
+// Validación mínima en frontend solo para campos vacíos
+function validarCamposVacios(datos) {
+    for (let campo in datos) {
+        if (!datos[campo]) {
+            return false;
+        }
+    }
+    return true;
+}
 
 // Función para deshabilitar el formulario
 function deshabilitarFormulario() {
@@ -111,16 +116,6 @@ function habilitarFormulario() {
     });
     botonSubmit.style.opacity = '1';
     botonSubmit.style.cursor = 'pointer';
-}
-
-// Validación mínima en frontend solo para campos vacíos
-function validarCamposVacios(datos) {
-    for (let campo in datos) {
-        if (!datos[campo]) {
-            return false;
-        }
-    }
-    return true;
 }
 
 // Funciones del nuevo sistema de Pop-Up

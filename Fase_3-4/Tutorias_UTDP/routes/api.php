@@ -10,6 +10,11 @@ use App\Http\Controllers\EvaluacionController;
 Route::get('/bienvenida', function () {
     return ["mensaje" => "Bienvenidos a Tutorías UTDP"];
 });
+
+/*Rutas para Login y Registrarse*/
+Route::post('/registrarse', [EstudianteController::class, 'store']);
+Route::post('/login', [EstudianteController::class, 'login']);
+
 /*Rutas para Materias*/
 Route::get('/materia/{cod_materia}/{estudiante_uuid}', [InscripcionController::class, 'index']);
 Route::get('/inscripcion/{cod_materia}/{cod_sesion}', [InscripcionController::class, 'show']);

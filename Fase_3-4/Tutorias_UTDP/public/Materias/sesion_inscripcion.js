@@ -1,5 +1,4 @@
 import {crearCirculosAnimacion, agregarContenedorAnimacion, desaparecerContenedorAnimacion, mostrarPopUp} from "/utilidades/utilidades.js"
-sessionStorage.setItem("estudiante_uuid", "abcdef12-3456-7890-abcd-ef1234566679");
 const estudianteUUID = sessionStorage.getItem("estudiante_uuid");
 const cod_materia = new URLSearchParams(window.location.search).get("id");
 const cod_sesion = new URLSearchParams(window.location.search).get("sesion");
