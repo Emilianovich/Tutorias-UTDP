@@ -14,7 +14,7 @@ main {
     display: flex;
     margin-top: 2rem;
     grid-area: main;
-    gap: 2em;
+    gap: 3.5em;
 }
 
 footer {
