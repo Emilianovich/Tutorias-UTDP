@@ -1,5 +1,4 @@
 import {crearCirculosAnimacion, agregarContenedorAnimacion, desaparecerContenedorAnimacion} from "/utilidades/utilidades.js"
-sessionStorage.setItem("estudiante_uuid", "abcdef12-3456-7890-abcd-ef1234566678");
 const cedula_estudiante = sessionStorage.getItem("estudiante_uuid");
 
 
