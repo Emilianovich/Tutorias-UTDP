@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Exo;
+}
+
+body {
+    background-color: #232946;
+    position: relative;
+}
+
+.header_estilos_generales_pc {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.titulo-utdp  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.13rem;
+    width: 23%;
+    background-color: #fffffe;
+    padding: 1em;
+    border-radius: 25px;
+}
+
+picture {
+    width: 30%;
+}
+
+#logo-utdp {
+    width: 30%;
+    height: auto;
+}
+
+#picture-icono-perfil {
+    display: flex;
+    justify-content:flex-end;
+}
+
+#icono-perfil {
+    width: 17%;
+    height: auto;
+}
+
+#icono-perfil:hover {
+    cursor: pointer;
+}
+
+.nav_estilos_generales_pc {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #FFFFFF;
+    border: 0.5px solid #FFFFFF;
+}
+
+.nav_estilos_generales_pc div {
+    height: 90%;
+    width: 9%;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.nav_estilos_generales_pc h2 {
+    font-size: 1.50rem;
+    font-weight: 300;
+}
+
+.opciones-nav:hover {
+    background-color: #eebbc3;
+    color: black;
+}
+
+.nav-selected {
+    background-color: #eebbc3;
+    color: black;
+}
+
+.footer_estilos_generales_pc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_estilos_generales_pc p {
+    color: white;
+    font-weight: 100;
+}
+
+#hamburger-menu {
+    width: 10%;
+    color: white;
+}
+
+#hamburger-menu:hover {
+    cursor: pointer;
+}
+
+#contenedorHamburgerPerfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Hambuger menu*/
+.nav-celular {
+    background-color:#2E5C91;
+    position: fixed;
+    width: 100vw;
+    max-width: 480px;
+    height: 100vh;
+    opacity: 0.95;
+    display: none;
+}
+
+.visible {
+    display: none;
+}
+
+#contenedor-boton-cerrar {
+    position: absolute;
+    top: 50px;
+    left: 80%;
+}
+
+.nav-celular img {
+    width: 30%;
+}
+
+#nav-celular-opciones {
+    position: relative;
+    color: #fffffe;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.70rem;
+    gap: 2em;
+    width: 100%;
+    height: 100%;
+}
+
+#nav-celular-opciones:hover {
+    cursor: default;
+}
+
+#nav-celular-opciones p:hover {
+    cursor: pointer;
+}
+
+#botonCerrar:hover {
+    cursor: pointer;
+}
+
+.quitar-hamburger {
+    animation-name: quitarHamburger;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.mostrar-hamburger {
+    animation-name: mostrarHamburger;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes mostrarHamburger {
+    0% {transform: translateX(-480px); }
+100% {transform: translateX(0px); }
+}
+
+@keyframes quitarHamburger {
+    0% {transform: translateX(0px);}
+100% {transform: translateX(-480px);}
+}
+
+#contenedor-pop-up {
+    position: fixed;
+    inset: 0;
+    display: none;
+    pointer-events: none;
+}
+
+#contenedor-pop-up.mostrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto;
+}
+
+#pop-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    background-color: #fffffe;
+    border: 4px solid #eebbc3;
+    border-radius: 3em;
+    padding: 1em;
+    text-align: center;
+}
+
+#pop-up h2 {
+    margin-top: 0.5em;
+    font-weight: 200;
+}
+
+#pop-up img {
+    width: 40%;
+    height: auto;
+    border-radius: 100%;
+}
+
+#pop-up button {
+    font-size: 1.65rem;
+    font-weight: 300;
+    background-color: #eebbc3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 15%;
+    border-radius: 1.10em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/*Header responsive para celulares*/
+@media (max-width: 480px) {
+    #logo-utdp {
+        width: 70%;
+    }
+
+    header {
+        gap: 1em;
+    }
+
+    .titulo-utdp {
+        width: 80%;
+        height: 10%;
+    }
+
+    .header_estilos_generales_pc h1 {
+        text-align: center;
+        font-size: 1.30rem;
+        max-width: 60ch;
+    }
+
+    #contenedorHamburgerPerfil {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 30%;
+        height: 100%;
+    }
+
+    #hamburger-menu {
+        width: 35%;
+    }
+
+    #icono-perfil {
+        width: 100%;
+        height: auto;
+    }
+
+    footer {
+        font-size: 0.60rem;
+    }
+
+    #footer-copyright {
+        margin-top: 5em;
+    }
+
+    #pop-up {
+        width: 80%;
+    }
+
+    #pop-up h2 {
+        font-size: 1.30rem;
+    }
+
+    #pop-up img {
+        width: 25%;
+    }
+
+    #pop-up button {
+        font-size: 1.20rem;
+        width: 30%;
+    }
+}
+
+/*Animación de carga*/
+#contenedor-animacion {
+    z-index: 1;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 100%;
+    background-color: #232946;
+}
+
+.circulos {
+    width: 30px;
+    height: 30px;
+    background-color: #FFFFFE;
+    border-radius: 100%;
+}
+
+.animacion-carga {
+    animation: animacion-carga 400ms linear 1;
+}
+
+.fading-animacion {
+    animation: fading-loading 1.5s linear;
+    animation-fill-mode: forwards;
+    pointer-events: none;
+}
+
+.circulo1 {
+    animation-delay: 0s;
+}
+
+.circulo2 {
+    animation-delay: 400ms;
+}
+
+.circulo3 {
+    animation-delay: 800ms;
+}
+
+.circulo4 {
+    animation-delay: 1200ms;
+}
+
+.circulo5 {
+    animation-delay: 1600ms;
+}
+
+@keyframes animacion-carga {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fading-loading {
+    0% {
+        opacity: 0.95;
+    }
+
+    50% {
+        opacity: 0.50;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 700px) {
+    header picture, header div {
+        margin-top: 1em;
+    }
+
+    #logo-utdp {
+        width: 60%;
+    }
+
+    .titulo-utdp {
+        width: fit-content;
+        font-size: 0.75rem;
+        height: fit-content;
+    }
+
+    #icono-perfil {
+        width: 45%;
+    }
+
+    .nav_estilos_generales_pc div {
+        width: 18%;
+    }
+
+    .opciones-nav h2 {
+        font-size: 1.25rem;
+    }
+
+    .footer_estilos_generales_pc p {
+        font-size: 0.8rem;
+    }
+
+    #pop-up {
+        width: 85%;
+    }
+
+    #pop-up img {
+        width: 25%;
+    }
+
+    #pop-up button {
+        font-size: 1.20rem;
+        width: 25%;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 850px) {
+    header picture, header div {
+        margin-top: 1em;
+    }
+
+    #logo-utdp {
+        width: 35%;
+    }
+
+    .titulo-utdp {
+        width: 35%;
+        font-size: 1rem;
+        height: fit-content;
+    }
+
+    #icono-perfil {
+        width: 30%;
+    }
+
+    .nav_estilos_generales_pc div {
+        width: 15%;
+    }
+
+    .opciones-nav h2 {
+        font-size: 1.4rem;
+    }
+
+    #pop-up {
+        width: 75%;
+    }
+
+    #pop-up h2 {
+        font-size: 1.5rem;
+    }
+
+    #pop-up img {
+        width: 25%;
+    }
+
+    #pop-up button {
+        font-size: 1.20rem;
+        width: 25%;
+    }
+}
+
+@media (min-width: 851px) and (max-width: 1052px) {
+    .titulo-utdp {
+        width: fit-content;
+        font-size: 1rem;
+        height: fit-content;
+    }
+
+    .nav_estilos_generales_pc div {
+        width: 15%;
+    }
+
+    #pop-up {
+        width: 75%;
+    }
+
+    #pop-up h2 {
+        font-size: 1.5rem;
+    }
+
+    #pop-up img {
+        width: 15%;
+    }
+
+    #pop-up button {
+        font-size: 1.20rem;
+        width: 25%;
+    }
+}
+
+@media (min-width: 1053px) {
+    #pop-up {
+        width: 60%;
+    }
+
+    #pop-up h2 {
+        font-size: 1.75rem;
+    }
+
+    #pop-up img {
+        width: 15%;
+    }
+
+    #pop-up button {
+        height: 10%;
+        font-size: 1.25rem;
+    }
+}
