@@ -1,3 +1,8 @@
+/*Verificación sesion*/
+if (!sessionStorage.getItem("estudiante_uuid")) {
+    window.location.replace("/index.html");
+}
+
 /*Nav dinámico*/
 const opcionesNav = document.querySelectorAll("div.opciones-nav");
 const opcionSeleccionada = document.getElementById("opcion_nav-seleccionada");
@@ -169,7 +174,7 @@ export function mostrarPopUp(mensaje, src, redireccion) {
 }
 export function cerrarSesion() {
     sessionStorage.clear();
-    window.location.href = "/index.html";
+    location.replace("/index.html");
 }
 
 /*Agregando el vínculo a la página de Perfil*/
