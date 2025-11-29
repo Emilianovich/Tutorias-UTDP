@@ -204,3 +204,13 @@ export function agregarContenedorAnimacion(contenedorAnimacion) {
 export function desaparecerContenedorAnimacion(contenedorAnimacion) {
     contenedorAnimacion.classList.add("fading-animacion");
 }
+
+/*Redirección si no hay login*/
+if (!sessionStorage.getItem("estudiante_uuid")) {
+    crearCirculosAnimacion();
+    agregarContenedorAnimacion(contenedorAnimacion);
+    setTimeout(()=> {
+        desaparecerContenedorAnimacion(contenedorAnimacion);
+        location.href = "/index.html";
+    }, 2001);
+}
