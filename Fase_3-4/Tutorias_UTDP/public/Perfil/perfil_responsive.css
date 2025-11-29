@@ -71,13 +71,7 @@
         width: 1.4em;
         height: auto;
     }
-    #password_image {
-        width: 3%;
-        left: 85%;
-    }
     #picture-icono-perfil {
         justify-content: center;
     }
 }
-
-
