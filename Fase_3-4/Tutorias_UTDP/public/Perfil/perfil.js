@@ -36,7 +36,6 @@ if (document.body.id === "pagina-perfil") {
             document.getElementById('facultad_perfil').value = Facultades[response.cod_facultad];
             document.getElementById('correo_perfil').value = response.correo;
             document.getElementById('contraseña_perfil').value = "*****************";
-            console.log(response);
         } catch (error) {
             console.error("Error cargando datos personales:", error);
         }
