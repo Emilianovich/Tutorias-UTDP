@@ -1,3 +1,4 @@
+
 /* Layout general igual que Inicio/Nosotros */
 body{
     display: grid;
@@ -70,6 +71,14 @@ main{
     font-weight: 600;
 }
 
+.plantilla {
+    display: none;
+}
+
+.tarjeta-sesion{      /* máx 3 por fila */
+    height: fit-content;
+}
+
 /* Botón Evaluar */
 .btn-evaluar{
     margin-top: 0.5rem;
@@ -88,7 +97,7 @@ main{
     display: none; /* Activar solo si no hay sesiones */
     margin-top: 2rem;
     width: 100%;
-    padding: 3rem 2rem;
+    padding: 0rem;
     background-color: #fffffe;
     border-radius: 18px;
     border: 4px solid #eebbc3;
@@ -97,62 +106,15 @@ main{
     box-shadow: 0 6px 18px rgba(0,0,0,.18);
 }
 
+.tarjeta-sin-sesiones {
+    display: flex;              /* convierte el contenedor en flex */
+    justify-content: center;    /* centra horizontalmente el texto */
+    align-items: center;        /* centra verticalmente el texto   */
+    text-align: center;         /* centra el texto dentro del h2   */
+    min-height: 60vh;           /* alto mínimo para que se vea “alta” */
+}
+
 footer{
     grid-area: footer;
     margin-top: 1em;
-}
-
-/* ====== MOBILE EVALUAR (≤480px) ====== */
-@media (max-width: 480px){
-
-main{
-    width: 420px;
-    margin-inline:auto;
-    margin-top: 1.2em;
-}
-
-#contenedor-sesiones{
-    display: grid;            /* más estable que flex para 1 columna */
-    grid-template-columns: 1fr;
-    gap: 2.45rem;
-    margin-left: 1em;
-    margin-right: 1em;
-}
-
-.tarjeta-sesion{
-    max-width: none;
-    width: 100%;
-    padding: 1.25rem 1.1rem 1.2rem;
-    border-radius: 20px;
-}
-
-.tarjeta-sesion h2{
-    font-size: 1.6rem; 
-    margin-bottom: .9rem; 
-}
-
-.tarjeta-sesion p {
-    font-size: 1.15rem;
-}
-
-btn-evaluar{
-    margin-top: 1.1rem;
-    padding: .6rem 2.2rem;
-    font-size: 1.05rem;
-}
-
-  /* estado “no hay sesiones” */
-#sin-sesiones{
-    padding: 2rem 1rem;
-    font-size: 1.35rem;
-    border-radius: 20px;
-}
-
-footer{
-    width: 480px;
-}
-
-#footer-copyright{
-    margin-top: 0em;
-}
 }

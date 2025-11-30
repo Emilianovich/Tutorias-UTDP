@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,12 +7,13 @@
     <link rel="icon" href="/images/logo_utdp.png">
     <link rel="stylesheet" href="/utilidades/estilos_generales.css">
     <link rel="stylesheet" href="/Evaluacion/evaluar_sesion.css">
-    <script type="module" defer src="/utilidades/utilidades.js"></script>
-    <script type="module" defer src="/Evaluacion/evaluar_sesion.js"></script>
-    <title>Evaluar Sesión</title>
+    <link rel="stylesheet" href="/Evaluacion/evaluar_sesion_responsive.css">
+    <script type="module" defer src="/utilidades/utilidades.js"></script> 
+    <script type="module" defer src="/Evaluacion/evaluar_sesion.js"></script> 
+    <title>Evaluar sesión</title>
 </head>
 <body>
-
+    
     <header class="header_estilos_generales_pc">
         <picture>
             <img src="/images/logo_utdp.png" alt="Logo de la UTDP" id="logo-utdp">
@@ -27,12 +29,12 @@
     <main>
         <section class="evaluar-sesion-contenedor">
             <h2 id="bold">Datos de la sesión:</h2>
-
-            <h2>Tutor:</h2>
-            <h2>Materia:</h2>
-            <h2>Fecha: --/--/--</h2>
-            <h2>Horario: --:--</h2>
-            <h2>Salón: ---</h2>
+            
+            <h2 id="dato-tutor">Tutor:</h2>
+            <h2 id="dato-materia">Materia:</h2>
+            <h2 id="dato-fecha">Fecha: --/--/--</h2>
+            <h2 id="dato-horario">Horario: --:--</h2>
+            <h2 id="dato-salon">Salón: ---</h2>
 
             <div class="evaluar-rating">
                 <label for="rango-puntaje"><h2 id="sinmargen">Evalúe a su tutor:</h2></label>

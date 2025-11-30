@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -6,11 +7,13 @@
         <link rel="icon" href="/images/logo_utdp.png">
         <link rel="stylesheet" href="/utilidades/estilos_generales.css">
         <link rel="stylesheet" href="/Evaluacion/evaluar.css">
+        <link rel="stylesheet" href="/Evaluacion/evaluar_responsive.css">
         <script type="module" defer src="/utilidades/utilidades.js"></script>
+        <script type="module" defer src="/Evaluacion/evaluar.js"></script>
         <title>Evaluar</title>
     </head>
     <body>
-
+        
         <header class="header_estilos_generales_pc">
             <picture>
                 <img src="/images/logo_utdp.png" alt="Logo de la UTDP" id="logo-utdp">
@@ -23,7 +26,7 @@
             </picture>
         </header>
 
-
+        
         <nav class="nav_estilos_generales_pc">
             <div class="opciones-nav">
                 <a href="/Inicio/inicio.html"><h2>Inicio</h2></a>
@@ -40,61 +43,24 @@
         </nav>
 
         <main>
-
+            
             <section id="contenedor-sesiones">
-
-                <article class="tarjeta-sesion">
+                <article class="tarjeta-sesion plantilla" id="tarjeta-plantilla">
                     <h2>Datos de la Sesión</h2>
-                    <p>Tutor: Nombre del tutor</p>
-                    <p>Materia: Nombre de la materia</p>
-                    <p>Puntaje: 4.5</p>
-                    <p>Fecha: 12/11/2025</p>
-                    <button class="btn-evaluar"
-                            onclick="window.location.href='evaluar_sesion.html'">
-                        Evaluar
-                    </button>
-                </article>
-
-                <article class="tarjeta-sesion">
-                    <h2>Datos de la Sesión</h2>
-                    <p>Tutor: Nombre del tutor</p>
-                    <p>Materia: Nombre de la materia</p>
-                    <p>Puntaje: 4.5</p>
-                    <p>Fecha: 12/11/2025</p>
-                    <button class="btn-evaluar"
-                            onclick="window.location.href='evaluar_sesion.html'">
-                        Evaluar
-                    </button>
-                </article>
-
-                <article class="tarjeta-sesion">
-                    <h2>Datos de la Sesión</h2>
-                    <p>Tutor: Nombre del tutor</p>
-                    <p>Materia: Nombre de la materia</p>
-                    <p>Puntaje: 4.5</p>
-                    <p>Fecha: 12/11/2025</p>
-                    <button class="btn-evaluar"
-                            onclick="window.location.href='evaluar_sesion.html'">
-                        Evaluar
-                    </button>
-                </article>
-
-                <article class="tarjeta-sesion">
-                    <h2>Datos de la Sesión</h2>
-                    <p>Tutor: Nombre del tutor</p>
-                    <p>Materia: Nombre de la materia</p>
-                    <p>Puntaje: 4.5</p>
-                    <p>Fecha: 12/11/2025</p>
-                    <button class="btn-evaluar"
-                            onclick="window.location.href='evaluar_sesion.html'">
-                        Evaluar
-                    </button>
+                    <p class="dato-tutor">Tutor: Nombre del tutor</p>
+                    <p class="dato-materia">Materia: Nombre de la materia</p>
+                    <p class="dato-puntaje">Puntaje: 4.5</p>
+                    <p class="dato-fecha">Fecha: 12/11/2025</p>
+                    <button class="btn-evaluar">Evaluar</button>
                 </article>
             </section>
 
-            <section id="sin-sesiones">
-                <p>No hay sesiones por evaluar</p>
+            <section id="sin-sesiones" >
+                <section class="tarjeta-sin-sesiones">
+                    <p>No hay sesiones por evaluar</p>
+                </section>
             </section>
+
         </main>
 
         <footer class="footer_estilos_generales_pc">
