@@ -61,13 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     puntuacion: puntuacion
                 }),
             });
-            const data = await resp.json().catch(() => ({}));
-            const mensaje = Object.values(data.errors);
+            const data = await resp.json().catch(() => ({}))
             if (resp.ok) {
-                mostrarPopUp(mensaje[0],"/images/exito-inscripcion.png","/Evaluacion/evaluar.html");
+                mostrarPopUp(data.message,"/images/exito-inscripcion.png","/Evaluacion/evaluar.html");
             }
+
             else {
-                mostrarPopUp(mensaje[0], "/images/error-inscripcion.png");
+                mostrarPopUp(data.message, "/images/error-inscripcion.png");
                 btnEnviar.inert = false;
             }
 

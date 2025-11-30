@@ -1,11 +1,7 @@
 import {crearCirculosAnimacion, agregarContenedorAnimacion, desaparecerContenedorAnimacion} from "/utilidades/utilidades.js"
-
 const contenedorSesiones = document.getElementById("contenedor-sesiones");
 const seccionSinSesiones = document.getElementById("sin-sesiones");
-// Tarjeta plantilla que dejaste en el HTML (oculta con display:none)
-const tarjetaPlantilla   = document.getElementById("tarjeta-plantilla");
-const clon = tarjetaPlantilla.cloneNode(true);
-// Ocultamos "no hay sesiones" por defecto (por si acaso)
+
 if (seccionSinSesiones) {
     seccionSinSesiones.style.display = "none";
 }
@@ -25,37 +21,43 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
         const data = await resp.json();
         const sesiones = data.sesiones;
-        // Sí hay sesiones
+
+        // Ocultar el mensaje de no hay sesiones, si hay
         seccionSinSesiones.style.display = "none";
         contenedorSesiones.style.display = "flex";
-        contenedorSesiones.querySelectorAll(".tarjeta-sesion:not(.plantilla)")
-                          .forEach((el) => el.remove());
 
-        sesiones.forEach((sesion) => {
-            clon.classList.remove("plantilla");
-            clon.removeAttribute("id");
-            //Modificando el texto de las tarjetas con la info del backend
-            const pTutor =
-                clon.querySelector(".dato-tutor")
-                    .textContent = `Tutor: ${sesion.tutor}`;
-            const pMateria =
-                clon.querySelector(".dato-materia")
-                    .textContent = `Materia: ${sesion.materia}`;
-            const pPuntaje =
-                clon.querySelector(".dato-puntaje")
-                    .textContent = `Puntaje: ${sesion.puntaje}`;
-            const pFecha =
-                clon.querySelector(".dato-fecha")
-                    .textContent = `Fecha: ${sesion.fecha}`;
-            const boton =
-                clon.querySelector(".btn-evaluar")
-                    .addEventListener("click", () => {
+        sesiones.forEach((sesion, index) => {
+            let tituloTarjeta = document.createElement("h2");
+            tituloTarjeta.textContent = "Datos de la Sesión";
+
+            let tarjetaSesion = document.createElement("article");
+            tarjetaSesion.classList.add("tarjeta-sesion");
+            let nombreTutor = document.createElement("p");
+            nombreTutor.classList.add("dato-tutor");
+            nombreTutor.textContent = `Tutor: ${sesion.tutor}`;
+
+            let nombreMateria = document.createElement("p");
+            nombreMateria.classList.add("dato-materia");
+            nombreMateria.textContent = `Materia: ${sesion.materia}`;
+
+            let puntajeTutor = document.createElement("p");
+            puntajeTutor.classList.add("dato-puntaje");
+            puntajeTutor.textContent = `Puntaje: ${sesion.puntaje}`;
+
+            let fechaSesion = document.createElement("p");
+            fechaSesion.classList.add("dato-fecha");
+            fechaSesion.textContent = `Fecha: ${sesion.fecha}`;
+
+            const botonEvaluar = document.createElement("button");
+            botonEvaluar.textContent = "Evaluar";
+            botonEvaluar.classList.add("btn-evaluar");
+            botonEvaluar.addEventListener("click", () => {
                         sessionStorage.setItem("sesionAEvaluar", JSON.stringify(sesion));
                         window.location.href = "evaluar_sesion.html";
                     });
+            tarjetaSesion.append(tituloTarjeta, nombreTutor, puntajeTutor, fechaSesion, botonEvaluar);
+            contenedorSesiones.append(tarjetaSesion);
         });
-            // Se agrega la tarjeta perteneciente a una sesión al DOM
-            contenedorSesiones.appendChild(clon);
             desaparecerContenedorAnimacion(contenedorAnimacion);
 
     } catch (error) {

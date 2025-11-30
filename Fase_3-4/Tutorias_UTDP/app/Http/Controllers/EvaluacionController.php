@@ -59,8 +59,8 @@ class EvaluacionController extends Controller
         $codSesion = $validated['cod_sesion'];
 
         //Buscar el tutor que impartió la sesión
-        $codTutor = Imparte::select('cod_tutor')
-                           ->where('cod_sesion', $codSesion)->first();
+        $codTutor = Imparte::where('cod_sesion', $codSesion)->value('cod_tutor');
+
         //Verificar que el estudiante esté inscrito en la sesión
         $inscripcion = Inscripcion::where('estudiante_uuid', $validated['estudiante_uuid'])
             ->where('cod_sesion', $codSesion)
