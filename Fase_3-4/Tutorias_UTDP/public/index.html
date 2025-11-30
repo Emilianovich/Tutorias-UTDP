@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/images/logo_utdp.png" type="image/png">
     <title>Login</title>
+    <link rel="stylesheet" href="/utilidades/estilos_generales.css">
     <link rel="stylesheet" href="/Login/login.css">
     <link rel="stylesheet" href="/Login/login_responsive.css">
 </head>
@@ -26,12 +27,14 @@
             </h1>
 
             <div class="input-login">
-                <input type="email" name="correo" placeholder="Correo" required>
+                <label for="correo" class="sr-only">Correo</label>
+                <input type="email" name="correo" id="correo" placeholder="Correo">
             </div>
 
             <div class="input-login">
-                <input type="password" name="password" id="password" placeholder="Contraseña" required>
-                <img src="./images/eye_closed.png" alt="ojo password" id="password_image">
+                <label for="contraseña" class="sr-only">Contraseña</label>
+                <input type="password" name="contraseña" id="contraseña" placeholder="Contraseña">
+                <img src="/images/eye_closed.png" alt="ojo password" id="password_image">
             </div>
 
             <div class="boton">
@@ -43,7 +46,6 @@
     </div>
 </section>
 
-<script type="module" src="/Registrarse/registrarse.js"></script>
-
+<script type="module" src="/Login/login.js"></script>
 </body>
 </html>

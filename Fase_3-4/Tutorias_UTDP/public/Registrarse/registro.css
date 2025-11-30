@@ -25,7 +25,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/desktop_fondo.jpg');
+    background-image: url('/images/desktop_fondo.jpg');
     background-size: cover;
     background-position: center;
     filter: blur(8px);
@@ -185,4 +185,16 @@ body {
 .botones-login-registro a {
     text-decoration: none;
     color: #333;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
 }
