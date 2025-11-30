@@ -297,3 +297,7 @@ button {
 #pop-up p {
     font-size: 1.5em !important;
 }
+
+[inert] {
+    opacity: 0.5;
+}

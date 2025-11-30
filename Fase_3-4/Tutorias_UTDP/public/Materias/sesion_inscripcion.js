@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     /*Procesar la inscripción del estudiante*/
     botonConfirmarBoton.addEventListener("click", async () => {
+        contenedorBotones.inert = true;
         const datosInscripcion = {
             "estudiante_uuid":  estudianteUUID,
             "cod_sesion": cod_sesion,

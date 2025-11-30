@@ -118,6 +118,7 @@ if (document.body.id === "pagina-perfil") {
         botonSiPopUp.innerText = "Sí";
         botonSiPopUp.cursor = "pointer";
         botonSiPopUp.addEventListener("click", async () => {
+            contenedorbtnPopups.inert = true;
             const cod_sesion = sessionStorage.getItem("cod_sesion");
             await desinscripcion(estudiante_uuid, cod_sesion);
             contenedorConfPopUp.classList.remove("mostrar");
