@@ -1,18 +1,36 @@
-import {crearCirculosAnimacion, agregarContenedorAnimacion, desaparecerContenedorAnimacion, mostrarPopUp} from "/utilidades/utilidades.js"
-const slider = document.getElementById('rango-puntaje');
-    const labelValor = document.getElementById('valor-puntaje');
-    const btnEnviar = document.getElementById('btn-enviar-evaluacion');
-    const spanEstrellas = document.querySelector('.estrella');
+import {mostrarPopUp} from "/utilidades/utilidades.js"
+document.addEventListener("DOMContentLoaded", () => {
+    // ==== Obtener datos de la sesión seleccionada ====
+    const sesionGuardada = sessionStorage.getItem("sesionAEvaluar");
+    const estudianteUUID = sessionStorage.getItem("estudiante_uuid");
 
-    // Función para actualizar número + estrellas
+    if (!sesionGuardada) {
+        location.href = "/Evaluacion/evaluar.html";
+    }
+    const sesion = JSON.parse(sesionGuardada);
+    // ==== Rellenar los datos de la sesión en los <h2> ====
+    const hTutor   = document.getElementById("dato-tutor");
+    const hMateria = document.getElementById("dato-materia");
+    const hFecha   = document.getElementById("dato-fecha");
+    const hHorario = document.getElementById("dato-horario");
+    const hSalon   = document.getElementById("dato-salon");
+
+    hTutor.textContent   = `Tutor: ${sesion.tutor}`;
+    hMateria.textContent = `Materia: ${sesion.materia}`;
+    hFecha.textContent   = `Fecha: ${sesion.fecha}`;
+    hHorario.textContent = `Horario: ${sesion.hora}`;
+    hSalon.textContent   = `Salón: ${sesion.salon}`;
+
+    // ==== Lógica del slider y las estrellas ====
+    const slider      = document.getElementById('rango-puntaje');
+    const labelValor  = document.getElementById('valor-puntaje');
+    const spanEstrellas = document.querySelector('.estrella');
+    const btnEnviar   = document.getElementById('btn-enviar-evaluacion');
+
     function actualizarRating() {
         const v = parseInt(slider.value, 10) || 0;
-
-        // número pequeño a la derecha
         labelValor.textContent = v;
 
-        // estrellas arriba de la barra:
-        // 0 => vacío, 1..5 => tantas ★ como valor
         if (v <= 0) {
             spanEstrellas.textContent = '-';
         } else {
@@ -21,31 +39,40 @@ const slider = document.getElementById('rango-puntaje');
         }
     }
 
-    // Inicial (barra en 0, sin estrellas)
+    // Estado inicial
     actualizarRating();
-
-    // Cada vez que muevo la barra
     slider.addEventListener('input', actualizarRating);
 
-    // Mostrar pop-ups según valor
-    btnEnviar.addEventListener('click', () => {
-        const v = parseInt(slider.value, 10);
+    // ==== Enviar evaluación al backend ====
+    btnEnviar.addEventListener('click', async () => {
+        btnEnviar.inert = true;
+        const puntuacion = parseInt(slider.value, 10);
 
-        if (isNaN(v) || v < 1 || v > 5) {
-            // POPUP 1: puntuación inválida
-            popMensaje= 'Por favor, coloque una puntuación entre \n1 y 5';
-            popImagen= '/images/error-inscripcion.png'; // popup1
-            mostrarPopUpSinRedirect(popMensaje, popImagen)
-        } else {
-            // Aquí iría el envío real al backend
+        try {
+            const resp = await fetch("http://127.0.0.1:8000/api/evaluaciones", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                },
+                body: JSON.stringify({
+                    estudiante_uuid: estudianteUUID,
+                    cod_sesion: sesion.cod_sesion,
+                    puntuacion: puntuacion
+                }),
+            });
+            const data = await resp.json().catch(() => ({}))
+            if (resp.ok) {
+                mostrarPopUp(data.message,"/images/exito-inscripcion.png","/Evaluacion/evaluar.html");
+            }
 
-            // POPUP 2: éxito
-            popMensaje= 'Evaluación enviada exitosamente';
-            popImagen= '/images/exito-inscripcion.png';  // popup2
-            mostrarPopUpConRedirect(popMensaje, popImagen, 'evaluar.html')
+            else {
+                mostrarPopUp(data.message, "/images/error-inscripcion.png");
+                btnEnviar.inert = false;
+            }
+
+        } catch (error) {
+            console.error("Error al enviar evaluación:", error);
         }
     });
-
-    btnCerrar.addEventListener('click', () => {
-        contPop.classList.remove('mostrar');
-    });
+});
