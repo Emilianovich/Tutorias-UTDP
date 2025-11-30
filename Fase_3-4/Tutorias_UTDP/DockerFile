@@ -1,0 +1,41 @@
+# Imagen base con PHP 8.3 + FPM
+FROM php:8.3-fpm
+
+# Instalar dependencias del sistema
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    zip \
+    unzip \
+    libpq-dev \
+    libonig-dev \
+    libxml2-dev \
+    libzip-dev \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    && docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
+
+# Instalar composer
+COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
+
+# Establecer directorio de trabajo
+WORKDIR /app
+
+# Copiar archivos de Laravel
+COPY . .
+
+# Instalar dependencias de Laravel
+RUN composer install --no-dev --optimize-autoloader
+
+# Generar cache de configuración
+RUN php artisan config:cache \
+    && php artisan route:cache \
+    && php artisan view:cache
+
+# Puerto que Render usará
+EXPOSE 10000
+
+# Comando final para iniciar Laravel
+CMD php artisan serve --host 0.0.0.0 --port 10000
+
