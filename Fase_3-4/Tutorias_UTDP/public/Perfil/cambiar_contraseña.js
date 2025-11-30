@@ -69,16 +69,20 @@ async function cambiarContrasena() {
         mostrarPopUp(mensaje,src, redireccion);
         document.getElementById('form_cambiar_contra').reset();
     } else if(response_Contra.status === 422){
+        botonGuardar.inert = false;
         const mensaje = data_Contra.message;
         const src = '/images/error-inscripcion.png';
         mostrarPopUp(mensaje,src);
-    }else
-    {
+    } else {
+        botonGuardar.inert = false;
         const mensaje = 'Ocurrió un error inesperado';
         const src = '/images/error-inscripcion.png';
         mostrarPopUp(mensaje,src);
     }
 }
+
+const botonGuardar = document.getElementById("boton-guardar-contraseña");
+botonGuardar.addEventListener("click", () => botonGuardar.inert = true);
 
 const form = document.getElementById('form_cambiar_contra');
 form.addEventListener('submit', (e) => {

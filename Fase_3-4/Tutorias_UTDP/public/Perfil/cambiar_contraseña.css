@@ -99,3 +99,7 @@ button:hover {
 button:active {
     transform: scale(0.95);
 }
+
+[inert] {
+    opacity: 0.5;
+}
