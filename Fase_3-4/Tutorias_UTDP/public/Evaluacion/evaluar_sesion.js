@@ -1,25 +1,13 @@
-import {crearCirculosAnimacion, agregarContenedorAnimacion, desaparecerContenedorAnimacion, mostrarPopUp} from "/utilidades/utilidades.js"
+import {mostrarPopUp} from "/utilidades/utilidades.js"
 document.addEventListener("DOMContentLoaded", () => {
     // ==== Obtener datos de la sesión seleccionada ====
     const sesionGuardada = sessionStorage.getItem("sesionAEvaluar");
     const estudianteUUID = sessionStorage.getItem("estudiante_uuid");
 
     if (!sesionGuardada) {
-        // Si alguien entra directo a evaluar_sesion.html sin pasar por Evaluar
-        if (typeof mostrarPopUp === "function") {
-            mostrarPopUp(
-                "No se encontró ninguna sesión seleccionada para evaluar.",
-                "../images/error-inscripcion.png",
-                "evaluar.html"
-            );
-        } else {
-            window.location.href = "evaluar.html";
-        }
-        return;
+        location.href = "/Evaluacion/evaluar.html";
     }
-
     const sesion = JSON.parse(sesionGuardada);
-
     // ==== Rellenar los datos de la sesión en los <h2> ====
     const hTutor   = document.getElementById("dato-tutor");
     const hMateria = document.getElementById("dato-materia");
@@ -57,29 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ==== Enviar evaluación al backend ====
     btnEnviar.addEventListener('click', async () => {
+        btnEnviar.inert = true;
         const puntuacion = parseInt(slider.value, 10);
-
-        // Validación básica en el frontend (mínima)
-        if (isNaN(puntuacion) || puntuacion < 1 || puntuacion > 5) {
-            if (typeof mostrarPopUp === "function") {
-                mostrarPopUp(
-                    "Por favor, seleccione una puntuación entre 1 y 5",
-                    "../images/error-inscripcion.png"
-                );
-            }
-            return;
-        }
-
-        if (!estudianteUUID) {
-            if (typeof mostrarPopUp === "function") {
-                mostrarPopUp(
-                    "No se encontró la información del estudiante. Inicie sesión nuevamente.",
-                    "../images/error-inscripcion.png",
-                    "../Login/login.html"
-                );
-            }
-            return;
-        }
 
         try {
             const resp = await fetch("http://127.0.0.1:8000/api/evaluaciones", {
@@ -94,64 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     puntuacion: puntuacion
                 }),
             });
-                
-            // 201 => creada ok
-            if (resp.status === 201) {
-
-                const data = await resp.json();
-                const mensaje = data.mensaje || "Evaluación enviada exitosamente";
-                
-                if (typeof mostrarPopUp === "function") {
-                    mostrarPopUp(
-                        mensaje,
-                        "../images/exito-inscripcion.png",
-                        "evaluar.html"
-                    );
-                } else {
-                    window.location.href = "evaluar.html";
-                }
-                return;
+            const data = await resp.json().catch(() => ({}));
+            const mensaje = Object.values(data.errors);
+            if (resp.ok) {
+                mostrarPopUp(mensaje[0],"/images/exito-inscripcion.png","/Evaluacion/evaluar.html");
             }
-
-            // Para cualquier otro código de estado, intentar obtener el mensaje del backend
-            const errorData = await resp.json().catch(() => ({}));
-            const mensajeError = errorData.mensaje || errorData.message || `Error al procesar la evaluación (código ${resp.status})`;
-
-            // Determinar la imagen según el código de estado
-            const imagenError = resp.status >= 400 && resp.status < 500 
-                ? "../images/error-inscripcion.png" 
-                : "../images/error-inscripcion.png";
-
-            // Determinar si debe redirigir a evaluar.html
-            const debeRedirigir = resp.status === 404 || resp.status === 409;
-
-            if (typeof mostrarPopUp === "function") {
-                mostrarPopUp(
-                    mensajeError,
-                    imagenError,
-                    debeRedirigir ? "evaluar.html" : undefined
-                );
-            } else {
-                alert(mensajeError);
-                if (debeRedirigir) {
-                    window.location.href = "evaluar.html";
-                }
+            else {
+                mostrarPopUp(mensaje[0], "/images/error-inscripcion.png");
+                btnEnviar.inert = false;
             }
 
         } catch (error) {
             console.error("Error al enviar evaluación:", error);
-            
-            // Intentar determinar si es un error de red o de otro tipo
-            const mensajeError = error.message || "No se pudo conectar con el servidor. Intente nuevamente.";
-            
-            if (typeof mostrarPopUp === "function") {
-                mostrarPopUp(
-                    mensajeError,
-                    "../images/error-inscripcion.png"
-                );
-            } else {
-                alert(mensajeError);
-            }
         }
     });
 });

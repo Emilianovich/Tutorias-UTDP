@@ -9,7 +9,7 @@ body{
     height: 100vh;
 }
 
-header{ 
+header{
     grid-area: header;
 }
 
@@ -17,11 +17,11 @@ header{
     display: none;
 }
 
-main{ 
+main{
     grid-area: main;
 }
 
-footer{ 
+footer{
     grid-area: footer;
     margin-top: 1em;
 }
@@ -125,4 +125,8 @@ main{
     border-radius: 999px;
     background-color: #eebbc3;
     cursor: pointer;
+}
+
+[inert] {
+    opacity: 0.5 ;
 }
