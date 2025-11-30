@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: utdp-tutorias-api
+    rootDir: Fase_3-4/Tutorias_UTDP
+    runtime: php
+    buildCommand: "composer install --no-dev --optimize-autoloader"
+    startCommand: "php artisan serve --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: APP_ENV
+        value: production
+
