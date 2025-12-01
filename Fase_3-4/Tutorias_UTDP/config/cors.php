@@ -7,7 +7,7 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        '',   // Agregar url del front de Firebase
+        'https://utdp-tutorias.web.app',
         'http://localhost:5173',
     ],
 
