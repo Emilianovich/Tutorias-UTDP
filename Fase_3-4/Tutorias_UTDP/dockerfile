@@ -1,14 +1,7 @@
 FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    unzip \
-    libpng-dev \
-    libzip-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip
+    git curl unzip libpng-dev libzip-dev libonig-dev libxml2-dev zip
 
 RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl bcmath
 
@@ -18,21 +11,10 @@ WORKDIR /var/www
 
 COPY . .
 
-
-
 RUN composer install --no-dev --optimize-autoloader --no-interaction
-
-
-RUN php -r "file_exists('.env') ?: copy('.env.example', '.env');" \
-    && php artisan key:generate
 
 RUN chmod -R 777 storage bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache
-
-
-RUN php artisan config:clear \
-    && php artisan route:clear \
-    && php artisan view:clear
 
 EXPOSE 10000
 
