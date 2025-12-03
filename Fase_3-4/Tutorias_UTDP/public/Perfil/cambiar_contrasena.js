@@ -70,7 +70,12 @@ async function cambiarContrasena() {
         document.getElementById('form_cambiar_contra').reset();
     } else if(response_Contra.status === 422){
         botonGuardar.inert = false;
-        const mensaje = data_Contra.message;
+        let mensaje = "";
+        //si laravel mandó errores específicos, se toma solo el primero
+        if (data_Contra.errors) {
+            const primerError = Object.keys(data_Contra.errors)[0];
+            mensaje = data_Contra.errors[primerError][0];
+        }
         const src = '../images/error-inscripcion.png';
         mostrarPopUp(mensaje,src);
     } else {
