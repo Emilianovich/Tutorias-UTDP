@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const estudianteUUID = sessionStorage.getItem("estudiante_uuid");
 
     try {
-        const resp = await fetch( `http://127.0.0.1:8000/api/sesiones-por-evaluar/${estudianteUUID}`);
+        const resp = await fetch( `https://tutorias-utdp-production.up.railway.app/api/sesiones-por-evaluar/${estudianteUUID}`);
         // Mostrar mensaje cuando el estudiante no tiene sesiones por evaluar
         if (!resp.ok) {
             const errorData = await resp.json().catch(() => ({}));

@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const puntuacion = parseInt(slider.value, 10);
 
         try {
-            const resp = await fetch("http://127.0.0.1:8000/api/evaluaciones", {
+            const resp = await fetch("https://tutorias-utdp-production.up.railway.app/api/evaluaciones", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

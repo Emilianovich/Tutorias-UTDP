@@ -9,7 +9,7 @@ const main = document.getElementById("main-sesion-inscripcion");
 document.addEventListener("DOMContentLoaded", async function () {
     const contenedorAnimacion = crearCirculosAnimacion();
     agregarContenedorAnimacion(contenedorAnimacion);
-    const request = await fetch(`http://127.0.0.1:8000/api/inscripcion/${cod_materia}/${cod_sesion}`);
+    const request = await fetch(`https://tutorias-utdp-production.up.railway.app/api/inscripcion/${cod_materia}/${cod_sesion}`);
     if (request.ok) {
         desaparecerContenedorAnimacion(contenedorAnimacion);
     }
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const botonRechazarBoton = document.createElement("button");
     botonRechazarBoton.innerText = "Cancelar Inscripcion";
     botonRechazarBoton.addEventListener("click", ()=>{
-        window.location.href = `materia_sesiones.html?id=${cod_materia}`;
+        window.location.href = `./materia_sesiones.html?id=${cod_materia}`;
     })
     contenedorBotones.append(botonConfirmarBoton, botonRechazarBoton);
 
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 /*Función para gestionar las inscripciones de los estudiantes*/
 async function inscripcionSesion(datosInscripcion) {
-    const inscripcion_request = await fetch("http://127.0.0.1:8000/api/inscripcion", {
+    const inscripcion_request = await fetch("https://tutorias-utdp-production.up.railway.app/api/inscripcion", {
         method: "POST",
         headers: { "Content-Type": "application/json",
                     "Accept": "application/json",},
@@ -97,7 +97,7 @@ async function inscripcionSesion(datosInscripcion) {
     if (inscripcion_request.status === 201) {
         const src = "../images/exito-inscripcion.png";
         const mensaje = inscripcion_response.mensaje;
-        mostrarPopUp(mensaje,src,`materia_sesiones.html?id=${cod_materia}`);
+        mostrarPopUp(mensaje,src,`./materia_sesiones.html?id=${cod_materia}`);
     }
     else {
         const src = "../images/error-inscripcion.png";

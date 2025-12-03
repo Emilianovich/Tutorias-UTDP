@@ -1,5 +1,3 @@
-const API_BASE_URL = 'http://localhost:8000/api';
-
 togglePasswordVisibility("contraseña", "password_image");
 
 function togglePasswordVisibility(inputId, imageId) {
@@ -13,10 +11,10 @@ function togglePasswordVisibility(inputId, imageId) {
     toggleImage.addEventListener('click', () => {
         if (passwordInput.type === 'password') {
             passwordInput.type = 'text';
-            toggleImage.src = '/images/eye_open.png';
+            toggleImage.src = '../images/eye_open.png';
         } else {
             passwordInput.type = 'password';
-            toggleImage.src = '/images/eye_closed.png';
+            toggleImage.src = '../images/eye_closed.png';
         }
     });
 }
@@ -41,7 +39,7 @@ formulario.addEventListener('submit', async (e) => {
     if (!validarCamposVacios(datosEstudiante)) {
         mostrarPopUp(
             'Por favor, llene todos los campos solicitados',
-            '/images/error-inscripcion.png'
+            '../images/error-inscripcion.png'
         );
         return;
     }
@@ -50,7 +48,7 @@ formulario.addEventListener('submit', async (e) => {
     deshabilitarFormulario();
 
     try {
-        const response = await fetch(`${API_BASE_URL}/registrarse`, {
+        const response = await fetch(`https://tutorias-utdp-production.up.railway.app/api/registrarse`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -65,7 +63,7 @@ formulario.addEventListener('submit', async (e) => {
             // Mensaje de éxito desde el backend
             mostrarPopUp(
                 data.message,
-                '/images/exito-inscripcion.png',
+                '../images/exito-inscripcion.png',
                 '/index.html'
             );
         } else {
@@ -80,14 +78,14 @@ formulario.addEventListener('submit', async (e) => {
                 mensajeError = data.message;
             }
 
-            mostrarPopUp(mensajeError, '/images/error-inscripcion.png');
+            mostrarPopUp(mensajeError, '../images/error-inscripcion.png');
         }
 
     } catch (error) {
         console.error('Error de conexión:', error);
         mostrarPopUp(
             'Error de conexión con el servidor. Por favor, intente nuevamente.',
-            '/images/error-inscripcion.png'
+            '../images/error-inscripcion.png'
         );
         habilitarFormulario();
     }

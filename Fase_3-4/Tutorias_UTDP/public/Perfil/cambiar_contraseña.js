@@ -8,14 +8,14 @@ const nueva_image = document.getElementById("ojo_contranueva");
 nueva_image.addEventListener("click", ()=>{
     if(nueva_field.type === "password") {
         nueva_field.type = "text";
-        nueva_image.src = "/images/passwordeye.png";
+        nueva_image.src = "../images/passwordeye.png";
         nueva_image.alt = "Opened eye by th studio";
     }
 
 //Changing the eye icon back and hiding the password
     else {
         nueva_field.type = "password";
-        nueva_image.src= "/images/close-eye.png";
+        nueva_image.src= "../images/close-eye.png";
         nueva_image.alt = "Closed eye by Rahul Kaklotar";
     }
 })
@@ -30,14 +30,14 @@ const confirm_image = document.getElementById("ojo_contraconfirm");
 confirm_image.addEventListener("click", ()=>{
     if(confirm_field.type === "password") {
         confirm_field.type = "text";
-        confirm_image.src = "/images/passwordeye.png";
+        confirm_image.src = "../images/passwordeye.png";
         confirm_image.alt = "Opened eye by th studio";
     }
 
 //Changing the eye icon back and hiding the password
     else {
         confirm_field.type = "password";
-        confirm_image.src= "/images/close-eye.png";
+        confirm_image.src= "../images/close-eye.png";
         confirm_image.alt = "Closed eye by Rahul Kaklotar";
     }
 })
@@ -48,7 +48,7 @@ async function cambiarContrasena() {
     const confirm = document.getElementById('confirm_input').value;
     const estudiante_uuid = sessionStorage.getItem('estudiante_uuid');
 
-    const response_Contra = await fetch(`http://127.0.0.1:8000/api/cambiarContrasena/${estudiante_uuid}`, {
+    const response_Contra = await fetch(`https://tutorias-utdp-production.up.railway.app/api/cambiarContrasena/${estudiante_uuid}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -64,19 +64,19 @@ async function cambiarContrasena() {
 
     if (response_Contra.status === 200) {
         const mensaje = data_Contra.mensaje;
-        const src = '/images/exito-inscripcion.png';
+        const src = '../images/exito-inscripcion.png';
         const redireccion = `perfil.html?${estudiante_uuid}`;
         mostrarPopUp(mensaje,src, redireccion);
         document.getElementById('form_cambiar_contra').reset();
     } else if(response_Contra.status === 422){
         botonGuardar.inert = false;
         const mensaje = data_Contra.message;
-        const src = '/images/error-inscripcion.png';
+        const src = '../images/error-inscripcion.png';
         mostrarPopUp(mensaje,src);
     } else {
         botonGuardar.inert = false;
         const mensaje = 'Ocurrió un error inesperado';
-        const src = '/images/error-inscripcion.png';
+        const src = '../images/error-inscripcion.png';
         mostrarPopUp(mensaje,src);
     }
 }

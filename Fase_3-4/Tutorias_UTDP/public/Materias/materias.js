@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const contenedorAnimacion = crearCirculosAnimacion();
     agregarContenedorAnimacion(contenedorAnimacion);
     window.dispatchEvent(new Event('resize'));
-    const request = await fetch(`http://127.0.0.1:8000/api/materia/${codMateria}/${cedula_estudiante}`);
+    const request = await fetch(`https://tutorias-utdp-production.up.railway.app/api/materia/${codMateria}/${cedula_estudiante}`);
     if (request.ok) {
         desaparecerContenedorAnimacion(contenedorAnimacion);
     }
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             let boton = document.createElement("button");
             let linkBoton = document.createElement("a");
             linkBoton.innerText = "Solicitar Tutoría";
-            linkBoton.href = `materia_inscripcion.html?id=${codMateria}&sesion=${sesion.cod_sesion}`;
+            linkBoton.href = `./materia_inscripcion.html?id=${codMateria}&sesion=${sesion.cod_sesion}`;
             boton.appendChild(linkBoton);
             contenedorCupoBoton.append(cuposSesion, boton);
 

@@ -1,6 +1,6 @@
 /*Verificación sesion*/
 if (!sessionStorage.getItem("estudiante_uuid")) {
-    window.location.replace("/index.html");
+    window.location.replace("https://utdp-tutorias.web.app/");
 }
 
 /*Nav dinámico*/
@@ -32,31 +32,31 @@ contenedorBotonCerrar.id = "contenedor-boton-cerrar";
 
 const botonCerrar = document.createElement("img");
 botonCerrar.id = "botonCerrar";
-botonCerrar.src = "/images/close.png";
+botonCerrar.src = "../images/close.png";
 contenedorBotonCerrar.appendChild(botonCerrar);
 
 const opcionInicio = document.createElement("p");
 const linkInicio = document.createElement("a");
 linkInicio.innerText = "Inicio";
-linkInicio.href = "/Inicio/inicio.html";
+linkInicio.href = "../Inicio/inicio.html";
 opcionInicio.appendChild(linkInicio);
 
 const opcionMateria = document.createElement("p");
 const linkMateria = document.createElement("a");
 linkMateria.innerText = "Materia";
-linkMateria.href = "/Materias/materias.html";
+linkMateria.href = "../Materias/materias.html";
 opcionMateria.appendChild(linkMateria);
 
 const opcionEvaluar = document.createElement("p");
 const linkEvaluar = document.createElement("a");
 linkEvaluar.innerText = "Evaluar";
-linkEvaluar.href = "/Evaluacion/evaluar.html";
+linkEvaluar.href = "../Evaluacion/evaluar.html";
 opcionEvaluar.appendChild(linkEvaluar);
 
 const opcionNosotros = document.createElement("p");
 const linkNosotros = document.createElement("a");
 linkNosotros.innerText = "Nosotros";
-linkNosotros.href = "/Nosotros/nosotros.html";
+linkNosotros.href = "../Nosotros/nosotros.html";
 opcionNosotros.appendChild(linkNosotros);
 
 contenedorMenu.append(contenedorBotonCerrar, opcionInicio, opcionMateria, opcionEvaluar, opcionNosotros);
@@ -67,7 +67,7 @@ const screenSize = window.matchMedia("(max-width: 480px)");
 const header = document.querySelector("header");
 const nav = document.querySelector("nav");
 const hamburgerMenu = document.createElement("img");
-hamburgerMenu.src = "/images/hamburger_menu.png";
+hamburgerMenu.src = "../images/hamburger_menu.png";
 hamburgerMenu.id = "hamburger-menu";
 hamburgerMenu.alt = "Hamburger menu by Md Tanvirul Haque";
 const iconoPerfil = document.getElementById("picture-icono-perfil");
@@ -174,14 +174,14 @@ export function mostrarPopUp(mensaje, src, redireccion) {
 }
 export function cerrarSesion() {
     sessionStorage.clear();
-    location.replace("/index.html");
+    location.replace("https://utdp-tutorias.web.app/");
 }
 
 /*Agregando el vínculo a la página de Perfil*/
 const perfilIcono = document.getElementById("icono-perfil");
 if (perfilIcono !== null) {
     perfilIcono.addEventListener("click", () => {
-        window.location.href = "/Perfil/perfil.html";
+        window.location.href = "../Perfil/perfil.html";
     })
 }
 
@@ -211,6 +211,6 @@ if (!sessionStorage.getItem("estudiante_uuid")) {
     agregarContenedorAnimacion(contenedorAnimacion);
     setTimeout(()=> {
         desaparecerContenedorAnimacion(contenedorAnimacion);
-        location.href = "/index.html";
+        location.href = "https://utdp-tutorias.web.app/";
     }, 2001);
 }

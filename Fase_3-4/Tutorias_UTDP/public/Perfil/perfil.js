@@ -15,7 +15,7 @@ if (document.body.id === "pagina-perfil") {
             const contenedorAnimacion = crearCirculosAnimacion();
             agregarContenedorAnimacion(contenedorAnimacion);
 
-            const request = await fetch(`http://127.0.0.1:8000/api/estudiante/${estudiante_uuid}`);
+            const request = await fetch(`https://tutorias-utdp-production.up.railway.app/api/estudiante/${estudiante_uuid}`);
             if (request.ok) {
                 desaparecerContenedorAnimacion(contenedorAnimacion);
             }
@@ -44,7 +44,7 @@ if (document.body.id === "pagina-perfil") {
 //Trayendo Sesiones Pendientes
     async function cargarSesionesPendientes () {
         try {
-            const requestSesionesPend = await fetch(`http://127.0.0.1:8000/api/sesion/pendiente/${estudiante_uuid}`);
+            const requestSesionesPend = await fetch(`https://tutorias-utdp-production.up.railway.app/api/sesion/pendiente/${estudiante_uuid}`);
             const responseSesionesPend = await requestSesionesPend.json();
 
             const contenedor_divs_pendientes = document.getElementById("contenedor_sesiones_pendientes");
@@ -103,7 +103,7 @@ if (document.body.id === "pagina-perfil") {
         mensajePopUp.innerText = "¿Segur@ que desea cancelar su inscripción?";
 
         const imagen = document.createElement("img");
-        imagen.src = "/images/error-inscripcion.png";
+        imagen.src = "../images/error-inscripcion.png";
 
         const contenedorbtnPopups = document.createElement("div");
         contenedorbtnPopups.style.display = "flex";
@@ -146,7 +146,7 @@ if (document.body.id === "pagina-perfil") {
     /*Desinscribirse*/
     async function desinscripcion(estudiante_uuid, cod_sesion) {
         try {
-            const desinscripcion_request = await fetch(`http://127.0.0.1:8000/api/desinscripcion/${estudiante_uuid}/${cod_sesion}`, {
+            const desinscripcion_request = await fetch(`https://tutorias-utdp-production.up.railway.app/api/desinscripcion/${estudiante_uuid}/${cod_sesion}`, {
                 method: 'DELETE',
                 headers: {
                     "Content-Type": "application/json",
@@ -155,7 +155,7 @@ if (document.body.id === "pagina-perfil") {
             });
             const desinscripcion_response = await desinscripcion_request.json();
             if (desinscripcion_request.status === 200) {
-                const src = "/images/exito-inscripcion.png";
+                const src = "../images/exito-inscripcion.png";
                 const mensaje = desinscripcion_response.mensaje;
                 mostrarPopUpValid(mensaje, src);
             }
@@ -196,7 +196,7 @@ if (document.body.id === "pagina-perfil") {
     //Trayendo Sesiones Anteriores
     async function cargarSesionesAnteriores () {
         try {
-            const requestSesionesAnt = await fetch(`http://127.0.0.1:8000/api/sesion/anterior/${estudiante_uuid}`);
+            const requestSesionesAnt = await fetch(`https://tutorias-utdp-production.up.railway.app/api/sesion/anterior/${estudiante_uuid}`);
             const responseSesionesAnt = await requestSesionesAnt.json();
 
 
@@ -274,7 +274,7 @@ if (document.body.id === "pagina-perfil") {
     const btncambiar_contra = document.getElementById('boton_cambiar_contra');
 
     btncambiar_contra.addEventListener('click', () => {
-        window.location.href = '/Perfil/cambiar_contraseña.html';
+        window.location.href = 'https://utdp-tutorias.web.app/Perfil/cambiar_contraseña.html';
     });
 }
 

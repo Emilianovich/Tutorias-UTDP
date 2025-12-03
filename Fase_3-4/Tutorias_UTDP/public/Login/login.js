@@ -1,5 +1,3 @@
-const API_BASE_URL = 'http://localhost:8000/api';
-
 togglePasswordVisibility("contraseña", "password_image");
 
 function togglePasswordVisibility(inputId, imageId) {
@@ -13,10 +11,10 @@ function togglePasswordVisibility(inputId, imageId) {
     toggleImage.addEventListener('click', () => {
         if (passwordInput.type === 'password') {
             passwordInput.type = 'text';
-            toggleImage.src = '/images/eye_open.png';
+            toggleImage.src = '../images/eye_open.png';
         } else {
             passwordInput.type = 'password';
-            toggleImage.src = '/images/eye_closed.png';
+            toggleImage.src = '../images/eye_closed.png';
         }
     });
 }
@@ -36,7 +34,7 @@ formulario.addEventListener('submit', async (e) => {
     if (!validarCamposVacios(datosLogin)) {
         mostrarPopUp(
             'Por favor, llene todos los campos solicitados',
-            '/images/error-inscripcion.png'
+            '../images/error-inscripcion.png'
         );
         return;
     }
@@ -45,7 +43,7 @@ formulario.addEventListener('submit', async (e) => {
     deshabilitarFormulario();
 
     try {
-        const response = await fetch(`${API_BASE_URL}/login`, {
+        const response = await fetch(`https://tutorias-utdp-production.up.railway.app/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -61,7 +59,7 @@ formulario.addEventListener('submit', async (e) => {
             sessionStorage.setItem('estudiante_uuid', data.uuid);
 
             // Redirigir al inicio
-            window.location.href = '/Inicio/inicio.html';
+            window.location.href = '../Inicio/inicio.html';
         } else {
             // Extraer mensaje de error desde el backend
             let mensajeError = 'Error en el inicio de sesión';
@@ -74,7 +72,7 @@ formulario.addEventListener('submit', async (e) => {
                 mensajeError = data.message;
             }
 
-            mostrarPopUp(mensajeError, '/images/error-inscripcion.png');
+            mostrarPopUp(mensajeError, '../images/error-inscripcion.png');
             habilitarFormulario();
         }
 
