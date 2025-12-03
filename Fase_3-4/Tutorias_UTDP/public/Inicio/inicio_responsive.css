@@ -2,22 +2,27 @@
 @media (max-width: 480px){
 
 header {
-    width: 480px;
+    max-width: 100%;
+    width: 100%;
 }
 
 main{
-    width: 480px;
-    margin-inline:auto;
+    max-width: 100%;
+    width: 100%;
+    margin-inline: auto;
     padding-block: 1rem;
     row-gap: 1.25rem;
+    box-sizing: border-box;
 }
 
   /* Bloque 1: imagen + bienvenida a una sola columna */
 .inicio-bienvenida{
-    width: 480px;
+    max-width: 100%;
+    width: 100%;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding-block: .5rem;
+    box-sizing: border-box;
 }
 
 .inicio-main-bienvenida{
@@ -28,22 +33,23 @@ main{
     border-radius: 2em;
     margin-left: 3em;
     margin-right: 3em;
+    box-sizing: border-box;
 }
 
 .inicio-bienvenida-imagen .imagen-inicio{
     width: 100%;
     height: auto;
-    display:block;
+    display: block;
 }
 
-inicio-main-bienvenida{
+.inicio-main-bienvenida{
     padding: 1.1rem 1rem;
     border-radius: 1rem;
 }
 
 .inicio-main-bienvenida h1{
     font-size: 1.25rem; 
-    margin-bottom:1.65rem; 
+    margin-bottom: 1.65rem; 
 }
 
 .inicio-main-bienvenida p {
@@ -52,16 +58,22 @@ inicio-main-bienvenida{
 
   /* Bloque 2: 3 imágenes apiladas + tarjetas de Misión/Visión en 1 columna */
 .inicio-misionvision{ 
-    width: 480px;
-    row-gap: 1rem; 
+    max-width: 100%;
+    width: 100%;
+    row-gap: 1rem;
+    box-sizing: border-box;
 }
 
 .inicio-misionvision-imagenes{
-    width: 480px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .inicio-misionvision-imagenes .imagen-inicio{
-    width:100%; aspect-ratio: 16/9; object-fit: cover;
+    width: 100%; 
+    aspect-ratio: 16/9; 
+    object-fit: cover;
 }
 
 .inicio-misionvision-texto{
@@ -70,7 +82,8 @@ inicio-main-bienvenida{
       "titulo"
       "mision"
       "vision";
-    gap: 2rem; 
+    gap: 2rem;
+    box-sizing: border-box;
 }
 
 .inicio-misionvision-texto-titulo{
@@ -94,8 +107,8 @@ inicio-main-bienvenida{
     border-radius: 2.8rem;
     margin-right: 3.2em;
     margin-left: 3em;
+    box-sizing: border-box;
 }
-
 
 .inicio-misionvision-texto-mision h2,
 .inicio-misionvision-texto-vision h2{
@@ -109,6 +122,9 @@ inicio-main-bienvenida{
 
 footer{
     margin-top: 0em;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 }

@@ -6,12 +6,16 @@ main{
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    padding-inline: 1rem;
+    box-sizing: border-box;
 }
 
 .evaluar-sesion-contenedor{
     width: 90vw;
+    max-width: 100%;
     padding: 2.4rem 1rem .9rem;
     border-radius: 20px;
+    box-sizing: border-box;
 }
 
 .evaluar-sesion-contenedor h2{
@@ -40,7 +44,9 @@ main{
     gap: .5rem;
 }
 
-.estrella{ font-size: 1.35rem; }
+.estrella{ 
+    font-size: 1.35rem; 
+}
 
 #rango-puntaje{
     width: 38vw;              /* barra más corta en móvil */
@@ -65,6 +71,9 @@ main{
 
 footer{
     margin-top: 14em;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 }

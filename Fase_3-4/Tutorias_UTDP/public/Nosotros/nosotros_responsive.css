@@ -2,24 +2,30 @@
 @media (max-width: 480px){
 
 main{
-    width: 480px;
-    margin-inline:auto;
+    max-width: 100%;
+    width: 100%;
+    margin-inline: auto;
     row-gap: 1.25rem;
     padding-block: 1rem;
+    padding-inline: 1rem;
     align-items: center;
     padding-bottom: 0em;
+    box-sizing: border-box;
 }
 
 .main-creadores{
-    width: 480px;
+    max-width: 100%;
+    width: 100%;
     padding: 0em;
     padding-top: 2em;
+    box-sizing: border-box;
 }
 
 .informacion-creadores{
     padding-top: 1em;
     margin-right: 0.7em;
     margin-bottom: 2em;
+    box-sizing: border-box;
 }
 
 .informacion-creadores h1{
@@ -27,13 +33,16 @@ main{
 }
 
 .lore{
-    width: 480px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .lore-texto{
     margin-left: 4em;
     margin-right: 4em;
     padding-bottom: 3em;
+    box-sizing: border-box;
 }
 
 .lore-texto h1{
@@ -43,6 +52,7 @@ main{
 .lore-texto p {
     margin-top: 1.5em;
 }
+
   /* rejilla de personas a 1 columna (ajusta a tus clases reales) */
 .tarjetas-nosotros,
 .nosotros-grid,
@@ -61,20 +71,21 @@ main{
     max-width: none;
     padding: 1rem 1.2rem;
     border-radius: 18px;
+    box-sizing: border-box;
 }
 
   /* fila de iconos sociales */
 .fila-social,
 .social,
 .social-row{
-    display:flex;
+    display: flex;
     justify-content: space-around;
-    align-items:center;
-    gap:1rem;
+    align-items: center;
+    gap: 1rem;
     margin-top: .6rem;
 }
 
-  /* card de “¿Por qué existimos?” */
+  /* card de "¿Por qué existimos?" */
 .nos-porque,
 .porque-card{
     width: 100%;
@@ -82,10 +93,14 @@ main{
     border-radius: 18px;
     line-height: 1.65;
     font-size: 1rem;
+    box-sizing: border-box;
 }
 
 footer{
     margin-top: 0em;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 }

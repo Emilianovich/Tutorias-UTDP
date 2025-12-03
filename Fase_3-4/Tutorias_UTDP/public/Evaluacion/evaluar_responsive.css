@@ -2,9 +2,12 @@
 @media (max-width: 480px){
 
 main{
-    width: 420px;
-    margin-inline:auto;
+    max-width: 100%;
+    width: 100%;
+    margin-inline: auto;
     margin-top: 1.2em;
+    padding-inline: 1rem;
+    box-sizing: border-box;
 }
 
 #contenedor-sesiones{
@@ -13,6 +16,7 @@ main{
     gap: 2.45rem;
     margin-left: 1em;
     margin-right: 1em;
+    box-sizing: border-box;
 }
 
 .tarjeta-sesion{
@@ -20,6 +24,7 @@ main{
     width: 100%;
     padding: 1.25rem 1.1rem 1.2rem;
     border-radius: 20px;
+    box-sizing: border-box;
 }
 
 .tarjeta-sesion h2{
@@ -31,24 +36,28 @@ main{
     font-size: 1.15rem;
 }
 
-btn-evaluar{
+.btn-evaluar{
     margin-top: 1.1rem;
     padding: .6rem 2.2rem;
     font-size: 1.05rem;
 }
 
-  /* estado “no hay sesiones” */
+  /* estado "no hay sesiones" */
 #sin-sesiones{
     padding: 2rem 1rem;
     font-size: 1.35rem;
     border-radius: 20px;
+    box-sizing: border-box;
 }
 
 footer{
-    width: 480px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 #footer-copyright{
     margin-top: 0em;
 }
+
 }
