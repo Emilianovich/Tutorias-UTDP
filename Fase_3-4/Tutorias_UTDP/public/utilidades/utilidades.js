@@ -211,6 +211,6 @@ if (!sessionStorage.getItem("estudiante_uuid")) {
     agregarContenedorAnimacion(contenedorAnimacion);
     setTimeout(()=> {
         desaparecerContenedorAnimacion(contenedorAnimacion);
-        location.href = "https://utdp-tutorias.web.app/";
+        location.replace("https://utdp-tutorias.web.app/");
     }, 2001);
 }
