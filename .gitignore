@@ -7,3 +7,5 @@
 *.asd      
 *.docx~    
 *.doc~
+/dist
+/node_modules
