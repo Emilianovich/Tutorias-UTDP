@@ -274,7 +274,7 @@ if (document.body.id === "pagina-perfil") {
     const btncambiar_contra = document.getElementById('boton_cambiar_contra');
 
     btncambiar_contra.addEventListener('click', () => {
-        window.location.href = 'https://utdp-tutorias.web.app/Perfil/cambiar_contraseña.html';
+        window.location.href = './cambiar_contrasena.html';
     });
 }
 
