@@ -47,7 +47,7 @@ if (document.body.id === "pagina-perfil") {
         try {
             const requestSesionesPend = await fetch(`https://tutorias-utdp-production.up.railway.app/api/sesion/pendiente/${estudiante_uuid}`);
             const responseSesionesPend = await requestSesionesPend.json();
-
+            console.log(responseSesionesPend);
             const contenedor_divs_pendientes = document.getElementById("contenedor_sesiones_pendientes");
             contenedor_divs_pendientes.innerHTML = "";
 
@@ -59,7 +59,7 @@ if (document.body.id === "pagina-perfil") {
                     div_pendiente.innerHTML = `
             <h3>${pendiente.nombre}</h3>
             <br>
-            <p>Fecha: ${pendiente.horario}</p>
+            <p>Hora: ${pendiente.horario}</p>
             <p>Salón: ${pendiente.salon}</p>
             <p>Tutor: ${pendiente.nombre_completo}</p>
             <div class="contenedor_desinscribirse">
