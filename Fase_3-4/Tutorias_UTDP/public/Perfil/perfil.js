@@ -22,6 +22,7 @@ if (document.body.id === "pagina-perfil") {
             const response = await request.json();
 
             const Facultades = {
+                'FCYT': 'Facultad de Ciencias y Tecnología',
                 'FISC': 'Facultad de Ingeniería en Sistemas Computacionales',
                 'FIE': 'Facultad de Ingeniería Eléctrica',
                 'FII': 'Facultad de Ingeniería Industrial',
